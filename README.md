@@ -1,4 +1,4 @@
-# Anfaengerpraktikum
-Physik Praktikum SoSe18
-Fabian Koch und Tom Rosenstein
-'FP
+# FP
+Physik Praktikum WiSe 18/19
+Gordon Scholz und Tom Rosenstein
+
