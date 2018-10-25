@@ -1,0 +1,7 @@
+T-Stück groß: d_innen: 40+-0.5mm
+              l_1: 128.2+-0.5mm
+              l_2: 45+-2mm
+
+Kreuzstück klein: d_innen: 10+-0.5mm
+                  l_1: 80+-0.5mm
+                  l_2(2 mal vorhanden): 30+-1mm
