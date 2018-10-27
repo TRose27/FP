@@ -1,0 +1,19 @@
+\section{Fehlerrechnung}
+\label{sec:Fehlerrechnung}
+Im Folgenden werden alle Mittelwerte mit folgender Formel bestimmt:
+\begin{equation}
+  \overline{x}=\frac{1}{N}\sum_{i=1}^N x_i.
+  \label{eqn:mittelwert}
+\end{equation}
+Der zugehörige Fehler des Mittelwertes berechnet sich nach
+\begin{equation}
+  \increment\overline{x}=\frac{1}{\sqrt{N}}\sqrt{\frac{1}{1-N}\sum_{i=1}^N (x_i - \overline{x})^2}.
+  \label{eqn:mittelwerterr}
+\end{equation}
+Werden fehlerbehaftete Größen in einer späteren Formel benutzt, so wird der neue Fehler mit Hilfe der Gauß'schen Fehlerfortpflanzung angegeben:
+\begin{equation}
+  \increment f=\sqrt{\sum_{i=1}^N \left(\frac{\partial f}{\partial x_i}\right)^2 \cdot (\increment x_i)^2}.
+  \label{eqn:gaußerr}
+\end{equation}
+Die Regression sowohl von Ausgleichsgeraden als auch von anderen Polynomen, sowie die Bestimmung der zugehörigen Fehler nach der Methode der kleinsten 
+Quadrate, wird mit iPython 3.6.6 durchgeführt.
