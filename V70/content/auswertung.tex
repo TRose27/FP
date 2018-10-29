@@ -1,9 +1,44 @@
 \section{Auswertung}
 \label{sec:Auswertung}
-
+\subsection{Volumenbestimmung}
 \begin{figure}
   \centering
-  \includegraphics{plot.pdf}
-  \caption{Plot.}
-  \label{fig:plot}
+  \includegraphics{images/pumpstand3.jpg}
+  \caption{Der verwendete Pumpstand mit nummerierten Bauteilen.}
+  \label{fig:ps1}
 \end{figure}
+\begin{figure}
+  \centering
+  \includegraphics{images/pumpstand5.jpg}
+  \caption{Der verwendete Pumpstand mit nummerierten Bauteilen.}
+  \label{fig:ps2}
+\end{figure}
+\begin{figure}
+  \centering
+  \includegraphics{images/pumpstand4.jpg}
+  \caption{Der verwendete Pumpstand mit nummerierten Bauteilen.}
+  \label{fig:ps3}
+\end{figure}
+Die Volumina der benutzten Bauteile sind in Tabelle \ref{tab:volumina} aufgelistet.
+Die Volumina 2 und 8 wurden dabei selber gemessen, die restlichen Werte wurden aus \cite{leitfaden} entnommen. Zur Bestimmung des Volumens von Bauteil 2 wurden folgende Werte gemessen:
+\begin{align*}
+  d_\text{innen}&= \SI{40\pm0.5}{\milli\metre} \\
+  l_1 &= \SI{128.2\pm0.5}{\milli\metre}\\
+  l_2 &= \SI{45\pm2}{\milli\metre}
+\end{align*}
+Das Volumen berechnet sich dann mit der Formel
+\begin{equation*}
+  V_2 = \pi (\frac{d_\text{innen}}{2})^2 \cdot (l_1 + l_2).
+\end{equation*}
+zu dem in \ref{tab:volumina} angegebenen Wert. Bei Bauteil 8 wurden folgende Werte und, da es sich um ein Kreuzstück handelt, Formel genutzt:
+\begin{align*}
+  d_\text{innen}&= \SI{10\pm0.5}{\milli\metre} \\
+  l_1 &= \SI{80\pm0.5}{\milli\metre}\\
+  l_2 &= \SI{30\pm1}{\milli\metre} \\
+  V_8 &= \pi (\frac{d_\text{innen}}{2})^2 \cdot (l_1 + 2 l_2).
+\end{align*}
+Bei den Messungen mit der Drehschieberpumpe ist das Ventil 6, sowie das in \ref{fig:ps2} zu sehende Ventil 4 verschlossen.
+Die Addition der verbleibenden Volumina ergibt ein Gesamtvolumen von $\SI{11.1\pm0.8}{\litre}$.
+Bei den Messungen mit der Trubopumpe sind diese Ventile offen, wodurch sich ein Gesamtvolumen von $\SI{11.2\pm0.8}{\litre}$ ergibt. 
+\subsection{Drehschieberpumpe}
+\subsubsection{Evakuierungsmessung}

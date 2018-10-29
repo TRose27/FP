@@ -40,9 +40,9 @@ b3a=ufloat(0.25,0.01)
 print("B3 aus Anleitung",b3a)
 
 
-vdrehevak=b1+b2+b3+v3z+v3o+s1+b5+v3z+s2+v4
-vdrehleck=b1+b2+b3+v3o+v3o+s1+b5+v3z+s2+v4
-vturboevak=vdrehevak+b3+b4+v3o-v3z+v1o
+vdrehevak=b1+b2+b3+b3+v3z+v3o+s1+b5+v3z+s2+v4
+vdrehleck=b1+b2+b3+b3+v3o+v3o+s1+b5+v3z+s2+v4
+vturboevak=vdrehevak+b4+v3o-v3z+v1o
 vturboleck=vturboevak-v1o+v1z-v3z+v3o
 
 print("V Drehevak in l:",vdrehevak)

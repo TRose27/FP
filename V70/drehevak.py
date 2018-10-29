@@ -7,7 +7,7 @@ from scipy.optimize import curve_fit
 import scipy.constants as const
 
 p, t1, t2, t3, t4, t5 = np.genfromtxt("data/drehevak.csv",delimiter=",",unpack=True)
-V=ufloat(10.9,0.8)
+V=ufloat(11.1,0.8)
 pe=ufloat(4e-2,0.8e-2)
 p0=ufloat(1013,202.6)
 t0=np.column_stack([t1,t2,t3,t4,t5])
