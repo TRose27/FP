@@ -1,12 +1,66 @@
 \section{Theorie}
 \label{sec:Theorie}
-Als Vakuum wird der Zustand eines Gases bezeichnet, dessen Druck in einem Behälter kleiner ist als der Umgebungsdruck. Dies bedeutet auf der Erde, dass der Druck in einem
-Behälter kleiner als der Atmosphärendruck $p_0 = \SI{1013}{\milli\bar}$ sein muss. Der Druck ist dabei die Kraft pro Fläche $P = \dfrac{F}{A}$ und hat die Einheit 
-$[P] = \SI{1}{bar} = \SI{e5}{\pascal}$. Im folgenden werden alle Drücke immer in Bar angegeben.\\
+Als Vakuum wird der Zustand eines Gases bezeichnet, dessen Druck in einem Behälter kleiner ist als der Umgebungsdruck.\cite{pfeiffer} Dies bedeutet auf der Erde, dass der Druck in einem
+Behälter kleiner als der Atmosphärendruck $p_0 = \SI{1013}{\milli\bar}$ sein muss. Die sich im Behälter befindene Luft wurde in diesem Versuch als ideales Gas angenommen. Es wird daher davon
+ausgegangen das die Teilchen nur elastische Stöße untereinander und mit den Wänden des Behälters ausführen. Jegliche andere Wechselwirkung wie z.B. zwischen den einzelnen Teilchen werden 
+als vernachlässigbar betrachtet. Die Gasteilchen werden außerdem als ausdehnungslose Massepunkte betrachtet. Die allgemeine Gasgleichung für ideale Gase lautet
+\begin{equation}%ideale Gasgleichung
+    p \cdot V = n \cdot R \cdot T = N \cdot k_{\mathrm{B}} \cdot T,
+    \label{eqn:idgas}
+\end{equation}
+wobei $n$ für die Stoffmenge, $N$ für die Anzahl der Teilchen und $R$ für die allgemeine Gaskonstante steht. Für eine konstante Temperatur $T$ und eine konstante Stoffmenge $n$ folgt 
+das der Druck $p$ antiproportional zum Volumen $V$ ist. Dieser Zusammenhang wird durch das Boyle'sches Gesetz beschrieben:
+\begin{equation*}%Boyle'sches Gesetz
+    p \propto \frac{1}{V} \;.
+\end{equation*}
+Der Druck ist dabei die Kraft pro Fläche $p = \dfrac{F}{A}$ und hat die Einheit $[P] = \SI{1}{bar} = \SI{e5}{\pascal}$. Im folgenden werden alle Drücke immer in Bar angegeben.\\
+Die Partialdrücke, das heißt die Teildrücke der unterschiedlichen Fraktionen, werden ebenfalls vernachlässig, da angenommen wird das die Luft im Behälter nur aus einer Fraktion besteht.
+
+\subsection{Herleitung der p(t)-Kurve}
+Unter den weiteren Annahmen das das Volumen beim messen des Druckes konstant bleibt und das der Druck $p(t)$ zu einem Zeitpunkt immer im Gesamten Volumen herscht, sowie es keine Lecks und 
+Ausgasungen von den Oberflächen gibt und das Saugvermögen $S$ konstant und unabhängig vom Druck ist, lässt sich der Druckverlauf aus der idealen Gasgleichung.\cite[12]{leitfaden}\\
+Unter Berücksichtigung der getroffenen Annahmen folgt aus der zeitlichen Ableitung der Gleichung \eqref{eqn:idgas}
+\begin{align}
+    \frac{\mathrm{d}}{\mathrm{d}t}pV = \frac{\mathrm{d}}{\mathrm{d}t}nRT \nonumber\\
+    \implies \dot{p}V + p\dot{V} = 0,\label{eqn:idgasableitung}
+\end{align}
+da die Stoffmenge, Temperatur und Gaskonstante konstant sind. Da das Saugvermögen $S$ konstant sein soll, ist es gleich der Zunahme des Volumens pro Zeit:
+\begin{equation*}
+    \dot{V} = S. 
+\end{equation*}
+Damit folgt aus Gleichung \eqref{eqn:idgasableitung}:
+\begin{align}
+    \dot{p}V = -pS. \label{eqn:pVpS} 
+\end{align}
+Der Lösungsansazu dieser bekannten Differenzialgleichung lautet\cite[12]{leitfaden}: 
+\begin{align*}
+    p(t) &= p_0 \exp\left(-\frac{t}{\tau}\right),\\
+    \dot{p}(t) &= -\frac{p_0}{\tau}\exp\left(-\frac{t}{\tau}\right) = -\frac{p(t)}{\tau},
+\end{align*}
+dabei ist $p_0$ der Anfangsdruck und $\tau$ eine zu bestimmenden Zeitkonstante. Durch einsetzen in die Gleichung \eqref{eqn:pVpS} ergibt sich 
+\begin{equation*}
+    \tau = \frac{V}{S}.
+\end{equation*}
+Unter Berücksichtigung eines endlichen Enddrucks $p_{\mathrm{E}}$ ergibt sich durch das einsätzen in den Lösungsansatz die Funtkon $p(t)$ in Abhängigkeit vom Saugvermögen $S$:
+\begin{equation}
+    p(t) = (p_0 - p_{\mathrm{E}})\exp\left(-t\frac{S}{V}\right) + p_{\mathrm{E}}.
+\end{equation}
+Der Enddruck $p_{\mathrm{E}}$ ergibt sich aus nicht vermeidbaren Leckagen und Ausgasungen\cite[13]{leitfaden}. Der schematische Kurvenverlauf ist in Abbildung \ref{fig:pkurve} zu sehen.
+\begin{figure}[H]
+    \centering 
+    \includegraphics[scale=0.7]{p-kurve.png}
+    \caption{Schematischer Kurvenverlauf der p(t)-Kurve.\cite[13]{leitfaden}}
+    \label{fig:pkurve}
+\end{figure}\FloatBarrier
+
+\subsection{Druckbereiche}
 Ein Vakuum lässt sich je nachdem wie viele Teilchen noch im Volumen vorhanden sind, in unterschiedliche Druckbereiche einteilen. Diese sind in Abbildung \ref{fig:druckbereiche} zu sehen.
-\begin{figure}
+Je niedriger der Druck ist, desto größer ist die Qualität des Vakuums.
+\begin{figure}%Druckbereiche
     \centering
-    \includegraphics{Druckbereiche.png}
-    \caption{Druckbereiche in der Vakuumtechnik.}
+    \includegraphics[scale=2.0]{druckbereiche.jpg}
+    \caption{Druckbereiche in der Vakuumtechnik.\cite{bereiche}}
     \label{fig:druckbereiche}
-\end{figure}
+\end{figure}\FloatBarrier
+Die Anzahl an Teilchen im Volumen geht mit der mittleren freien Weglänge der Teilchen einher. Diese steht für die gemittelte Distanz die ein Teilchen zurücklegen muss um mit einem anderen 
+Teilchen zu stoßen. Sie wird mit abnehmener Teilchenzahl im Volumen größer, da weniger Teilchen zum kollidieren vorhanden sind. 
