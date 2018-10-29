@@ -24,9 +24,15 @@ build/turboleck.pdf: turboleck.py matplotlibrc header-matplotlib.tex | build
 # hier weitere Abhängigkeiten für build/main.pdf deklarieren:
 build/main.pdf: build/plot.pdf
 build/main.pdf: build/drehevak.pdf
-build/main.pdf: build/drehleck.pdf
+build/main.pdf: build/drehleck1.pdf
+build/main.pdf: build/drehleck2.pdf
+build/main.pdf: build/drehleck3.pdf
+build/main.pdf: build/drehleck4.pdf
 build/main.pdf: build/turboevak.pdf
-build/main.pdf: build/turboleck.pdf
+build/main.pdf: build/turboleck1.pdf
+build/main.pdf: build/turboleck2.pdf
+build/main.pdf: build/turboleck3.pdf
+build/main.pdf: build/turboleck4.pdf
 
 build/main.pdf: FORCE | build
 	  TEXINPUTS="$(call translate,build:)" \
