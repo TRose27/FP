@@ -42,6 +42,8 @@ print('b2=', params[1], '+-', errors[1])
 
 
 plt.plot(t[10:], f(t[10:], *params), 'b-', label='Fit 2')
+plt.xlabel(r't / $\si{\second}$')
+plt.ylabel(r'$\ln(\frac{p(t) - p_E}{p_0 - p_E})$')
 plt.tight_layout(pad=0, h_pad=1.08, w_pad=1.08)
 plt.legend(loc="best")
 plt.savefig('build/drehevak.pdf')
