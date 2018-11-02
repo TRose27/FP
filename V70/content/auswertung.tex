@@ -2,7 +2,7 @@
 \label{sec:Auswertung}
 \subsection{Volumenbestimmung}
 Die im folgenden verwendeten Zahlen für die Volumina sind in den Abbildungen \ref{fig:ps1} bis \ref{fig:ps3} zu sehen. Die Volumina der benutzten Bauteile sind in Tabelle \ref{tab:volumina}
-aufgelistet. Die Volumina 2 und 8 wurden dabei selber gemessen, die restlichen Werte wurden aus \cite{leitfaden} entnommen. Zur Bestimmung des Volumens von Bauteil 2 wurden folgende Werte gemessen:
+aufgelistet. Zu vernachlässigende oder nicht vorhandene Volumina sind dabei als $0$ angegeben. Die Volumina 2 und 8 wurden dabei selber gemessen, die restlichen Werte wurden aus \cite{leitfaden} entnommen. Zur Bestimmung des Volumens von Bauteil 2 wurden folgende Werte gemessen:
 \begin{align*}
   d_\text{innen}&= \SI{40\pm0.5}{\milli\metre} \\
   l_1 &= \SI{128.2\pm0.5}{\milli\metre}\\
@@ -32,5 +32,81 @@ Der Fehler des Gesamtvolumens berechnet sich dabei wie folgt:
     \Delta V_\text{ges}=\sqrt{\sum_{i=1}  (\increment V_i)^2}.
 \end{equation*}
 Dabei bezeichnet der Index $i$ die verwendeten Teile.
+\begin{table}
+  \centering
+  \caption{Die Volumina der verwendeten Bauteile.}
+  \label{tab:volumina}
+  \begin{tabular}[t]{c c c}
+   \toprule
+    {Bauteil} & {Volumen (offen) / $\si{\litre}$} & {Volumen (geschlossen) / $\si{\litre}$} \\
+     \midrule
+     \csvreader[no head,
+     late after line=\\,
+     late after last line=\\\bottomrule]%
+     {data/voltab.csv}{}%
+     {$\num{\csvcoli}$ & $\num{\csvcolii} \pm \num{\csvcoliii}$ & $\num{\csvcoliv} \pm \num{\csvcolv}$ }%
+   \end{tabular}
+ \end{table}
 \subsection{Drehschieberpumpe}
 \subsubsection{Evakuierungsmessung}
+Zur Bestimmung des Saugvermögens aus der Evakuierungsmessung wird Gleichung \eqref{eqn:pkurve} umgestellt und logarhithmiert, so dass sich folgende Gleichung ergibt:
+\begin{equation}
+  \ln \Bigl(\frac{p(t)-p_E}{p_0-p_E}\Bigr) = - t \cdot \frac{S}{V}.
+  \label{eqn:lnpkurve}
+\end{equation}
+Die Messwerte, sowie die mit \eqref{eqn:mittelwert} und \eqref{eqn:mittelwerterr} bestimmten Zeiten befinden sich in Tabelle \ref{tab:drehevak}.
+Zur Berechnung von $  \ln \Bigl(\frac{p(t)-p_E}{p_0-p_E}\Bigr)$ wurden der Atmosphärendruck $p_0=\SI{1013}{\milli\bar}$ und der gemessene Enddruck $p_E=\SI{4e-2}{\milli\bar}$ verwendet.
+Die Fehler aller gemessen Drücke betragen, gemäß der aus \cite{leitfaden} entnommenen Messungenauigkeit des Pirani-Messgerätes, $\SI{20}{\percent}$.
+Der Fehler des logarhithmischen Ausdrucks wird nach \eqref{eqn:gaußerr} mit der folgenden Formel bestimmt:
+\begin{equation}
+  \Delta \ln \Bigl(\frac{p(t)-p_E}{p_0-p_E}\Bigr) = \sqrt{\frac{\Delta_{p(t)}^{2}}{\left(p(t) - p_{E}\right)^{2}} + \frac{\Delta_{p_{0}}^{2}}{\left(p_{0} - p_{E}\right)^{2}} + \frac{\Delta_{p_{E}}^{2} \left(p_{0} - p_{E}\right)^{2}}{\left(p(t) - p_{E}\right)^{2}} \left(\frac{p(t) - p_{E}}{\left(p_{0} - p_{E}\right)^{2}} - \frac{1}{p_{0} - p_{E}}\right)^{2}}.
+  \label{eqn:lnperr}
+\end{equation}
+Die so bestimmten Werte befinden sich ebenfalls in Tabelle \ref{tab:drehevak}.
+Nun werden die logarhithmierten Drücke gegen die gemittelten Zeiten aufgetragen und mit der Gleichung $y=ax+b$ in zwei Bereichen optimiert.
+Der Plot ist in Abbildung \ref{fig:drehevak} zu sehen. Die Fitparameter wurden zu
+\begin{align*}
+  a_1 &= \SI{-0.094\pm0.002}{\per\second} \\
+  a_2 &= \SI{-0.051\pm0.004}{\per\second} \\
+  b_1 &= \SI{-0.169\pm0.107}{} \\
+  b_2 &= \SI{-3.648\pm0.397}{}
+\end{align*}
+bestimmt.
+Durch Vergleich mit \eqref{eqn:lnpkurve} lässt sich so das jeweilige Saugvermögen mit
+\begin{equation}
+  S=-a \cdot V
+  \label{eqn:saugvermögen}
+\end{equation}
+und der zugehörige Fehler mit
+\begin{equation}
+  \Delta S = \sqrt{V^{2} \Delta_{a}^{2} + a^{2} \Delta_{V}^{2}}
+  \label{eqn:saugvermögenerr}
+\end{equation}
+berechnen.
+So wurden die Saugvermögen zu
+\begin{align*}
+  S_1 &= \SI{1.04\pm0.08}{\litre\per\second} \\
+  S_2 &= \SI{0.57\pm0.06}{\litre\per\second}
+\end{align*}
+bestimmt.
+\begin{table}
+  \centering
+  \caption{Gemessene und berechnete Werte zur Evakuierungsmessung der Drehschieberpumpe.}
+  \label{tab:drehevak}
+  \begin{tabular}[t]{c c c c c c c c}
+   \toprule
+    p(t) / $\si{\milli\bar}$ & $\ln \Bigl(\frac{p(t)-p_E}{p_0-p_E}\Bigr)$ & $t_1$ / $\si{\second}$ & $t_2$ / $\si{\second}$ & $t_3$ / $\si{\second}$ & $t_4$ / $\si{\second}$ & $t_5$ / $\si{\second}$ &  $t$ / $\si{\second}$ \\
+     \midrule
+     \csvreader[no head,
+     late after line=\\,
+     late after last line=\\\bottomrule]%
+     {data/drehevaktab.csv}{}%
+     {$\num{\csvcoli}\pm\num{\csvcolii}$ & $\num{\csvcoliii} \pm \num{\csvcoliv}$ & $\num{\csvcolv}$ & $\num{\csvcolvi}$& $\num{\csvcolvii}$& $\num{\csvcolviii}$& $\num{\csvcolix}$& $\num{\csvcolx}\pm\num{\csvcolxi}$ }%
+   \end{tabular}
+ \end{table}
+ \begin{figure}
+     \centering
+     \includegraphics{build/drehevak.pdf}
+     \caption{Plot zur Evakuierungsmessung der Drehschieberpumpe.}
+     \label{fig:drehevak}
+ \end{figure}

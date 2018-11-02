@@ -21,10 +21,13 @@ build/turboevak.pdf: turboevak.py matplotlibrc header-matplotlib.tex | build
 	TEXINPUTS="$(call translate,$(pwd):)" python turboevak.py
 build/turboleck.pdf: turboleck.py matplotlibrc header-matplotlib.tex | build
 	TEXINPUTS="$(call translate,$(pwd):)" python turboleck.py
+
 # hier weitere Abhängigkeiten für build/main.pdf deklarieren:
 build/main.pdf: build/plot.pdf
 build/main.pdf: build/drehevak.pdf
 build/main.pdf: build/turboevak.pdf
+build/main.pdf: build/drehleck.pdf
+build/main.pdf: build/turboleck.pdf
 
 
 build/main.pdf: FORCE | build
