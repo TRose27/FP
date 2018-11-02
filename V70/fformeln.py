@@ -16,9 +16,9 @@ def error(f, err_vars=None):
     return latex(sympy.sqrt(s), symbol_names=latex_names)
 
 #E, q, r = sympy.var('E_x q r')
-a, v = sympy.var('a V')
+a, v, pg= sympy.var('a V p_g')
 #f = E + q**2 * r
-f = a*V
+f = (V/pg) *a
 
 print(f)
 print(error(f))

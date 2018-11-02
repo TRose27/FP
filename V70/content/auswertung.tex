@@ -47,8 +47,11 @@ Dabei bezeichnet der Index $i$ die verwendeten Teile.
      {$\num{\csvcoli}$ & $\num{\csvcolii} \pm \num{\csvcoliii}$ & $\num{\csvcoliv} \pm \num{\csvcolv}$ }%
    \end{tabular}
  \end{table}
+ \FloatBarrier
 \subsection{Drehschieberpumpe}
 \subsubsection{Evakuierungsmessung}
+\FloatBarrier
+\label{sec:drehevak}
 Zur Bestimmung des Saugvermögens aus der Evakuierungsmessung wird Gleichung \eqref{eqn:pkurve} umgestellt und logarhithmiert, so dass sich folgende Gleichung ergibt:
 \begin{equation}
   \ln \Bigl(\frac{p(t)-p_E}{p_0-p_E}\Bigr) = - t \cdot \frac{S}{V}.
@@ -110,3 +113,127 @@ bestimmt.
      \caption{Plot zur Evakuierungsmessung der Drehschieberpumpe.}
      \label{fig:drehevak}
  \end{figure}
+ \FloatBarrier
+\subsubsection{Leckratenmessung}
+\FloatBarrier
+\label{sec:drehleck}
+Die Messdaten für die Gleichgewichtsdrücke $p_{g,1}=\SI{0.1}{\milli\bar}$, $p_{g,2}=\SI{0.4}{\milli\bar}$, $p_{g,3}=\SI{0.8}{\milli\bar}$ und $p_{g,4}=\SI{1}{\milli\bar}$ befinden sich in den
+Tabellen \ref{tab:drehleck1}, \ref{tab:drehleck2}, \ref{tab:drehleck3} und \ref{tab:drehleck4}. Die Fehler der gemessenen Drücke berechnen sich wie in \ref{sec:drehevak} und die gemessenen
+Zeiten werden wieder mit \eqref{eqn:mittelwert} und \eqref{eqn:mittelwerterr} gemittelt.
+Die Drücke werden gegen die Zeiten aufgetragen und linear gefittet. Die Plots sind in den Abbildungen \ref{fig:drehleck1}, \ref{fig:drehleck2}, \ref{fig:drehleck3} und \ref{fig:drehleck4} zu sehen.
+Die bestimmten Parameter sind
+\begin{align*}
+  a_1 &= \SI{4.804\pm0.242e-3}{\milli\bar\per\second}\\
+  a_2 &= \SI{3.299\pm0.059e-2}{\milli\bar\per\second}\\
+  a_3 &= \SI{9.478\pm0.148e-2}{\milli\bar\per\second}\\
+  a_4 &= \SI{1.235\pm0.011e-1}{\milli\bar\per\second}\\
+  b_1 &= \SI{0.144\pm0.023}{\milli\bar} \\
+  b_2 &= \SI{0.345\pm0.030}{\milli\bar} \\
+  b_3 &= \SI{0.735\pm0.061}{\milli\bar} \\
+  b_1 &= \SI{0.958\pm0.048}{\milli\bar}
+\end{align*}
+Der Parameter $a$ stellt hierbei die Steigung $\frac{\mathrm{d}p}{\mathrm{d}t}$ dar und so lässt sich das Saugvermögen durch Vergleich mit \eqref{eqn:leck}
+folgendermaßen bestimmen:
+\begin{equation}
+  S=\frac{V}{p_g} \cdot a .
+  \label{eqn:leck2}
+\end{equation}
+Der zugehörige Fehler wird nach \eqref{eqn:gaußerr} mit
+\begin{equation}
+  \Delta S = \sqrt{\frac{V^{2} a^{2}}{p_{g}^{4}} \Delta_{p_{g}}^{2} + \frac{V^{2} \Delta_{a}^{2}}{p_{g}^{2}} + \frac{a^{2} \Delta_{V}^{2}}{p_{g}^{2}}}.
+  \label{eqn:leckerr}
+\end{equation}
+bestimmt.
+So wurden folgende Saugvermögen bestimmt:
+\begin{align*}
+  S_1 &= \SI{0.53\pm0.05}{\litre\per\second} \\
+  S_2 &= \SI{0.92\pm0.07}{\litre\per\second} \\
+  S_3 &= \SI{1.32\pm0.10}{\litre\per\second} \\
+  S_4 &= \SI{1.37\pm0.10}{\litre\per\second}
+\end{align*}
+\begin{figure}
+    \centering
+    \includegraphics{build/drehleck1.pdf}
+    \caption{Plot zur Leckratenmessung der Drehschieberpumpe bei $p_g=\SI{0.1}{\milli\bar}$.}
+    \label{fig:drehleck1}
+\end{figure}
+\begin{figure}
+    \centering
+    \includegraphics{build/drehleck2.pdf}
+    \caption{Plot zur Leckratenmessung der Drehschieberpumpe bei $p_g=\SI{0.4}{\milli\bar}$.}
+    \label{fig:drehleck2}
+\end{figure}
+\begin{figure}
+    \centering
+    \includegraphics{build/drehleck3.pdf}
+    \caption{Plot zur Leckratenmessung der Drehschieberpumpe bei $p_g=\SI{0.8}{\milli\bar}$.}
+    \label{fig:drehleck3}
+\end{figure}
+\begin{figure}
+    \centering
+    \includegraphics{build/drehleck4.pdf}
+    \caption{Plot zur Leckratenmessung der Drehschieberpumpe bei $p_g=\SI{1}{\milli\bar}$.}
+    \label{fig:drehleck4}
+\end{figure}
+\begin{table}
+  \centering
+  \caption{Gemessene und berechnete Werte zur Leckratenmessung der Drehschieberpumpe bei $p_g=\SI{0.1}{\milli\bar}$.}
+  \label{tab:drehleck1}
+  \begin{tabular}[t]{c c c c c}
+   \toprule
+    p(t) / $\si{\milli\bar}$ & $t_1$ / $\si{\second}$ & $t_2$ / $\si{\second}$ & $t_3$ / $\si{\second}$ & $t$ / $\si{\second}$ \\
+     \midrule
+     \csvreader[no head,
+     late after line=\\,
+     late after last line=\\\bottomrule]%
+     {data/drehleck1tab.csv}{}%
+     {$\num{\csvcoli}\pm\num{\csvcolii}$ & $\num{\csvcoliii}$ & $\num{\csvcoliv}$ & $\num{\csvcolv}$ & $\num{\csvcolvi}\pm\num{\csvcolvii}$ }%
+   \end{tabular}
+ \end{table}
+ \begin{table}
+   \centering
+   \caption{Gemessene und berechnete Werte zur Leckratenmessung der Drehschieberpumpe bei $p_g=\SI{0.4}{\milli\bar}$.}
+   \label{tab:drehleck2}
+   \begin{tabular}[t]{c c c c c}
+    \toprule
+     p(t) / $\si{\milli\bar}$ & $t_1$ / $\si{\second}$ & $t_2$ / $\si{\second}$ & $t_3$ / $\si{\second}$ & $t$ / $\si{\second}$ \\
+      \midrule
+      \csvreader[no head,
+      late after line=\\,
+      late after last line=\\\bottomrule]%
+      {data/drehleck2tab.csv}{}%
+      {$\num{\csvcoli}\pm\num{\csvcolii}$ & $\num{\csvcoliii}$ & $\num{\csvcoliv}$ & $\num{\csvcolv}$ & $\num{\csvcolvi}\pm\num{\csvcolvii}$ }%
+    \end{tabular}
+  \end{table}
+  \begin{table}
+    \centering
+    \caption{Gemessene und berechnete Werte zur Leckratenmessung der Drehschieberpumpe bei $p_g=\SI{0.8}{\milli\bar}$.}
+    \label{tab:drehleck3}
+    \begin{tabular}[t]{c c c c c}
+     \toprule
+      p(t) / $\si{\milli\bar}$ & $t_1$ / $\si{\second}$ & $t_2$ / $\si{\second}$ & $t_3$ / $\si{\second}$ & $t$ / $\si{\second}$ \\
+       \midrule
+       \csvreader[no head,
+       late after line=\\,
+       late after last line=\\\bottomrule]%
+       {data/drehleck3tab.csv}{}%
+       {$\num{\csvcoli}\pm\num{\csvcolii}$ & $\num{\csvcoliii}$ & $\num{\csvcoliv}$ & $\num{\csvcolv}$ & $\num{\csvcolvi}\pm\num{\csvcolvii}$ }%
+     \end{tabular}
+   \end{table}
+   \begin{table}
+     \centering
+     \caption{Gemessene und berechnete Werte zur Leckratenmessung der Drehschieberpumpe bei $p_g=\SI{1}{\milli\bar}$.}
+     \label{tab:drehleck4}
+     \begin{tabular}[t]{c c c c c}
+      \toprule
+       p(t) / $\si{\milli\bar}$ & $t_1$ / $\si{\second}$ & $t_2$ / $\si{\second}$ & $t_3$ / $\si{\second}$ & $t$ / $\si{\second}$ \\
+        \midrule
+        \csvreader[no head,
+        late after line=\\,
+        late after last line=\\\bottomrule]%
+        {data/drehleck4tab.csv}{}%
+        {$\num{\csvcoli}\pm\num{\csvcolii}$ & $\num{\csvcoliii}$ & $\num{\csvcoliv}$ & $\num{\csvcolv}$ & $\num{\csvcolvi}\pm\num{\csvcolvii}$ }%
+      \end{tabular}
+    \end{table}
+    \FloatBarrier
+\subsection{Turbopumpe}

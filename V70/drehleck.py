@@ -13,7 +13,7 @@ t=t0.mean(axis=1)
 terr=np.std(t0,axis=1)
 perr=0.2*p
 
-np.savetxt("data/drehleck1tab.csv",np.column_stack([p,t1,t2,t3,t,terr]),delimiter=",",fmt=["%4.2f","%4.2f","%4.2f","%4.2f","%4.2f","%4.2f"])
+np.savetxt("data/drehleck1tab.csv",np.column_stack([p,perr,t1,t2,t3,t,terr]),delimiter=",",fmt=["%4.2f","%4.2f","%4.2f","%4.2f","%4.2f","%4.2f","%4.2f"])
 
 
 def f(x, a, b):
@@ -44,7 +44,7 @@ t=t0.mean(axis=1)
 terr=np.std(t0,axis=1)
 perr=0.2*p
 
-np.savetxt("data/drehleck2tab.csv",np.column_stack([p,t1,t2,t3,t,terr]),delimiter=",",fmt=["%4.2f","%4.2f","%4.2f","%4.2f","%4.2f","%4.2f"])
+np.savetxt("data/drehleck2tab.csv",np.column_stack([p,perr,t1,t2,t3,t,terr]),delimiter=",",fmt=["%4.2f","%4.2f","%4.2f","%4.2f","%4.2f","%4.2f","%4.2f"])
 
 
 def f(x, a, b):
@@ -74,7 +74,7 @@ t=t0.mean(axis=1)
 terr=np.std(t0,axis=1)
 perr=0.2*p
 
-np.savetxt("data/drehleck3tab.csv",np.column_stack([p,t1,t2,t3,t,terr]),delimiter=",",fmt=["%4.2f","%4.2f","%4.2f","%4.2f","%4.2f","%4.2f"])
+np.savetxt("data/drehleck3tab.csv",np.column_stack([p,perr,t1,t2,t3,t,terr]),delimiter=",",fmt=["%4.2f","%4.2f","%4.2f","%4.2f","%4.2f","%4.2f","%4.2f"])
 
 
 def f(x, a, b):
@@ -104,7 +104,7 @@ t=t0.mean(axis=1)
 terr=np.std(t0,axis=1)
 perr=0.2*p
 
-np.savetxt("data/drehleck4tab.csv",np.column_stack([p,t1,t2,t3,t,terr]),delimiter=",",fmt=["%4.2f","%4.2f","%4.2f","%4.2f","%4.2f","%4.2f"])
+np.savetxt("data/drehleck4tab.csv",np.column_stack([p,perr,t1,t2,t3,t,terr]),delimiter=",",fmt=["%4.2f","%4.2f","%4.2f","%4.2f","%4.2f","%4.2f","%4.2f"])
 
 
 def f(x, a, b):
