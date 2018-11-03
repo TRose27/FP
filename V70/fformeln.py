@@ -11,14 +11,14 @@ def error(f, err_vars=None):
     for v in err_vars:
         err = Symbol('latex_std_' + v.name)
         s += f.diff(v)**2 * err**2
-        latex_names[err] = '\\Delta_{' + latex(v) + '}'
+        latex_names[err] = '(\\Delta ' + latex(v) +')'
 
     return latex(sympy.sqrt(s), symbol_names=latex_names)
 
 #E, q, r = sympy.var('E_x q r')
-a, v, pg= sympy.var('a V p_g')
+di,l1,l2 = sympy.var('{d_{innen}} l_1 l_2')
 #f = E + q**2 * r
-f = (V/pg) *a
+f = sympy.pi * (di/2)**2 * (l1+2*l2)
 
 print(f)
 print(error(f))

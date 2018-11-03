@@ -11,10 +11,12 @@ V=ufloat(11.2,0.8)
 t0=np.column_stack([t1,t2,t3])
 t=t0.mean(axis=1)
 terr=np.std(t0,axis=1)
-perr=0.2*p
-
-np.savetxt("data/turboleck1tab.csv",np.column_stack([p,t1,t2,t3,t,terr]),delimiter=",",fmt=["%3.1e","%4.2f","%4.2f","%4.2f","%4.2f","%4.2f"])
-
+perr=0.1*p
+p=p*1e+5
+perr=perr*1e+5
+np.savetxt("data/turboleck1tab.csv",np.column_stack([p,perr,t1,t2,t3,t,terr]),delimiter=",",fmt=["%3.2f","%3.2f","%4.2f","%4.2f","%4.2f","%4.2f","%4.2f"])
+p=p*1e-5
+perr=perr*1e-5
 
 def f(x, a, b):
     return a*x+b
@@ -41,9 +43,12 @@ p,t1,t2,t3 = np.genfromtxt("data/turboleck2.csv",delimiter=",",unpack=True)
 t0=np.column_stack([t1,t2,t3])
 t=t0.mean(axis=1)
 terr=np.std(t0,axis=1)
-perr=0.2*p
-
-np.savetxt("data/turboleck2tab.csv",np.column_stack([p,t1,t2,t3,t,terr]),delimiter=",",fmt=["%3.1e","%4.2f","%4.2f","%4.2f","%4.2f","%4.2f"])
+perr=0.1*p
+p=p*1e+4
+perr=perr*1e+4
+np.savetxt("data/turboleck2tab.csv",np.column_stack([p,perr,t1,t2,t3,t,terr]),delimiter=",",fmt=["%3.2f","%3.2f","%4.2f","%4.2f","%4.2f","%4.2f","%4.2f"])
+p=p*1e-4
+perr=perr*1e-4
 
 
 def f(x, a, b):
@@ -71,10 +76,12 @@ p,t1,t2,t3 = np.genfromtxt("data/turboleck3.csv",delimiter=",",unpack=True)
 t0=np.column_stack([t1,t2,t3])
 t=t0.mean(axis=1)
 terr=np.std(t0,axis=1)
-perr=0.2*p
-
-np.savetxt("data/turboleck3tab.csv",np.column_stack([p,t1,t2,t3,t,terr]),delimiter=",",fmt=["%3.1e","%4.2f","%4.2f","%4.2f","%4.2f","%4.2f"])
-
+perr=0.1*p
+p=p*1e+4
+perr=perr*1e+4
+np.savetxt("data/turboleck3tab.csv",np.column_stack([p,perr,t1,t2,t3,t,terr]),delimiter=",",fmt=["%3.2f","%3.2f","%4.2f","%4.2f","%4.2f","%4.2f","%4.2f"])
+p=p*1e-4
+perr=perr*1e-4
 
 def f(x, a, b):
     return a*x+b
@@ -101,10 +108,12 @@ p,t1,t2,t3 = np.genfromtxt("data/turboleck4.csv",delimiter=",",unpack=True)
 t0=np.column_stack([t1,t2,t3])
 t=t0.mean(axis=1)
 terr=np.std(t0,axis=1)
-perr=0.2*p
-
-np.savetxt("data/turboleck4tab.csv",np.column_stack([p,t1,t2,t3,t,terr]),delimiter=",",fmt=["%3.1e","%4.2f","%4.2f","%4.2f","%4.2f","%4.2f"])
-
+perr=0.1*p
+p=p*1e+4
+perr=perr*1e+4
+np.savetxt("data/turboleck4tab.csv",np.column_stack([p,perr,t1,t2,t3,t,terr]),delimiter=",",fmt=["%3.2f","%3.2f","%4.2f","%4.2f","%4.2f","%4.2f","%4.2f"])
+p=p*1e-4
+perr=perr*1e-4
 
 def f(x, a, b):
     return a*x+b

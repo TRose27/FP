@@ -10,26 +10,26 @@ aufgelistet. Zu vernachlässigende oder nicht vorhandene Volumina sind dabei als
 \end{align*}
 Das Volumen berechnet sich dann mit der Formel
 \begin{equation*}
-  V_2 = \pi \bigl(\frac{d_\text{innen}}{2}\bigr)^2 \cdot (l_1 + l_2).
+  V_2 = \pi \Bigl(\frac{d_\text{innen}}{2}\Bigr)^2 \cdot (l_1 + l_2).
 \end{equation*}
 und der Fehler nach \eqref{eqn:gaußerr} mit
 \begin{equation*}
-\Delta V_2 =  \sqrt{\frac{\pi^{2} d_{innen}^{4}}{16} \Delta_{l_{1}}^{2} + \frac{\pi^{2} d_{innen}^{4}}{16} \Delta_{l_{2}}^{2} + \frac{\pi^{2} d_{innen}^{2}}{4} \Delta_{d_{innen}}^{2} \left(l_{1} + l_{2}\right)^{2}}
+\Delta V_2 = \sqrt{\frac{\pi^{2} {d_{\text{innen}}}^{4}}{16} (\Delta l_{1})^{2} + \frac{\pi^{2} {d_{\text{innen}}}^{4}}{16} (\Delta l_{2})^{2} + \frac{\pi^{2} {d_{\text{innen}}}^{2}}{4} (\Delta {d_{\text{innen}}})^{2} \left(l_{1} + l_{2}\right)^{2}}
 \end{equation*}
 zu dem in \ref{tab:volumina} angegebenen Wert. Bei Bauteil 8 wurden folgende Werte und, da es sich um ein Kreuzstück handelt, Formeln genutzt:
 \begin{align*}
   d_\text{innen}&= \SI{10\pm0.5}{\milli\metre} \\
   l_1 &= \SI{80\pm0.5}{\milli\metre}\\
   l_2 &= \SI{30\pm1}{\milli\metre} \\
-  V_8 &= \pi \bigl(\frac{d_\text{innen}}{2}\bigr)^2 \cdot (l_1 + 2 l_2) \\
-  \Delta V_8 &= \sqrt{\frac{\pi^{2} d_{innen}^{4}}{16} \Delta_{l_{1}}^{2} + \frac{\pi^{2} d_{innen}^{4}}{4} \Delta_{l_{2}}^{2} + \frac{\pi^{2} d_{innen}^{2}}{4} \Delta_{d_{innen}}^{2} \left(l_{1} + 2 l_{2}\right)^{2}}
+  V_8 &= \pi \Bigl(\frac{d_\text{innen}}{2}\Bigr)^2 \cdot (l_1 + 2 l_2) \\
+  \Delta V_8 &= \sqrt{\frac{\pi^{2} {d_{\text{innen}}}^{4}}{16} (\Delta l_{1})^{2} + \frac{\pi^{2} {d_{\text{innen}}}^{4}}{4} (\Delta l_{2})^{2} + \frac{\pi^{2} {d_{\text{innen}}}^{2}}{4} (\Delta {d_{\text{innen}}})^{2} \left(l_{1} + 2 l_{2}\right)^{2}}
 \end{align*}
 Bei den Messungen mit der Drehschieberpumpe ist das Ventil 6, sowie das in \ref{fig:ps2} zu sehende Ventil 4 verschlossen.
 Die Addition der verbleibenden Volumina ergibt ein Gesamtvolumen von $\SI{11.1\pm0.8}{\litre}$.
 Bei den Messungen mit der Trubopumpe sind diese Ventile offen, wodurch sich ein Gesamtvolumen von $\SI{11.2\pm0.8}{\litre}$ ergibt.
 Der Fehler des Gesamtvolumens berechnet sich dabei wie folgt:
 \begin{equation*}
-    \Delta V_\text{ges}=\sqrt{\sum_{i=1}  (\increment V_i)^2}.
+    \Delta V_\text{ges}=\sqrt{\sum_{i=1}  (\Delta V_i)^2}.
 \end{equation*}
 Dabei bezeichnet der Index $i$ die verwendeten Teile.
 \begin{table}
@@ -61,10 +61,17 @@ Die Messwerte, sowie die mit \eqref{eqn:mittelwert} und \eqref{eqn:mittelwerterr
 Zur Berechnung von $  \ln \Bigl(\frac{p(t)-p_E}{p_0-p_E}\Bigr)$ wurden der Atmosphärendruck $p_0=\SI{1013}{\milli\bar}$ und der gemessene Enddruck $p_E=\SI{4e-2}{\milli\bar}$ verwendet.
 Die Fehler aller gemessen Drücke betragen, gemäß der aus \cite{leitfaden} entnommenen Messungenauigkeit des Pirani-Messgerätes, $\SI{20}{\percent}$.
 Der Fehler des logarhithmischen Ausdrucks wird nach \eqref{eqn:gaußerr} mit der folgenden Formel bestimmt:
+
 \begin{equation}
-  \Delta \ln \Bigl(\frac{p(t)-p_E}{p_0-p_E}\Bigr) = \sqrt{\frac{\Delta_{p(t)}^{2}}{\left(p(t) - p_{E}\right)^{2}} + \frac{\Delta_{p_{0}}^{2}}{\left(p_{0} - p_{E}\right)^{2}} + \frac{\Delta_{p_{E}}^{2} \left(p_{0} - p_{E}\right)^{2}}{\left(p(t) - p_{E}\right)^{2}} \left(\frac{p(t) - p_{E}}{\left(p_{0} - p_{E}\right)^{2}} - \frac{1}{p_{0} - p_{E}}\right)^{2}}.
+  \begin{split}
+  &\Delta \ln \Bigl(\frac{p(t)-p_E}{p_0-p_E}\Bigr) = \\
+  &\sqrt{\frac{(\Delta p_{0})^{2}}{\left(p_{0} - p_{E}\right)^{2}} + \frac{(\Delta p_{E})^{2} \left(p_{0} - p_{E}\right)^{2}}{\left(- p_{E} + {p(t)}\right)^{2}} \left(- \frac{1}{p_{0} - p_{E}} + \frac{- p_{E} + {p(t)}}{\left(p_{0} - p_{E}\right)^{2}}\right)^{2} 
+  + \frac{(\Delta {p(t)})^{2}}{\left(- p_{E} + {p(t)}\right)^{2}}}.
   \label{eqn:lnperr}
+\end{split}
 \end{equation}
+
+
 Die so bestimmten Werte befinden sich ebenfalls in Tabelle \ref{tab:drehevak}.
 Nun werden die logarhithmierten Drücke gegen die gemittelten Zeiten aufgetragen und mit der Gleichung $y=ax+b$ in zwei Bereichen optimiert.
 Der Plot ist in Abbildung \ref{fig:drehevak} zu sehen. Die Fitparameter wurden zu
@@ -82,7 +89,7 @@ Durch Vergleich mit \eqref{eqn:lnpkurve} lässt sich so das jeweilige Saugvermö
 \end{equation}
 und der zugehörige Fehler mit
 \begin{equation}
-  \Delta S = \sqrt{V^{2} \Delta_{a}^{2} + a^{2} \Delta_{V}^{2}}
+  \Delta S = \sqrt{V^{2} (\Delta a)^{2} + a^{2} (\Delta V)^{2}}
   \label{eqn:saugvermögenerr}
 \end{equation}
 berechnen.
@@ -140,7 +147,7 @@ folgendermaßen bestimmen:
 \end{equation}
 Der zugehörige Fehler wird nach \eqref{eqn:gaußerr} mit
 \begin{equation}
-  \Delta S = \sqrt{\frac{V^{2} a^{2}}{p_{g}^{4}} \Delta_{p_{g}}^{2} + \frac{V^{2} \Delta_{a}^{2}}{p_{g}^{2}} + \frac{a^{2} \Delta_{V}^{2}}{p_{g}^{2}}}.
+  \Delta S = \sqrt{\frac{V^{2} a^{2}}{p_{g}^{4}} (\Delta p_{g})^{2} + \frac{V^{2}}{p_{g}^{2}} (\Delta a)^{2} + \frac{a^{2}}{p_{g}^{2}} (\Delta V)^{2}}.
   \label{eqn:leckerr}
 \end{equation}
 bestimmt.
@@ -237,3 +244,149 @@ So wurden folgende Saugvermögen bestimmt:
     \end{table}
     \FloatBarrier
 \subsection{Turbopumpe}
+\subsubsection{Evakuierungsmessung}
+\FloatBarrier
+Die Auswertung der Daten für die Turbopumpe verläuft analog zu \ref{sec:drehevak}. Bei der Turbopumpe wurde jedoch ein Anfangsdruck von $p_0=\SI{5e-3}{\milli\bar}$ eingestellt,
+und ein Enddruck von $p_E=\SI{1e-5}{\milli\bar}$ gemessen. Zudem beträgt der Fehler des benutzten Heißkathoden-Messgerätes nur $\SI{10}{\percent}$.
+Die verwendeten gemessenen und berechneten Daten befinden sich in Tabelle \ref{tab:turboevak} und der Plot ist in Abbildung \ref{fig:turboevak} zu sehen.
+Die Fitparameter wurden zu folgenden Werten bestimmt:
+\begin{align*}
+  a_1 &= \SI{-0.623\pm0.061}{\per\second} \\
+  a_2 &= \SI{-0.024\pm0.003}{\per\second} \\
+  b_1 &= \SI{-0.614\pm0.310}{} \\
+  b_2 &= \SI{-5.545\pm0.161}{}.
+\end{align*}
+Daraus werden nun wieder mittels \eqref{eqn:saugvermögen} und \eqref{eqn:saugvermögenerr} die Saugvermögen bestimmt:
+\begin{align*}
+  S_1 &= \SI{7.0\pm0.8}{\litre\per\second} \\
+  S_2 &= \SI{0.27\pm0.04}{\litre\per\second}
+\end{align*}
+\begin{table}
+  \centering
+  \caption{Gemessene und berechnete Werte zur Evakuierungsmessung der Turbopumpe.}
+  \label{tab:turboevak}
+  \begin{tabular}[t]{c c c c c c c c}
+   \toprule
+    p(t) / $\SI{e-5}{\milli\bar}$ & $\ln \Bigl(\frac{p(t)-p_E}{p_0-p_E}\Bigr)$ & $t_1$ / $\si{\second}$ & $t_2$ / $\si{\second}$ & $t_3$ / $\si{\second}$ & $t_4$ / $\si{\second}$ & $t_5$ / $\si{\second}$ &  $t$ / $\si{\second}$ \\
+     \midrule
+     \csvreader[no head,
+     late after line=\\,
+     late after last line=\\\bottomrule]%
+     {data/turboevaktab.csv}{}%
+     {$\num{\csvcoli\pm\csvcolii}$ & $\num{\csvcoliii} \pm \num{\csvcoliv}$ & $\num{\csvcolv}$ & $\num{\csvcolvi}$& $\num{\csvcolvii}$& $\num{\csvcolviii}$& $\num{\csvcolix}$& $\num{\csvcolx}\pm\num{\csvcolxi}$ }%
+   \end{tabular}
+ \end{table}
+ \begin{figure}
+     \centering
+     \includegraphics{build/turboevak.pdf}
+     \caption{Plot zur Evakuierungsmessung der Turbopumpe.}
+     \label{fig:turboevak}
+ \end{figure}
+ \FloatBarrier
+\subsubsection{Leckratenmessung}
+\FloatBarrier
+Die Auswertung verläuft analog zu \ref{sec:drehleck}. Die verwendeten Gleichgewichtsdrücke sind $p_{g,1}=\SI{5e-5}{\milli\bar}$, $p_{g,2}=\SI{1e-4}{\milli\bar}$, $p_{g,3}=\SI{1.5e-4}{\milli\bar}$ und $p_{g,4}=\SI{2e-4}{\milli\bar}$.
+Die Messdaten befinden sich in \ref{tab:turboleck1}, \ref{tab:turboleck2}, \ref{tab:turboleck3} und \ref{tab:turboleck4} und die Plots in den Abbildungen \ref{fig:turboleck1}, \ref{fig:turboleck2}, \ref{fig:turboleck3} und \ref{fig:turboleck4}.
+Es wurden folgende Parameter optimiert:
+\begin{align*}
+  a_1 &= \SI{4.468\pm0.049e-5}{\milli\bar\per\second}\\
+  a_2 &= \SI{1.883\pm0.048e-4}{\milli\bar\per\second}\\
+  a_3 &= \SI{3.009\pm0.068e-4}{\milli\bar\per\second}\\
+  a_4 &= \SI{3.214\pm0.052e-4}{\milli\bar\per\second}\\
+  b_1 &= \SI{7.081\pm0.579e-5}{\milli\bar} \\
+  b_2 &= \SI{4.492\pm3.084e-5}{\milli\bar} \\
+  b_3 &= \SI{9.222\pm3.439e-5}{\milli\bar} \\
+  b_1 &= \SI{1.347\pm0.242e-4}{\milli\bar}.
+\end{align*}
+Daraus wurden mittels \eqref{eqn:leck2} und \eqref{eqn:leckerr} folgende Saugvermögen bestimmt:
+\begin{align*}
+  S_1 &= \SI{10.0\pm0.7}{\litre\per\second} \\
+  S_2 &= \SI{21.1\pm1.6}{\litre\per\second} \\
+  S_3 &= \SI{22.5\pm1.7}{\litre\per\second} \\
+  S_4 &= \SI{18.0\pm1.3}{\litre\per\second}.
+\end{align*}
+\begin{figure}
+    \centering
+    \includegraphics{build/turboleck1.pdf}
+    \caption{Plot zur Leckratenmessung der Turbopumpe bei $p_g=\SI{5e-5}{\milli\bar}$.}
+    \label{fig:turboleck1}
+\end{figure}
+\begin{figure}
+    \centering
+    \includegraphics{build/turboleck2.pdf}
+    \caption{Plot zur Leckratenmessung der Turbopumpe bei $p_g=\SI{1e-4}{\milli\bar}$.}
+    \label{fig:turboleck2}
+\end{figure}
+\begin{figure}
+    \centering
+    \includegraphics{build/turboleck3.pdf}
+    \caption{Plot zur Leckratenmessung der Turbopumpe bei $p_g=\SI{1.5e-4}{\milli\bar}$.}
+    \label{fig:turboleck3}
+\end{figure}
+\begin{figure}
+    \centering
+    \includegraphics{build/turboleck4.pdf}
+    \caption{Plot zur Leckratenmessung der Turbopumpe bei $p_g=\SI{2e-4}{\milli\bar}$.}
+    \label{fig:turboleck4}
+\end{figure}
+\begin{table}
+  \centering
+  \caption{Gemessene und berechnete Werte zur Leckratenmessung der Turbopumpe bei $p_g=\SI{5e-5}{\milli\bar}$.}
+  \label{tab:turboleck1}
+  \begin{tabular}[t]{c c c c c}
+   \toprule
+    p(t) / $\SI{e-5}{\milli\bar}$ & $t_1$ / $\si{\second}$ & $t_2$ / $\si{\second}$ & $t_3$ / $\si{\second}$ & $t$ / $\si{\second}$ \\
+     \midrule
+     \csvreader[no head,
+     late after line=\\,
+     late after last line=\\\bottomrule]%
+     {data/turboleck1tab.csv}{}%
+     {$\num{\csvcoli}\pm\num{\csvcolii}$ & $\num{\csvcoliii}$ & $\num{\csvcoliv}$ & $\num{\csvcolv}$ & $\num{\csvcolvi}\pm\num{\csvcolvii}$ }%
+   \end{tabular}
+ \end{table}
+ \begin{table}
+   \centering
+   \caption{Gemessene und berechnete Werte zur Leckratenmessung der Turbopumpe bei $p_g=\SI{1e-4}{\milli\bar}$.}
+   \label{tab:turboleck2}
+   \begin{tabular}[t]{c c c c c}
+    \toprule
+     p(t) / $\SI{e-4}{\milli\bar}$ & $t_1$ / $\si{\second}$ & $t_2$ / $\si{\second}$ & $t_3$ / $\si{\second}$ & $t$ / $\si{\second}$ \\
+      \midrule
+      \csvreader[no head,
+      late after line=\\,
+      late after last line=\\\bottomrule]%
+      {data/turboleck2tab.csv}{}%
+      {$\num{\csvcoli}\pm\num{\csvcolii}$ & $\num{\csvcoliii}$ & $\num{\csvcoliv}$ & $\num{\csvcolv}$ & $\num{\csvcolvi}\pm\num{\csvcolvii}$ }%
+    \end{tabular}
+  \end{table}
+  \begin{table}
+    \centering
+    \caption{Gemessene und berechnete Werte zur Leckratenmessung der Turbopumpe bei $p_g=\SI{1.5e-4}{\milli\bar}$.}
+    \label{tab:turboleck3}
+    \begin{tabular}[t]{c c c c c}
+     \toprule
+      p(t) / $\SI{e-4}{\milli\bar}$ & $t_1$ / $\si{\second}$ & $t_2$ / $\si{\second}$ & $t_3$ / $\si{\second}$ & $t$ / $\si{\second}$ \\
+       \midrule
+       \csvreader[no head,
+       late after line=\\,
+       late after last line=\\\bottomrule]%
+       {data/turboleck3tab.csv}{}%
+       {$\num{\csvcoli}\pm\num{\csvcolii}$ & $\num{\csvcoliii}$ & $\num{\csvcoliv}$ & $\num{\csvcolv}$ & $\num{\csvcolvi}\pm\num{\csvcolvii}$ }%
+     \end{tabular}
+   \end{table}
+   \begin{table}
+     \centering
+     \caption{Gemessene und berechnete Werte zur Leckratenmessung der Turbopumpe bei $p_g=\SI{2e-4}{\milli\bar}$.}
+     \label{tab:turboleck4}
+     \begin{tabular}[t]{c c c c c}
+      \toprule
+       p(t) / $\SI{e-4}{\milli\bar}$ & $t_1$ / $\si{\second}$ & $t_2$ / $\si{\second}$ & $t_3$ / $\si{\second}$ & $t$ / $\si{\second}$ \\
+        \midrule
+        \csvreader[no head,
+        late after line=\\,
+        late after last line=\\\bottomrule]%
+        {data/turboleck4tab.csv}{}%
+        {$\num{\csvcoli}\pm\num{\csvcolii}$ & $\num{\csvcoliii}$ & $\num{\csvcoliv}$ & $\num{\csvcolv}$ & $\num{\csvcolvi}\pm\num{\csvcolvii}$ }%
+      \end{tabular}
+    \end{table}
+    \FloatBarrier

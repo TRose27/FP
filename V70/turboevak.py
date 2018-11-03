@@ -17,8 +17,12 @@ perr=0.1*p
 pges=unp.uarray(p,perr)
 pges=(p-pe)/(p0-pe)
 lnpges=unp.log(pges)
+p=p*1e+5
+perr=perr*1e+5
+np.savetxt("data/turboevaktab.csv",np.column_stack([p,perr,unp.nominal_values(lnpges),unp.std_devs(lnpges),t1,t2,t3,t4,t5,t,terr]),delimiter=",",fmt=["%3.2f","%3.2f","%3.2f","%3.2f","%4.2f","%4.2f","%4.2f","%4.2f","%4.2f","%4.2f","%4.2f"])
+p=p*1e-5
+perr=perr*1e-5
 
-np.savetxt("data/turboevaktab.csv",np.column_stack([p,unp.nominal_values(lnpges),unp.std_devs(lnpges),t1,t2,t3,t4,t5,t,terr]),delimiter=",",fmt=["%3.1e","%3.2f","%3.2f","%4.2f","%4.2f","%4.2f","%4.2f","%4.2f","%4.2f","%4.2f"])
 
 plt.grid()
 plt.errorbar(t,unp.nominal_values(lnpges),xerr=terr,yerr=unp.std_devs(lnpges),fmt=".",color="k",markersize="3",elinewidth="1.5",label="Messdaten")

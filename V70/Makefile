@@ -26,8 +26,8 @@ build/turboleck.pdf: turboleck.py matplotlibrc header-matplotlib.tex | build
 build/main.pdf: build/plot.pdf
 build/main.pdf: build/drehevak.pdf
 build/main.pdf: build/turboevak.pdf
-build/main.pdf: build/drehleck.pdf
-build/main.pdf: build/turboleck.pdf
+#build/main.pdf: build/drehleck.pdf
+#build/main.pdf: build/turboleck.pdf
 
 
 build/main.pdf: FORCE | build
