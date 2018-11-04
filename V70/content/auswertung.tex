@@ -64,8 +64,8 @@ Der Fehler des logarhithmischen Ausdrucks wird nach \eqref{eqn:gaußerr} mit der
 
 \begin{equation}
   \begin{split}
-  &\Delta \ln \Bigl(\frac{p(t)-p_E}{p_0-p_E}\Bigr) = \\
-  &\sqrt{\frac{(\Delta p_{0})^{2}}{\left(p_{0} - p_{E}\right)^{2}} + \frac{(\Delta p_{E})^{2} \left(p_{0} - p_{E}\right)^{2}}{\left(- p_{E} + {p(t)}\right)^{2}} \left(- \frac{1}{p_{0} - p_{E}} + \frac{- p_{E} + {p(t)}}{\left(p_{0} - p_{E}\right)^{2}}\right)^{2} 
+  \Delta \ln \Bigl(\frac{p(t)-p_E}{p_0-p_E}\Bigr) &= \sqrt{\frac{(\Delta p_{0})^{2}}{\left(p_{0} - p_{E}\right)^{2}}  + \frac{(\Delta p_{E})^{2} \left(p_{0} - p_{E}\right)^{2}}{\left(- p_{E} + {p(t)}\right)^{2}}} \\
+  & \overline{\left(- \frac{1}{p_{0} - p_{E}} + \frac{- p_{E} + {p(t)}}{\left(p_{0} - p_{E}\right)^{2}}\right)^{2}
   + \frac{(\Delta {p(t)})^{2}}{\left(- p_{E} + {p(t)}\right)^{2}}}.
   \label{eqn:lnperr}
 \end{split}
@@ -153,10 +153,10 @@ Der zugehörige Fehler wird nach \eqref{eqn:gaußerr} mit
 bestimmt.
 So wurden folgende Saugvermögen bestimmt:
 \begin{align*}
-  S_1 &= \SI{0.53\pm0.05}{\litre\per\second} \\
-  S_2 &= \SI{0.92\pm0.07}{\litre\per\second} \\
-  S_3 &= \SI{1.32\pm0.10}{\litre\per\second} \\
-  S_4 &= \SI{1.37\pm0.10}{\litre\per\second}
+  S_1 &= \SI{0.53\pm0.12}{\litre\per\second} \\
+  S_2 &= \SI{0.92\pm0.20}{\litre\per\second} \\
+  S_3 &= \SI{1.32\pm0.28}{\litre\per\second} \\
+  S_4 &= \SI{1.37\pm0.29}{\litre\per\second}
 \end{align*}
 \begin{figure}
     \centering
@@ -300,10 +300,10 @@ Es wurden folgende Parameter optimiert:
 \end{align*}
 Daraus wurden mittels \eqref{eqn:leck2} und \eqref{eqn:leckerr} folgende Saugvermögen bestimmt:
 \begin{align*}
-  S_1 &= \SI{10.0\pm0.7}{\litre\per\second} \\
-  S_2 &= \SI{21.1\pm1.6}{\litre\per\second} \\
-  S_3 &= \SI{22.5\pm1.7}{\litre\per\second} \\
-  S_4 &= \SI{18.0\pm1.3}{\litre\per\second}.
+  S_1 &= \SI{10.0\pm1.2}{\litre\per\second} \\
+  S_2 &= \SI{21.1\pm2.6}{\litre\per\second} \\
+  S_3 &= \SI{22.5\pm2.8}{\litre\per\second} \\
+  S_4 &= \SI{18.0\pm2.2}{\litre\per\second}.
 \end{align*}
 \begin{figure}
     \centering
@@ -390,3 +390,18 @@ Daraus wurden mittels \eqref{eqn:leck2} und \eqref{eqn:leckerr} folgende Saugver
       \end{tabular}
     \end{table}
     \FloatBarrier
+\subsection{Vergleich der bestimmten Saugvermögen}
+\label{sec:vgl}
+Die verschiedenen bestimmten Saugvermögen sind in \ref{fig:drehvgl} für die Drehschieberpumpe und on \ref{fig:turbovgl} für die Turbopumpe dargestellt.
+\begin{figure}
+    \centering
+    \includegraphics{build/drehvgl.pdf}
+    \caption{Vergleich der bestimmten Saugvermögen für die Drehschieberpumpe.}
+    \label{fig:drehvgl}
+\end{figure}
+\begin{figure}
+    \centering
+    \includegraphics{build/turbovgl.pdf}
+    \caption{Vergleich der bestimmten Saugvermögen für die Turbopumpe.}
+    \label{fig:turbovgl}
+\end{figure}

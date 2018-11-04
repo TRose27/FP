@@ -25,7 +25,8 @@ errors = np.sqrt(np.diag(covariance_matrix))
 print('a=', params[0], '+-', errors[0])
 print('b=', params[1], '+-', errors[1])
 a=ufloat(params[0],errors[0])
-s1=(V/0.1)*a
+pg=ufloat(0.1,0.02)
+s1=(V/pg)*a
 
 plt.grid()
 plt.errorbar(t,p,xerr=terr,yerr=perr,fmt=".",color="k",markersize="3",elinewidth="1.5",label="Messdaten")
@@ -56,7 +57,8 @@ errors = np.sqrt(np.diag(covariance_matrix))
 print('a=', params[0], '+-', errors[0])
 print('b=', params[1], '+-', errors[1])
 a=ufloat(params[0],errors[0])
-s2=(V/0.4)*a
+pg=ufloat(0.4,0.08)
+s2=(V/pg)*a
 plt.grid()
 plt.errorbar(t,p,xerr=terr,yerr=perr,fmt=".",color="k",markersize="3",elinewidth="1.5",label="Messdaten")
 plt.plot(t,f(t,*params), 'r-', label='Fit')
@@ -86,7 +88,8 @@ errors = np.sqrt(np.diag(covariance_matrix))
 print('a=', params[0], '+-', errors[0])
 print('b=', params[1], '+-', errors[1])
 a=ufloat(params[0],errors[0])
-s3=(V/0.8)*a
+pg=ufloat(0.8,0.16)
+s3=(V/pg)*a
 plt.grid()
 plt.errorbar(t,p,xerr=terr,yerr=perr,fmt=".",color="k",markersize="3",elinewidth="1.5",label="Messdaten")
 plt.plot(t,f(t,*params), 'r-', label='Fit')
@@ -116,7 +119,8 @@ errors = np.sqrt(np.diag(covariance_matrix))
 print('a=', params[0], '+-', errors[0])
 print('b=', params[1], '+-', errors[1])
 a=ufloat(params[0],errors[0])
-s4=(V/1)*a
+pg=ufloat(1,0.2)
+s4=(V/pg)*a
 
 
 print("S1 in l/s=",s1)
