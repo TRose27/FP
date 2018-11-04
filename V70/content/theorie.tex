@@ -1,7 +1,7 @@
 \section{Theorie}
 \label{sec:Theorie}
 Als Vakuum wird der Zustand eines Gases bezeichnet, dessen Druck in einem Behälter kleiner ist als der Umgebungsdruck.\cite{pfeiffer} Dies bedeutet auf der Erde, dass der Druck in einem
-Behälter kleiner als der Atmosphärendruck $p_0 = \SI{1013}{\milli\bar}$ sein muss. Die sich im Behälter befindene Luft wurde in diesem Versuch als ideales Gas angenommen. Es wird daher davon
+Behälter kleiner, als der Atmosphärendruck $p_0 = \SI{1013}{\milli\bar}$ sein muss. Die sich im Behälter befindene Luft wurde in diesem Versuch als ideales Gas angenommen. Es wird daher davon
 ausgegangen das die Teilchen nur elastische Stöße untereinander und mit den Wänden des Behälters ausführen. Jegliche andere Wechselwirkung wie z.B. zwischen den einzelnen Teilchen werden
 als vernachlässigbar betrachtet. Die Gasteilchen werden außerdem als ausdehnungslose Massepunkte betrachtet. Die allgemeine Gasgleichung für ideale Gase lautet
 \begin{equation}%ideale Gasgleichung
@@ -18,8 +18,8 @@ Der Druck ist dabei die Kraft pro Fläche $p = \dfrac{F}{A}$ und hat die Einheit
 Die Partialdrücke, das heißt die Teildrücke der unterschiedlichen Fraktionen, werden ebenfalls vernachlässig, da angenommen wird das die Luft im Behälter nur aus einer Fraktion besteht.
 
 \subsection{Herleitung der p(t)-Kurve}
-Unter den weiteren Annahmen das das Volumen beim messen des Druckes konstant bleibt und das der Druck $p(t)$ zu einem Zeitpunkt immer im Gesamten Volumen herscht, sowie es keine Lecks und
-Ausgasungen von den Oberflächen gibt und das Saugvermögen $S$ konstant und unabhängig vom Druck ist, lässt sich der Druckverlauf aus der idealen Gasgleichung.\cite[12]{leitfaden}\\
+Unter den weiteren Annahmen das das Volumen beim messen des Druckes konstant bleibt und das der Druck $p(t)$ zu einem Zeitpunkt immer im gesamten Volumen herscht, sowie es keine Lecks und
+Ausgasungen von den Oberflächen gibt und das Saugvermögen $S$ konstant und unabhängig vom Druck ist, lässt sich der Druckverlauf aus der idealen Gasgleichung herleiten.\cite[12]{leitfaden}\\
 Unter Berücksichtigung der getroffenen Annahmen folgt aus der zeitlichen Ableitung der Gleichung \eqref{eqn:idgas}
 \begin{align}
     \frac{\mathrm{d}}{\mathrm{d}t}pV = \frac{\mathrm{d}}{\mathrm{d}t}nRT \nonumber\\
@@ -33,7 +33,7 @@ Damit folgt aus Gleichung \eqref{eqn:idgasableitung}:
 \begin{align}
     \dot{p}V = -pS. \label{eqn:pVpS}
 \end{align}
-Der Lösungsansazu dieser bekannten Differenzialgleichung lautet\cite[12]{leitfaden}:
+Der Lösungsansatz dieser bekannten Differenzialgleichung lautet\cite[12]{leitfaden}:
 \begin{align*}
     p(t) &= p_0 \exp\left(-\frac{t}{\tau}\right),\\
     \dot{p}(t) &= -\frac{p_0}{\tau}\exp\left(-\frac{t}{\tau}\right) = -\frac{p(t)}{\tau},
@@ -54,6 +54,7 @@ Der Enddruck $p_{\mathrm{E}}$ ergibt sich aus nicht vermeidbaren Leckagen und Au
     \caption{Schematischer Kurvenverlauf der p(t)-Kurve.\cite[13]{leitfaden}}
     \label{fig:pkurve}
 \end{figure}\FloatBarrier
+
 \subsection{Leckratenmessung}
 Mit der als $Q= V \cdot \frac{\mathrm{d}p}{\mathrm{d}t}$ definierten Leckrate, lässt sich das Saugvermögen, nach Einstellung eines Gleichgewichtsdruckes $p_g$, als
 \begin{equation}
@@ -71,7 +72,7 @@ Je niedriger der Druck ist, desto größer ist die Qualität des Vakuums.
     \caption{Druckbereiche in der Vakuumtechnik.\cite{bereiche}}
     \label{fig:druckbereiche}
 \end{figure}\FloatBarrier
-Die Anzahl an Teilchen im Volumen geht mit der mittleren freien Weglänge der Teilchen einher. Diese steht für die gemittelte Distanz die ein Teilchen zurücklegen muss um mit einem anderen
+Die Anzahl an Teilchen im Volumen geht mit der mittleren freien Weglänge der Teilchen einher. Diese steht für die gemittelte Distanz die ein Teilchen zurücklegen muss, um mit einem anderen
 Teilchen zu stoßen. Sie wird mit abnehmener Teilchenzahl im Volumen größer, da weniger Teilchen zum kollidieren vorhanden sind.
 
 \subsection{Strömungsarten und Leitwert}
@@ -89,7 +90,7 @@ Bei der laminaren Strömung bleiben die Teilchen in parallelen Schichten zueinan
 wobei $\rho$ die Dichte, $v$ die Geschwindigkeit, $l$ die charakteristische Länge und $\eta$ die Viskosität ist, überschritten wird, wird der Bereich der turbulenten Strömung erreicht.
 Hier strömen die Teilchen völlig ungeordnet durcheinander. Dies wird in der Vakuumtechnik versucht zu vermeiden, da aufgrund der großen Strömungswiderständen sonst ein höheres Saugvermögen
 vonnöten wär.\cite{strömung}\\
-Wenn die mittlere Weglänge viel größer ist als der Durchmesser liegt die molekulare Strömung vor. Daher kommt es kaum noch zu stößen unter den Gasteilchen, sonder fast nur noch mit den
+Wenn die mittlere Weglänge viel größer ist als der Durchmesser liegt die molekulare Strömung vor. Daher kommt es kaum noch zu stößen unter den Gasteilchen, sondern fast nur noch mit den
 Wänden des Behälters.\\
 Durch Reibung der Gasteilchen mit den Wänden oder untereinander kommt es zu Strömungswiderständen $W$ in den Rohrleitungen mit den eine Vakuumpumpe und der Rezipient verbunden sind. Die Widerstände
 drücken sich in Druckunterschiede und Saugvermögenverlust aus. Der Leitwert ist dabei der Kehrwert der Strömungswiderstände und wird allgemein in der Vakuumtechnik verwendet. Die Formel des
@@ -112,7 +113,7 @@ Da der Leitwert, vorallem bei molekularen Strömungen, einen großen Einfluss au
 \end{equation}
 
 \subsection{Sorption}
-Sorption ist ein Überbegriff für das anreichern eines Stoffes innerhalb einer Phase oder an der Grenzfläche zwischen zwei Phasen. Bei der Absorption absorptier eine Phase z.B. ein Feststoff
+Sorption ist ein Überbegriff für das anreichern eines Stoffes innerhalb einer Phase oder an der Grenzfläche zwischen zwei Phasen. Bei der Absorption absorbiert eine Phase z.B. ein Feststoff
 Teilchen aus einer anderen Phase z.B ein Gas. Die Gasteilchen werden dabei in das freie Volumen des Feststoffes absorbiert. Bei der Adsorption lagern sich die Teilchen bei diesem Beispiel
 dahingegen an der Grenzfläche des Feststoffes ein und dringen nicht in das Volumen des Feststoffes ein.
 Der Umkehrprozess zu den beiden Vorgängen lauter Desorption. Dieser Effekt ist der Grund für die Existenz von "virtuellen" Lecks. Diese sind nicht detektierbar und können daher auch nicht
@@ -131,11 +132,11 @@ Gasbindene Vakuumpumpen arbeiten indem sie die Gasteilchen an Festkörperoberfl�
     \caption{Schematischer Aufbau einer Drehschieberpumpe.\cite{drehpumpe}}
     \label{fig:drehpumpe}
 \end{figure}\FloatBarrier
-In Abbildung \ref{fig:drehpumpe} ist der schematische Aufbau einer Drehschieberpumpe dargestellt. Der exzentrisch eingebaute Rotor befinden sich trennt den Einlass vom Auslass. Das Gehäuse
+In Abbildung \ref{fig:drehpumpe} ist der schematische Aufbau einer Drehschieberpumpe dargestellt. Der exzentrisch eingebaute Rotor trennt den Einlass vom Auslass. Das Gehäuse
 (Stator), der Rotor und die Schieber begrenzen den Arbeitsraum. Die Schieber sind beweglich und werden beim drehen des Rotors aus diesem rausgeschoben um den Arbeitsraum in zwei Teile zu
 trennen. Wenn der Rotor sich dreht vergrößert sich das Volumen im Arbeitsraum bis der zweite Schieber den Arbeitsraum abtrennt. Wie bereits erwähnt wird durch diese Volumenvergrößerung
 der Druck im Rezipienten kleiner. Das eingeschlossene Gas wird noch komprimiert bis der Druck groß genug ist um das Auslassventil gegen den Atmosphärendruck zu öffnen. Dadurch gelangt Öl
-vom ölüberlagerten Auslassventil in den Stator, wodurch die Schieber geölt werden und gegen den Schieber abgedichtet werden. Der Arbeitsbereich einer Drehschieberpumpe liegt im Grob- und
+vom ölüberlagerten Auslassventil in den Stator, wodurch die Schieber geölt werden und gegen den Stator abgedichtet werden. Der Arbeitsbereich einer Drehschieberpumpe liegt im Grob- und
 Feinvakuum, weshalb sie auch gerne als Vorpumpe verwendet wird.\cite{drehpumpe}
 \subsubsection{Turbomolekularpumpe}
 \begin{figure}[H]
@@ -145,7 +146,7 @@ Feinvakuum, weshalb sie auch gerne als Vorpumpe verwendet wird.\cite{drehpumpe}
     \label{fig:turbopumpe}
 \end{figure}\FloatBarrier
 Eine Turbomolekularpumpe oder auch einfach Turbopumpe ist, wie in Abbildung \ref{fig:turbopumpe} zu sehen, aufgebaut.  Diese Pumpenart basiert auf der Impulsübertragung von den rotierenden
-Rotorblätter auf die Gasteilchen. Wenn die Rotorblätter ein Gasteilchen treffen binden sich dieses durch adsorption für eine gewisse Zeit an das Rotorblatt. Bevor das Teilchen wieder desorbiert
+Rotorblätter auf die Gasteilchen. Wenn die Rotorblätter ein Gasteilchen treffen binden sich dieses durch adsorption für eine gewisse Zeit an das Rotorblatt. Bevor das Teilchen wieder desorbiert,
 addiert sich die Rotorgeschwindigkeit und es übernimmt die Impulsrichtung. Deswegen sind die Rotorblätter auch um den Winkel $\alpha$ zur horizontalen gedreht. Damit die Teilchen nicht die
 von den Rotorblättern übertragene Geschwindigkeitkomponente durch Stöße mit anderen Teilchen verlieren, ist eine molekulare Strömung vonnöten. Deswegen funktioniert eine Turbopumpe auch nur
 mit einer Vorpumpe, welche in diesem Versuch durch eine Drehschieberpumpe realisiert wird. Der Arbeitsbereich einer Turbopumpe reicht vom Feinvakuum bis hin zum Ultrahochvakuum.\cite{turbopumpe}
