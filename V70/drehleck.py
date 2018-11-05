@@ -10,7 +10,7 @@ p,t1,t2,t3 = np.genfromtxt("data/drehleck1.csv",delimiter=",",unpack=True)
 V=ufloat(11.1,0.8)
 t0=np.column_stack([t1,t2,t3])
 t=t0.mean(axis=1)
-terr=np.std(t0,axis=1)
+terr=sem(t0,axis=1)
 perr=0.2*p
 
 np.savetxt("data/drehleck1tab.csv",np.column_stack([p,perr,t1,t2,t3,t,terr]),delimiter=",",fmt=["%4.2f","%4.2f","%4.2f","%4.2f","%4.2f","%4.2f","%4.2f"])

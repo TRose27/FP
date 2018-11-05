@@ -12,7 +12,7 @@ pe=ufloat(1e-5,1e-6)
 p0=ufloat(5e-3,5e-4)
 t0=np.column_stack([t1,t2,t3,t4,t5])
 t=t0.mean(axis=1)
-terr=np.std(t0,axis=1)
+terr=sem(t0,axis=1)
 perr=0.1*p
 pges=unp.uarray(p,perr)
 pges=(p-pe)/(p0-pe)

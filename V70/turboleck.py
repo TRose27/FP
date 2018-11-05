@@ -110,7 +110,7 @@ p,t1,t2,t3 = np.genfromtxt("data/turboleck4.csv",delimiter=",",unpack=True)
 
 t0=np.column_stack([t1,t2,t3])
 t=t0.mean(axis=1)
-terr=np.std(t0,axis=1)
+terr=sem(t0,axis=1)
 perr=0.1*p
 p=p*1e+4
 perr=perr*1e+4
