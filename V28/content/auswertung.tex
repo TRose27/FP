@@ -1,9 +1,26 @@
-\section{Auswertung}
-\label{sec:Auswertung}
-
-\begin{figure}
+\section{Evaluation}
+\label{sec:Evaluation}
+To determine the g-factor, formula \eqref{eq:hnu} can be converted to
+\begin{equation}
+  g = \frac{h \nu}{\mu_{\mathrm{B}} B},
+  \label{eqn:g}
+\end{equation}
+with the Planck constan $h = \SI{6.626e-34}{\joule\second}$ \cite{h} and the Bohr magneton $\mu_{\mathrm{B}} = \SI{927.4e-26}{\joule\per\tesla}$ \cite{mub}.
+The used frequencies and currents can be taken from table \ref{tab:g-factor}, also the calculated values for the magnetic field strength by equation \eqref{eq:hh}.
+\begin{table}
   \centering
-  \includegraphics{plot.pdf}
-  \caption{Plot.}
-  \label{fig:plot}
-\end{figure}
+  \caption{The determined g-factor for different frequencies $\nu_{\mathrm{e}}$.}
+  \label{tab:g-factor}
+  \begin{tabular}{c c c c}
+    \toprule
+    $\nu_{\mathrm{e}} \,/\, \si{\mega\hertz}$ & $I \,/\, \si{\milli\ampere}$ & $B \,/\, \si{\milli\tesla}$ & $g$\\
+    \midrule
+    \csvreader[respect sharp=true,
+    late after line=\\,
+    late after last line=\\\bottomrule]{data/datatab.csv}{}
+    {\num{\csvcoli} & \num{\csvcolii} & \num{\csvcoliii} & \num{\csvcoliv}}
+  \end{tabular}
+\end{table}\FloatBarrier
+The average value for the g-factor is $g = \num{2.22(15)}$.
+
+
