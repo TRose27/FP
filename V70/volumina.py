@@ -7,7 +7,7 @@ from scipy.optimize import curve_fit
 import scipy.constants as const
 
 
-num=np.arange(1,12)
+num=np.arange(1,11)
 b1=ufloat(9.5,0.8)
 b2=ufloat(0.177,0.09)
 v3z=ufloat(0.005,0.001)
@@ -41,18 +41,13 @@ print("Vol B3 in l:",b3)
 b3a=ufloat(0.25,0.01)
 print("B3 aus Anleitung",b3a)
 
-nanfloat=ufloat(0,0)
-volo=np.array([b1,b3,b2,v3o,s1,v1o,b4,b5,s2,v4,nanfloat])
-volz=np.array([nanfloat,nanfloat,nanfloat,v3z,nanfloat,v1z,nanfloat,nanfloat,nanfloat,nanfloat,nanfloat])
-np.savetxt("data/voltab.csv",np.column_stack([num,unp.nominal_values(volo),unp.std_devs(volo),unp.nominal_values(volz),unp.std_devs(volz)]),delimiter=",",fmt=["%4.0f","%4.3f","%4.3f","%4.3f","%4.3f"])
+
+volo=np.array([b1,b3,b2,v3o,s1,v1o,b4,b5,s2,v4])
+np.savetxt("data/voltab.csv",np.column_stack([num,unp.nominal_values(volo),unp.std_devs(volo)]),delimiter=",",fmt=["%4.0f","%4.3f","%4.3f"])
 
 
-vdrehevak=b1+b2+b3+b3+v3z+v3o+s1+b5+v3z+s2+v4
-vdrehleck=b1+b2+b3+b3+v3o+v3o+s1+b5+v3z+s2+v4
-vturboevak=vdrehevak+b4+v3o-v3z+v1o
-vturboleck=vturboevak-v1o+v1z-v3z+v3o
+vdrehevak=b1+b3+b3+b2+v3o+v3z+v3z+s1+v1z+b5+s2+v4
+vturboevak=b1+b3+b3+b2+v3z+v3z+v1o+b4
 
 print("V Drehevak in l:",vdrehevak)
-print("V Drehleck in l:",vdrehleck)
 print("V Turboevak in l:",vturboevak)
-print("V Turboleck in l",vturboleck)

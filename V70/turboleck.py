@@ -7,7 +7,7 @@ from scipy.optimize import curve_fit
 import scipy.constants as const
 #Erste Messung
 p,t1,t2,t3 = np.genfromtxt("data/turboleck1.csv",delimiter=",",unpack=True)
-V=ufloat(11.2,0.8)
+V=ufloat(10.2,0.8)
 t0=np.column_stack([t1,t2,t3])
 t=t0.mean(axis=1)
 terr=np.std(t0,axis=1)

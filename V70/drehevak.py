@@ -15,8 +15,8 @@ t=t0.mean(axis=1)
 terr=sem(t0,axis=1)
 perr=0.2*p
 pges=unp.uarray(p,perr)
-pges=(p-pe)/(p0-pe)
-lnpges=unp.log(pges)
+pln=(pges-pe)/(p0-pe)
+lnpges=unp.log(pln)
 
 np.savetxt("data/drehevaktab.csv",np.column_stack([p,perr,unp.nominal_values(lnpges),unp.std_devs(lnpges),t1,t2,t3,t4,t5,t,terr]),delimiter=",",fmt=["%3.2f","%3.2f","%3.2f","%3.2f","%4.2f","%4.2f","%4.2f","%4.2f","%4.2f","%4.2f","%4.2f"])
 

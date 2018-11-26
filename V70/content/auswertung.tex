@@ -2,7 +2,13 @@
 \label{sec:Auswertung}
 \subsection{Volumenbestimmung}
 Die im folgenden verwendeten Zahlen für die Volumina sind in den Abbildungen \ref{fig:ps1} bis \ref{fig:ps3} zu sehen. Die Volumina der benutzten Bauteile sind in Tabelle \ref{tab:volumina}
-aufgelistet. Zu vernachlässigende oder nicht vorhandene Volumina sind dabei als $0$ angegeben. Die Volumina 2 und 8 wurden dabei selber gemessen, die restlichen Werte wurden aus \cite{leitfaden} entnommen. Zur Bestimmung des Volumens von Bauteil 2 wurden folgende Werte gemessen:
+aufgelistet. Die Volumina der Ventile 4 und 6 sind im offenen Zustand angegeben. Im geschlossenen Zustand besizen sie folgende Volumina:
+\begin{align*}
+  V_\text{4,geschlossen} &= \SI{0.005\pm0.001}{\litre} \\
+  V_\text{6,geschlossen} &= \SI{0.022\pm0.002}{\litre}.
+\end{align*}
+Die Volumina des Ventils 11 sowie der Messgeräte werden vernachlässigt.
+Die Volumina 2 und 8 wurden dabei selber gemessen, die restlichen Werte wurden aus \cite{leitfaden} entnommen. Zur Bestimmung des Volumens von Bauteil 2 wurden folgende Werte gemessen:
 \begin{align*}
   d_\text{innen}&= \SI{40\pm0.5}{\milli\metre} \\
   l_1 &= \SI{128.2\pm0.5}{\milli\metre}\\
@@ -24,9 +30,11 @@ zu dem in \ref{tab:volumina} angegebenen Wert. Bei Bauteil 8 wurden folgende Wer
   V_8 &= \pi \Bigl(\frac{d_\text{innen}}{2}\Bigr)^2 \cdot (l_1 + 2 l_2) \\
   \Delta V_8 &= \sqrt{\frac{\pi^{2} {d_{\text{innen}}}^{4}}{16} (\Delta l_{1})^{2} + \frac{\pi^{2} {d_{\text{innen}}}^{4}}{4} (\Delta l_{2})^{2} + \frac{\pi^{2} {d_{\text{innen}}}^{2}}{4} (\Delta {d_{\text{innen}}})^{2} \left(l_{1} + 2 l_{2}\right)^{2}}
 \end{align*}
-Bei den Messungen mit der Drehschieberpumpe ist das Ventil 6, sowie das in \ref{fig:ps2} zu sehende Ventil 4 verschlossen.
+Bei den Messungen mit der Drehschieberpumpe ist das Ventil 6, sowie das in Abbildung \ref{fig:ps2} zu sehende Ventil 4 verschlossen.
 Die Addition der verbleibenden Volumina ergibt ein Gesamtvolumen von $\SI{11.1\pm0.8}{\litre}$.
-Bei den Messungen mit der Trubopumpe sind diese Ventile offen, wodurch sich ein Gesamtvolumen von $\SI{11.2\pm0.8}{\litre}$ ergibt.
+Bei den Messungen mit der Turbopumpe sind beide in Abbildung \ref{fig:ps1} zu sehenden Ventile 4 geschlossen. Das Ventil 6, sowie das in Abbildung \ref{fig:ps2} zu sehende Ventil 4 ist offen, jedoch
+befinden sich dieses Ventil und alle angeschlossenen Bauteile hinter dem Ansaugstutzen der Turbopumpe und gehören deswegen nicht zum Messvolumen.
+So ergibt sich für die Turbopumpe ein Gesamtvolumen von $\SI{10.2\pm0.8}{\litre}$.
 Der Fehler des Gesamtvolumens berechnet sich dabei wie folgt:
 \begin{equation*}
     \Delta V_\text{ges}=\sqrt{\sum_{i=1}  (\Delta V_i)^2}.
@@ -38,13 +46,13 @@ Dabei bezeichnet der Index $i$ die verwendeten Teile.
   \label{tab:volumina}
   \begin{tabular}[t]{c c c}
    \toprule
-    {Bauteil} & {Volumen (offen) / $\si{\litre}$} & {Volumen (geschlossen) / $\si{\litre}$} \\
+    {Bauteil} & {Volumen (offen) / $\si{\litre}$} \\
      \midrule
      \csvreader[no head,
      late after line=\\,
      late after last line=\\\bottomrule]%
      {data/voltab.csv}{}%
-     {$\num{\csvcoli}$ & $\num{\csvcolii} \pm \num{\csvcoliii}$ & $\num{\csvcoliv} \pm \num{\csvcolv}$ }%
+     {$\num{\csvcoli}$ & $\num{\csvcolii} \pm \num{\csvcoliii}$}%
    \end{tabular}
  \end{table}
  \FloatBarrier
@@ -52,7 +60,7 @@ Dabei bezeichnet der Index $i$ die verwendeten Teile.
 \subsubsection{Evakuierungsmessung}
 \FloatBarrier
 \label{sec:drehevak}
-Zur Bestimmung des Saugvermögens aus der Evakuierungsmessung wird Gleichung \eqref{eqn:pkurve} umgestellt und logarhithmiert, so dass sich folgende Gleichung ergibt:
+Zur Bestimmung des Saugvermögens aus der Evakuierungsmessung wird Gleichung \eqref{eqn:pkurve} umgestellt und logarithmiert, so dass sich folgende Gleichung ergibt:
 \begin{equation}
   \ln \Bigl(\frac{p(t)-p_E}{p_0-p_E}\Bigr) = - t \cdot \frac{S}{V}.
   \label{eqn:lnpkurve}
@@ -60,20 +68,16 @@ Zur Bestimmung des Saugvermögens aus der Evakuierungsmessung wird Gleichung \eq
 Die Messwerte, sowie die mit \eqref{eqn:mittelwert} und \eqref{eqn:mittelwerterr} bestimmten Zeiten befinden sich in Tabelle \ref{tab:drehevak}.
 Zur Berechnung von $  \ln \Bigl(\frac{p(t)-p_E}{p_0-p_E}\Bigr)$ wurden der Atmosphärendruck $p_0=\SI{1013}{\milli\bar}$ und der gemessene Enddruck $p_E=\SI{4e-2}{\milli\bar}$ verwendet.
 Die Fehler aller gemessen Drücke betragen, gemäß der aus \cite{leitfaden} entnommenen Messungenauigkeit des Pirani-Messgerätes, $\SI{20}{\percent}$.
-Der Fehler des logarhithmischen Ausdrucks wird nach \eqref{eqn:gaußerr} mit der folgenden Formel bestimmt:
+Der Fehler des logarithmischen Ausdrucks wird nach \eqref{eqn:gaußerr} mit der folgenden Formel bestimmt:
 
 \begin{equation}
-  \begin{split}
-  \Delta \ln \Bigl(\frac{p(t)-p_E}{p_0-p_E}\Bigr) &= \sqrt{\frac{(\Delta p_{0})^{2}}{\left(p_{0} - p_{E}\right)^{2}}  + \frac{(\Delta p_{E})^{2} \left(p_{0} - p_{E}\right)^{2}}{\left(- p_{E} + {p(t)}\right)^{2}}} \\
-  & \overline{\left(- \frac{1}{p_{0} - p_{E}} + \frac{- p_{E} + {p(t)}}{\left(p_{0} - p_{E}\right)^{2}}\right)^{2}
-  + \frac{(\Delta {p(t)})^{2}}{\left(- p_{E} + {p(t)}\right)^{2}}}.
+  \Delta \ln \Bigl(\frac{p(t)-p_E}{p_0-p_E}\Bigr) = \sqrt{\Bigl(\frac{\Delta p(t)}{(p(t)-p_E)}\Bigr)^2 + \Bigl(\frac{\Delta p_0}{(p_0-p_E)}\Bigr)^2 + \Bigl(\frac{(p(t)-p_0)\Delta p_E}{(p_0 - p_E)(p(t)-p_E)}\Bigr)^2}
   \label{eqn:lnperr}
-\end{split}
 \end{equation}
 
 
 Die so bestimmten Werte befinden sich ebenfalls in Tabelle \ref{tab:drehevak}.
-Nun werden die logarhithmierten Drücke gegen die gemittelten Zeiten aufgetragen und mit der Gleichung $y=ax+b$ in zwei Bereichen optimiert.
+Nun werden die logarithmierten Drücke gegen die gemittelten Zeiten aufgetragen und mit der Gleichung $y=ax+b$ in zwei Bereichen optimiert.
 Der Plot ist in Abbildung \ref{fig:drehevak} zu sehen. Die Fitparameter wurden zu
 \begin{align*}
   a_1 &= \SI{-0.094\pm0.002}{\per\second} \\
@@ -105,7 +109,7 @@ bestimmt.
   \label{tab:drehevak}
   \begin{tabular}[t]{c c c c c c c c}
    \toprule
-    p(t) / $\si{\milli\bar}$ & $\ln \Bigl(\frac{p(t)-p_E}{p_0-p_E}\Bigr)$ & $t_1$ / $\si{\second}$ & $t_2$ / $\si{\second}$ & $t_3$ / $\si{\second}$ & $t_4$ / $\si{\second}$ & $t_5$ / $\si{\second}$ &  $t$ / $\si{\second}$ \\
+    p(t) / $\si{\milli\bar}$ & $\ln \Bigl(\frac{p(t)-p_E}{p_0-p_E}\Bigr)$ & $t_1$ / $\si{\second}$ & $t_2$ / $\si{\second}$ & $t_3$ / $\si{\second}$ & $t_4$ / $\si{\second}$ & $t_5$ / $\si{\second}$ &  $\overline{t}$ / $\si{\second}$ \\
      \midrule
      \csvreader[no head,
      late after line=\\,
@@ -139,7 +143,7 @@ Die bestimmten Parameter sind
   b_3 &= \SI{0.735\pm0.061}{\milli\bar} \\
   b_1 &= \SI{0.958\pm0.048}{\milli\bar}
 \end{align*}
-Der Parameter $a$ stellt hierbei die Steigung $\frac{\mathrm{d}p}{\mathrm{d}t}$ dar und so lässt sich das Saugvermögen durch Vergleich mit \eqref{eqn:leck}
+Der Parameter $a$ stellt hierbei die Steigung $\frac{\mathrm{d}p}{\mathrm{d}t}$ dar,damit lässt sich das Saugvermögen durch Vergleich mit \eqref{eqn:leck}
 folgendermaßen bestimmen:
 \begin{equation}
   S=\frac{V}{p_g} \cdot a .
@@ -151,7 +155,7 @@ Der zugehörige Fehler wird nach \eqref{eqn:gaußerr} mit
   \label{eqn:leckerr}
 \end{equation}
 bestimmt.
-So wurden folgende Saugvermögen bestimmt:
+Damit wurden folgende Saugvermögen bestimmt:
 \begin{align*}
   S_1 &= \SI{0.53\pm0.12}{\litre\per\second} \\
   S_2 &= \SI{0.92\pm0.20}{\litre\per\second} \\
@@ -188,7 +192,7 @@ So wurden folgende Saugvermögen bestimmt:
   \label{tab:drehleck1}
   \begin{tabular}[t]{c c c c c}
    \toprule
-    p(t) / $\si{\milli\bar}$ & $t_1$ / $\si{\second}$ & $t_2$ / $\si{\second}$ & $t_3$ / $\si{\second}$ & $t$ / $\si{\second}$ \\
+    p(t) / $\si{\milli\bar}$ & $t_1$ / $\si{\second}$ & $t_2$ / $\si{\second}$ & $t_3$ / $\si{\second}$ & $\overline{t}$ / $\si{\second}$ \\
      \midrule
      \csvreader[no head,
      late after line=\\,
@@ -203,7 +207,7 @@ So wurden folgende Saugvermögen bestimmt:
    \label{tab:drehleck2}
    \begin{tabular}[t]{c c c c c}
     \toprule
-     p(t) / $\si{\milli\bar}$ & $t_1$ / $\si{\second}$ & $t_2$ / $\si{\second}$ & $t_3$ / $\si{\second}$ & $t$ / $\si{\second}$ \\
+     p(t) / $\si{\milli\bar}$ & $t_1$ / $\si{\second}$ & $t_2$ / $\si{\second}$ & $t_3$ / $\si{\second}$ & $\overline{t}$ / $\si{\second}$ \\
       \midrule
       \csvreader[no head,
       late after line=\\,
@@ -218,7 +222,7 @@ So wurden folgende Saugvermögen bestimmt:
     \label{tab:drehleck3}
     \begin{tabular}[t]{c c c c c}
      \toprule
-      p(t) / $\si{\milli\bar}$ & $t_1$ / $\si{\second}$ & $t_2$ / $\si{\second}$ & $t_3$ / $\si{\second}$ & $t$ / $\si{\second}$ \\
+      p(t) / $\si{\milli\bar}$ & $t_1$ / $\si{\second}$ & $t_2$ / $\si{\second}$ & $t_3$ / $\si{\second}$ & $\overline{t}$ / $\si{\second}$ \\
        \midrule
        \csvreader[no head,
        late after line=\\,
@@ -233,7 +237,7 @@ So wurden folgende Saugvermögen bestimmt:
      \label{tab:drehleck4}
      \begin{tabular}[t]{c c c c c}
       \toprule
-       p(t) / $\si{\milli\bar}$ & $t_1$ / $\si{\second}$ & $t_2$ / $\si{\second}$ & $t_3$ / $\si{\second}$ & $t$ / $\si{\second}$ \\
+       p(t) / $\si{\milli\bar}$ & $t_1$ / $\si{\second}$ & $t_2$ / $\si{\second}$ & $t_3$ / $\si{\second}$ & $\overline{t}$ / $\si{\second}$ \\
         \midrule
         \csvreader[no head,
         late after line=\\,
@@ -256,10 +260,10 @@ Die Fitparameter wurden zu folgenden Werten bestimmt:
   b_1 &= \SI{-0.614\pm0.310}{} \\
   b_2 &= \SI{-5.545\pm0.161}{}.
 \end{align*}
-Daraus werden nun wieder mittels \eqref{eqn:saugvermögen} und \eqref{eqn:saugvermögenerr} die Saugvermögen bestimmt:
+Daraus werden erneut mittels \eqref{eqn:saugvermögen} und \eqref{eqn:saugvermögenerr} die Saugvermögen bestimmt:
 \begin{align*}
-  S_1 &= \SI{7.0\pm0.8}{\litre\per\second} \\
-  S_2 &= \SI{0.27\pm0.04}{\litre\per\second}
+  S_1 &= \SI{6.4\pm0.8}{\litre\per\second} \\
+  S_2 &= \SI{0.245\pm0.04}{\litre\per\second}
 \end{align*}
 \begin{table}
   \centering
@@ -267,7 +271,7 @@ Daraus werden nun wieder mittels \eqref{eqn:saugvermögen} und \eqref{eqn:saugve
   \label{tab:turboevak}
   \begin{tabular}[t]{c c c c c c c c}
    \toprule
-    p(t) / $\SI{e-5}{\milli\bar}$ & $\ln \Bigl(\frac{p(t)-p_E}{p_0-p_E}\Bigr)$ & $t_1$ / $\si{\second}$ & $t_2$ / $\si{\second}$ & $t_3$ / $\si{\second}$ & $t_4$ / $\si{\second}$ & $t_5$ / $\si{\second}$ &  $t$ / $\si{\second}$ \\
+    p(t) / $\SI{e-5}{\milli\bar}$ & $\ln \Bigl(\frac{p(t)-p_E}{p_0-p_E}\Bigr)$ & $t_1$ / $\si{\second}$ & $t_2$ / $\si{\second}$ & $t_3$ / $\si{\second}$ & $t_4$ / $\si{\second}$ & $t_5$ / $\si{\second}$ &  $\overline{t}$ / $\si{\second}$ \\
      \midrule
      \csvreader[no head,
      late after line=\\,
@@ -300,10 +304,10 @@ Es wurden folgende Parameter optimiert:
 \end{align*}
 Daraus wurden mittels \eqref{eqn:leck2} und \eqref{eqn:leckerr} folgende Saugvermögen bestimmt:
 \begin{align*}
-  S_1 &= \SI{10.0\pm1.2}{\litre\per\second} \\
-  S_2 &= \SI{21.1\pm2.6}{\litre\per\second} \\
-  S_3 &= \SI{22.5\pm2.8}{\litre\per\second} \\
-  S_4 &= \SI{18.0\pm2.2}{\litre\per\second}.
+  S_1 &= \SI{9.1\pm1.2}{\litre\per\second} \\
+  S_2 &= \SI{19.2\pm2.5}{\litre\per\second} \\
+  S_3 &= \SI{20.5\pm2.6}{\litre\per\second} \\
+  S_4 &= \SI{16.4\pm2.1}{\litre\per\second}.
 \end{align*}
 \begin{figure}
     \centering
@@ -335,7 +339,7 @@ Daraus wurden mittels \eqref{eqn:leck2} und \eqref{eqn:leckerr} folgende Saugver
   \label{tab:turboleck1}
   \begin{tabular}[t]{c c c c c}
    \toprule
-    p(t) / $\SI{e-5}{\milli\bar}$ & $t_1$ / $\si{\second}$ & $t_2$ / $\si{\second}$ & $t_3$ / $\si{\second}$ & $t$ / $\si{\second}$ \\
+    p(t) / $\SI{e-5}{\milli\bar}$ & $t_1$ / $\si{\second}$ & $t_2$ / $\si{\second}$ & $t_3$ / $\si{\second}$ & $\overline{t}$ / $\si{\second}$ \\
      \midrule
      \csvreader[no head,
      late after line=\\,
@@ -350,7 +354,7 @@ Daraus wurden mittels \eqref{eqn:leck2} und \eqref{eqn:leckerr} folgende Saugver
    \label{tab:turboleck2}
    \begin{tabular}[t]{c c c c c}
     \toprule
-     p(t) / $\SI{e-4}{\milli\bar}$ & $t_1$ / $\si{\second}$ & $t_2$ / $\si{\second}$ & $t_3$ / $\si{\second}$ & $t$ / $\si{\second}$ \\
+     p(t) / $\SI{e-4}{\milli\bar}$ & $t_1$ / $\si{\second}$ & $t_2$ / $\si{\second}$ & $t_3$ / $\si{\second}$ & $\overline{t}$ / $\si{\second}$ \\
       \midrule
       \csvreader[no head,
       late after line=\\,
@@ -365,7 +369,7 @@ Daraus wurden mittels \eqref{eqn:leck2} und \eqref{eqn:leckerr} folgende Saugver
     \label{tab:turboleck3}
     \begin{tabular}[t]{c c c c c}
      \toprule
-      p(t) / $\SI{e-4}{\milli\bar}$ & $t_1$ / $\si{\second}$ & $t_2$ / $\si{\second}$ & $t_3$ / $\si{\second}$ & $t$ / $\si{\second}$ \\
+      p(t) / $\SI{e-4}{\milli\bar}$ & $t_1$ / $\si{\second}$ & $t_2$ / $\si{\second}$ & $t_3$ / $\si{\second}$ & $\overline{t}$ / $\si{\second}$ \\
        \midrule
        \csvreader[no head,
        late after line=\\,
@@ -380,7 +384,7 @@ Daraus wurden mittels \eqref{eqn:leck2} und \eqref{eqn:leckerr} folgende Saugver
      \label{tab:turboleck4}
      \begin{tabular}[t]{c c c c c}
       \toprule
-       p(t) / $\SI{e-4}{\milli\bar}$ & $t_1$ / $\si{\second}$ & $t_2$ / $\si{\second}$ & $t_3$ / $\si{\second}$ & $t$ / $\si{\second}$ \\
+       p(t) / $\SI{e-4}{\milli\bar}$ & $t_1$ / $\si{\second}$ & $t_2$ / $\si{\second}$ & $t_3$ / $\si{\second}$ & $\overline{t}$ / $\si{\second}$ \\
         \midrule
         \csvreader[no head,
         late after line=\\,
@@ -392,7 +396,7 @@ Daraus wurden mittels \eqref{eqn:leck2} und \eqref{eqn:leckerr} folgende Saugver
     \FloatBarrier
 \subsection{Vergleich der bestimmten Saugvermögen}
 \label{sec:vgl}
-Die verschiedenen bestimmten Saugvermögen sind in \ref{fig:drehvgl} für die Drehschieberpumpe und on \ref{fig:turbovgl} für die Turbopumpe dargestellt.
+Die verschiedenen bestimmten Saugvermögen sind in Abbildung \ref{fig:drehvgl} für die Drehschieberpumpe und in Abbildung \ref{fig:turbovgl} für die Turbopumpe dargestellt.
 \begin{figure}
     \centering
     \includegraphics{build/drehvgl.pdf}
