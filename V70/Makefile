@@ -11,6 +11,7 @@ endif
 all: build/main.pdf
 
 # hier Python-Skripte:
+
 build/plot.pdf: plot.py matplotlibrc header-matplotlib.tex | build
 	TEXINPUTS="$(call translate,$(pwd):)" python plot.py
 build/drehevak.pdf: drehevak.py matplotlibrc header-matplotlib.tex | build
@@ -25,12 +26,12 @@ build/drehvgl.pdf: saugschlampe.py matplotlibrc header-matplotlib.tex | build
 	TEXINPUTS="$(call translate,$(pwd):)" python saugschlampe.py
 
 # hier weitere Abhängigkeiten für build/main.pdf deklarieren:
-build/main.pdf: build/plot.pdf
-build/main.pdf: build/drehevak.pdf
-build/main.pdf: build/turboevak.pdf
-build/main.pdf: build/drehvgl.pdf
-build/main.pdf: build/drehleck.pdf
-build/main.pdf: build/turboleck.pdf
+#build/main.pdf: build/plot.pdf
+#build/main.pdf: build/drehevak.pdf
+#build/main.pdf: build/turboevak.pdf
+#build/main.pdf: build/drehvgl.pdf
+#build/main.pdf: build/drehleck.pdf
+#build/main.pdf: build/turboleck.pdf
 
 
 build/main.pdf: FORCE | build
