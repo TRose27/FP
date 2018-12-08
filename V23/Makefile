@@ -29,6 +29,14 @@ build/7.pdf: 7.py matplotlibrc header-matplotlib.tex | build
 	TEXINPUTS="$(call translate,$(pwd):)" python 7.py
 build/8.pdf: 8.py matplotlibrc header-matplotlib.tex | build
 	TEXINPUTS="$(call translate,$(pwd):)" python 8.py
+build/9.pdf: 9.py matplotlibrc header-matplotlib.tex | build
+	TEXINPUTS="$(call translate,$(pwd):)" python 9.py
+build/10.pdf: 10.py matplotlibrc header-matplotlib.tex | build
+	TEXINPUTS="$(call translate,$(pwd):)" python 10.py
+build/11.pdf: 11.py matplotlibrc header-matplotlib.tex | build
+	TEXINPUTS="$(call translate,$(pwd):)" python 11.py
+build/12.pdf: 12.py matplotlibrc header-matplotlib.tex | build
+	TEXINPUTS="$(call translate,$(pwd):)" python 12.py
 
 # hier weitere Abhängigkeiten für build/main.pdf deklarieren:
 build/main.pdf: build/plot.pdf
@@ -40,6 +48,10 @@ build/main.pdf: build/5.pdf
 build/main.pdf: build/6.pdf
 build/main.pdf: build/7.pdf
 build/main.pdf: build/8.pdf
+build/main.pdf: build/9.pdf
+build/main.pdf: build/10.pdf
+build/main.pdf: build/11.pdf
+build/main.pdf: build/12.pdf
 
 build/main.pdf: FORCE | build
 	  TEXINPUTS="$(call translate,build:)" \
