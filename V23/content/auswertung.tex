@@ -83,7 +83,7 @@ Daraus wurden die Nummer der Resonanzstelle, sowie die dazugehörige Resonanzfre
 \end{figure}
 \FloatBarrier
 
-In Abbildung \ref{fig:3} sind die $\SI{0.4}{\kilo\hertz}$ bis $\SI{12}{\kilo\hertz}$ Spektren und Dispersionsrelationen für ein Rohr welches aus 12 $\SI{50}{\milli\metre}$
+In Abbildung \ref{fig:3} sind die $\SI{0.4}{\kilo\hertz}$ bis $\SI{12}{\kilo\hertz}$ Spektren und Dispersionsrelationen für ein Rohr welches aus acht $\SI{50}{\milli\metre}$
 Röhren, zwischen welchen sich Blenden befinden, besteht. Die Messung wurde einmal mit $\SI{10}{\milli\metre}$, einmal mit $\SI{13}{\milli\metre}$ und einmal mit
 $\SI{16}{\milli\metre}$ Blendendurchmesser durchgeführt. Aus den resultierenden Spektren wurden wieder die Nummern der Resonanzstellen und die Resonanzfrequenzen bestimmt und
 geplottet. Die Messdaten befinden sich in Tablle \ref{tab:3}.
@@ -131,14 +131,14 @@ geplottet. Die Messdaten befinden sich in Tablle \ref{tab:3}.
 \end{table}
 \begin{figure}
 \centering
-\includegraphics[scale=0.8]{build/3.pdf}
+\includegraphics[scale=0.7]{build/3.pdf}
 \caption{In a) sind die Spektren und in b) die Dispersionsrelationen für die angegebenen Blendendurchmesser für einen Frequenzbereich von $\SI{0.4}{\kilo\hertz}$ bis $\SI{12}{\kilo\hertz}$ dargestellt. Dabei sind vom Blendendurchmesser abhängige Bandstrukturen zu erkennen.}
 \label{fig:3}
 \end{figure}
 
 In den Spektren und Dispersionsrelationen sind Bandstrukturen zu erkennen, welche auf die eingebauten Blenden zurück zu führen sind. Es ist dabei zu beobachten, dass bei zunehmenden
 Blendendurchmesser die Bandlücken kleiner und die Bänder größer werden. Des weiteren ist eine Verschiebung der Bänder zu niedrigeren Frequenzen zu beobachten. Außerdem sind bei größeren
-Blenden mehr Resonanzen pro Band aufgetreten, was aber auf die größere Bandbreite zurückzuführen ist.
+Blenden mehr Resonanzen pro Band aufgetreten.
 Unabhängig vom Blendendurchmesser ist zu beobachten, dass bei steigender Frequenz die Bandlücken größer und die Bandbreiten kleiner werden.
 Aus den in \ref{fig:3} dargestellten Dispersionsrelationen wurden die spektralen Breiten der Bandlücken $\Delta f_\text{Lücke}$ und Bänder $\Delta f_\text{Band}$ bestimmt. Die Ergebnisse befinden sich in Tabelle \ref{tab:3band}.
 Bei den Messdaten fällt auf, dass bei der $\SI{16}{\milli\metre}$ Blende das zweite Band breiter als das erste ist, was nicht zu den zuvor beobachteten Gesetzmaßigkeiten passt.
@@ -163,3 +163,71 @@ Dies geht wahrscheinlich darauf zurück, dass Teile des ersten Bandes nicht mehr
  \end{tabular}
  }
 \end{table}
+\FloatBarrier
+In Abbildung \ref{fig:4} sind wieder $\SI{0.4}{\kilo\hertz}$ bis $\SI{12}{\kilo\hertz}$ Spektren zu sehen. Diesmal für 10 und 12 $\SI{50}{\milli\metre}$ Röhren mit
+$\SI{16}{\milli\metre}$ Blenden in den Zwischenräumen.
+Durch Vergleich der beiden Spektren untereinander und mit dem Spektrum aus \ref{fig:3} bei welchem ebenfalls $\SI{16}{\milli\metre}$ Blenden genutzt wurden, wird deutlich, dass
+die Bandstruktur nur von der genutzten Blende und nicht von der Rohrlänge abhängig ist, da sich die spektrale Breite der Bänder und Bandlücken, sowie deren Position bei Verlängerung
+des Rohres nicht ändert. Es wird jedoch eine Abnahme der Amplitude, sowie ein Anstieg der Resonanzen pro Band bei steigender Rohrlänge beobachtet.
+\begin{figure}
+\centering
+\includegraphics[scale=0.7]{build/4.pdf}
+\caption{In a) ist das Spektrum für 10 und in b) für 12 $\SI{50}{\milli\metre}$ Röhren für einen Frequenzbereich von $\SI{0.4}{\kilo\hertz}$ bis $\SI{12}{\kilo\hertz}$ dargestellt. Die Bandstruktur ist dabei bei beiden Spektren gleich.}
+\label{fig:4}
+\end{figure}
+\FloatBarrier
+
+In Abbildung \ref{fig:5} ist ein Spektrum im selben Frequenzbereich zu sehen, nur wurden diesmal acht $\SI{75}{\milli\metre}$ Röhren mit $\SI{16}{\milli\metre}$ Blenden verwendet.
+Wird dies mit dem Spektrum aus \ref{fig:3} verglichen, in welchem der selbe Blendendurchmesser und die selbe Anzahl an Röhren, jeoch mit einer Länge von $\SI{50}{\milli\metre}$,
+benutzt wurden, so fällt auf, dass sich nun mehr Bänder und Bandlücken im Frequenzbereich befinden, welche dementsprechend auch geringere Breiten haben. Die Anzahl der Resonanzen pro
+Band bleibt dabei jedoch gleich.
+\begin{figure}
+\centering
+\includegraphics[scale=0.9]{build/5.pdf}
+\caption{Spektrum für acht  $\SI{75}{\milli\metre}$ Röhren in einem Frequenzbereich von $\SI{0.4}{\kilo\hertz}$ bis $\SI{12}{\kilo\hertz}$.}
+\label{fig:5}
+\end{figure}
+\FloatBarrier
+\subsection{Atom-Molekül-Ketten Ansatz}
+In Abbildung \ref{fig:6} ist ein $\SI{0.4}{\kilo\hertz}$ bis $\SI{22}{\kilo\hertz}$ Spektrum für ein $\SI{50}{\milli\metre}$ Rohr dargestellt.
+Dabei lassen sich die vier Resonanzen unterhalb von $\SI{15}{\kilo\hertz}$ aufgrund ihres konstantes Abstandes als longitudinale Moden identifzieren, weshalb die restlichen
+Resonanzen radialen Moden entsprechen müssen. Aus dem Spektrum wurde der Abstand der Resonanzen zu $\Delta f =\SI{3342}{\hertz}$ bestimmt. Aus der Resonanzbedingung folgt folgende
+Gleichung für den theoretischen Abstand zwischen den Resonanzen
+\begin{equation}
+  \Delta f = \frac{c}{2d}.
+  \label{eqn:deltaf}
+\end{equation}
+Mit der zuvor bestimmten Schallgeschwindigkeit und der Rohrlänge $d=\SI{50}{\milli\metre}$ berechnet sich der Theoriewert zu $\Delta f = \SI{3369.4\pm11.8}{\hertz}$.
+Somit weicht der bestimmte Wert um $\SI{0.8}{\percent}$ vom theoretisch errechneten Wert ab.
+\begin{figure}
+\centering
+\includegraphics[scale=0.9]{build/6.pdf}
+\caption{ $\SI{0.4}{\kilo\hertz}$ bis $\SI{22}{\kilo\hertz}$ Spektrum für ein $\SI{50}{\milli\metre}$ Rohr. Die ersten vier Resonanzen entsprechen longitudinalen Moden, die folgenden entsprechen radialen Moden.}
+\label{fig:6}
+\end{figure}
+\FloatBarrier
+
+In Abbildung \ref{fig:7} ist ein Spektrum im selben Frequenzbereich zu sehen, jedoch wurde diesmal ein $\SI{75}{\milli\metre}$ Rohr verwendet.
+Die Resonanzen unterhalb von $\SI{15}{\kilo\hertz}$ lassen sich abermals als longitudinale und die folgenden als radiale Moden identifizieren.
+Diesmal beträgt der aus dem Graphen ermittelte Abstand zwischen den Moden $\Delta f = \SI{2270}{\hertz}$. Der theretische Wert wird wieder mit
+\eqref{eqn:deltaf} bestimmt und beträgt $\Delta f = \SI{2246.3\pm7.9}{\hertz}$. Die relative Abweichung beträgt dann $\SI{1.04}{\percent}$.
+\begin{figure}
+\centering
+\includegraphics[scale=0.9]{build/7.pdf}
+\caption{ $\SI{0.4}{\kilo\hertz}$ bis $\SI{22}{\kilo\hertz}$ Spektrum für ein $\SI{75}{\milli\metre}$ Rohr. Die ersten sechs Resonanzen entsprechen longitudinalen Moden, die folgenden entsprechen radialen Moden.}
+\label{fig:7}
+\end{figure}
+\FloatBarrier
+
+In Abbildung \ref{fig:8} sind die Spektren für zwei $\SI{50}{\milli\metre}$ Röhren mit einer Blende dazwischen dargestellt. Dabei wurden Blenden mit verschiedenen Durchmessern benutzt.
+Einmal $\SI{10}{\milli\metre}$, einmal $\SI{13}{\milli\metre}$ und einmal $\SI{16}{\milli\metre}$.
+Dabei sind gepaarte Peaks zu beobachten. Der Peak mit der niedrigeren Frequenz entspricht einem bindenden Zustand, und der Peak mit der höheren Frequenz entspricht einem antibindenden Zustand, da diese
+mehr Energie, welche in der Quantenmechanik proportional zur Frequenz ist, besitzen. Weiterhin ist zu beobachten, dass der Abstand zwischen bindenden und antibindenden
+Zuständen bei größer werdendem Blendendurchmesser größer wird, und dass sich die gepaarten Zustände in Richtung höherer Frequenzen beziehungsweise Energien verschieben.
+\begin{figure}
+\centering
+\includegraphics[scale=0.9]{build/8.pdf}
+\caption{ $\SI{0.4}{\kilo\hertz}$ bis $\SI{22}{\kilo\hertz}$ Spektrum für zwei $\SI{50}{\milli\metre}$ Röhren mit einer Blende zwischen ihnen. Die Abhängigkeit der Zustände vom Blendendurchmesser sind an den Abständen zwischen den Peaks und ihrer Frequenzverschiebung zu erkennen.}
+\label{fig:8}
+\end{figure}
+\FloatBarrier

@@ -10,8 +10,9 @@ f0,a0=np.genfromtxt("data/4/10.dat",unpack=True)
 f1,a1=np.genfromtxt("data/4/12.dat",unpack=True)
 
 
-plt.figure(figsize=[8,2.5])
+plt.figure(figsize=[8,3])
 plt.subplot(1,2,1)
+plt.title("a)",loc="left")
 plt.grid()
 plt.plot(f0,a0,"r-",lw=0.5,label="500mm")
 plt.ylabel(r'Amplitude')
@@ -19,6 +20,7 @@ plt.xlabel(r'f / $\si{\hertz}$')
 plt.legend(loc="best")
 
 plt.subplot(1,2,2)
+plt.title("b)",loc="left")
 plt.grid()
 plt.plot(f1,a1,"k-",lw=0.5,label="600mm")
 plt.ylabel(r'Amplitude')
