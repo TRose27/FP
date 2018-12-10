@@ -1,9 +1,165 @@
 \section{Auswertung}
 \label{sec:Auswertung}
-
+\subsection{Partikel im periodischen Potenzial}
+Die Spektren für die in \ref{tab:1} zu sehenden Rohrlängen sind in Abbildung \ref{fig:1} dargestellt.
+Es ist zu beobachten, dass, bei gleicher Breite des Spektrums, mit steigender Rohrlänge die Anzahl an Resonanzen zunimmt, und der Abstand zwischen den Resonanzen abnimmt.
+Aus den einzelnen Spektren wurden die Abstände der Resonanzen bestimmt. Diese werden gegen die inverse Rohrlänge aufgetragen und linear mit SciPy \cite{scipy} gefittet.
+Dies ist in Abbildung \ref{fig:vschall} zu sehen. Die bestimmten Parameter sind:
+\begin{align*}
+  a &= \SI{168.47\pm0.59}{\metre\per\second} \\
+  b &= \SI{8.76\pm3.42}{\hertz}.
+\end{align*}
+Gemäß der Resonanzbedingung \eqref{eqn:resonanz} lässt sich $a$ folgendermaßen identifizieren:
+\begin{equation*}
+  a=\frac{c}{2}
+\end{equation*}
+Somit beträgt die gemessene Schallgeschwindigkeit $c_\text{gemessen} = \SI{336.94\pm1.18}{\metre\per\second}$. Dies entspricht einer Abweichung von $\SI{1.8}{\percent}$ vom
+Literaturwert, welcher $\SI{343}{\metre\per\second}$ bei $T=\SI{20}{\celsius}$ beträgt \cite{vschall}.
+\begin{table}
+  \centering
+  \caption{Rohrlänge, inverse Rohrlänge und Abstände der Resonanzen}
+  \label{tab:1}
+  \begin{tabular}[t]{c c c}
+   \toprule
+    {d / $\si{\milli\metre}$} & {$\frac{1}{d}$ / $\si{\per\milli\metre}$} & {$\Delta f$ / $\si{\hertz}$} \\
+     \midrule
+     \csvreader[no head,
+     late after line=\\,
+     late after last line=\\\bottomrule]%
+     {data/1tab.csv}{}%
+     {$\num{\csvcoli}$ & $\num{\csvcolii}$ & $\num{\csvcoliii}$}%
+   \end{tabular}
+ \end{table}
 \begin{figure}
   \centering
-  \includegraphics{plot.pdf}
-  \caption{Plot.}
-  \label{fig:plot}
+  \includegraphics[scale=0.7]{build/1.pdf}
+  \caption{Es wurde für die angegeben Rohrlängen jeweils ein Spektrum im Bereich von $\SI{100}{\hertz}$ bis $\SI{10}{\kilo\hertz}$ gemessen und geplottet. Es ist zu sehen, dass die Anzahl der Resonanzstellen zunimmt.}
+  \label{fig:1}
 \end{figure}
+\begin{figure}
+  \centering
+  \includegraphics{build/vschall.pdf}
+  \caption{Die Abstände der Resonanzstellen $\Delta f$ wurde gegen die inverse Rohrlänge $\sfrac{1}{d}$ aufgetragen und linear gefittet. Aus der Steigung der Gerade lässt sich so die Schallgeschwindigkeit bestimmen.}
+  \label{fig:vschall}
+\end{figure}
+\FloatBarrier
+
+In Abbildung \ref{fig:2} ist ein $\SI{0.4}{\kilo\hertz}$ bis $\SI{12}{\kilo\hertz}$ Spektrum für eine Rohrlänge von $\SI{600}{\milli\metre}$ dargestellt.
+Daraus wurden die Nummer der Resonanzstelle, sowie die dazugehörige Resonanzfrequenz bestimmt. Diese werden nun gegeneinander aufgetragen. So ergibt sich die ebenfalls in
+\ref{fig:2} zu sehende Dispersionsrelation. Diese ist, da keine Störungen oder Unregelmäßigkeiten im Rohr vorliegen, linear. Die bestimmten Wertepaare befinden sich in Tabelle
+\ref{tab:2}.
+\begin{table}
+  \centering
+  \caption{Nummer der Resonanzstelle k und dazugehörige Frequenzen}
+  \label{tab:2}
+\begin{tabular}[t]{c c}
+ \toprule
+   {k} & {$f$ / $\si{\hertz}$} \\
+   \midrule
+   \csvreader[no head,
+   late after line=\\,
+   late after last line=\\\bottomrule,
+  filter test={\ifnumless{\thecsvinputline}{20}}]%
+   {data/2tab.csv}{}%
+   {$\num{\csvcoli}$ & $\num{\csvcolii}$}%
+ \end{tabular}
+ \begin{tabular}[t]{c c}
+  \toprule
+    {k} & {$f$ / $\si{\hertz}$} \\
+    \midrule
+    \csvreader[no head,
+    late after line=\\,
+    filter test={\ifnumgreater{\thecsvinputline}{19}},
+    late after last line=\\\bottomrule]%
+    {data/2tab.csv}{}%
+    {$\num{\csvcoli}$ & $\num{\csvcolii}$}%
+  \end{tabular}
+\end{table}
+\begin{figure}
+\centering
+\includegraphics[scale=0.7]{build/2.pdf}
+\caption{In a) ist das Spektrum von $\SI{0.4}{\kilo\hertz}$ bis $\SI{12}{\kilo\hertz}$ bei einer Rohrlänge von $\SI{600}{\milli\metre}$ zu sehen. In b) ist die dazugehörige lineare Dispersionsrelation dargestellt.}
+\label{fig:2}
+\end{figure}
+\FloatBarrier
+
+In Abbildung \ref{fig:3} sind die $\SI{0.4}{\kilo\hertz}$ bis $\SI{12}{\kilo\hertz}$ Spektren und Dispersionsrelationen für ein Rohr welches aus 12 $\SI{50}{\milli\metre}$
+Röhren, zwischen welchen sich Blenden befinden, besteht. Die Messung wurde einmal mit $\SI{10}{\milli\metre}$, einmal mit $\SI{13}{\milli\metre}$ und einmal mit
+$\SI{16}{\milli\metre}$ Blendendurchmesser durchgeführt. Aus den resultierenden Spektren wurden wieder die Nummern der Resonanzstellen und die Resonanzfrequenzen bestimmt und
+geplottet. Die Messdaten befinden sich in Tablle \ref{tab:3}.
+
+\begin{table}
+  \centering
+  \caption{Nummer der Resonanzstelle k und dazugehörige Frequenzen für verschiedene Blendendurchmesser}
+  \label{tab:3}
+\begin{tabular}[t]{c c}
+ \toprule
+ \multicolumn{2}{c}{$\SI{10}{\milli\metre}$} \\
+ \cmidrule(lr){1-2}
+   {k} & {$f$ / $\si{\hertz}$} \\
+   \midrule
+   \csvreader[no head,
+   late after line=\\,
+   late after last line=\\\bottomrule]%
+   {data/3tab0.csv}{}%
+   {$\num{\csvcoli}$ & $\num{\csvcolii}$}%
+ \end{tabular}
+ \begin{tabular}[t]{c c}
+  \toprule
+  \multicolumn{2}{c}{$\SI{13}{\milli\metre}$} \\
+  \cmidrule(lr){1-2}
+    {k} & {$f$ / $\si{\hertz}$} \\
+    \midrule
+    \csvreader[no head,
+    late after line=\\,
+    late after last line=\\\bottomrule]%
+    {data/3tab1.csv}{}%
+    {$\num{\csvcoli}$ & $\num{\csvcolii}$}%
+  \end{tabular}
+  \begin{tabular}[t]{c c}
+   \toprule
+   \multicolumn{2}{c}{$\SI{16}{\milli\metre}$} \\
+   \cmidrule(lr){1-2}
+     {k} & {$f$ / $\si{\hertz}$} \\
+     \midrule
+     \csvreader[no head,
+     late after line=\\,
+     late after last line=\\\bottomrule]%
+     {data/3tab2.csv}{}%
+     {$\num{\csvcoli}$ & $\num{\csvcolii}$}%
+   \end{tabular}
+\end{table}
+\begin{figure}
+\centering
+\includegraphics[scale=0.8]{build/3.pdf}
+\caption{In a) sind die Spektren und in b) die Dispersionsrelationen für die angegebenen Blendendurchmesser für einen Frequenzbereich von $\SI{0.4}{\kilo\hertz}$ bis $\SI{12}{\kilo\hertz}$ dargestellt. Dabei sind vom Blendendurchmesser abhängige Bandstrukturen zu erkennen.}
+\label{fig:3}
+\end{figure}
+
+In den Spektren und Dispersionsrelationen sind Bandstrukturen zu erkennen, welche auf die eingebauten Blenden zurück zu führen sind. Es ist dabei zu beobachten, dass bei zunehmenden
+Blendendurchmesser die Bandlücken kleiner und die Bänder größer werden. Des weiteren ist eine Verschiebung der Bänder zu niedrigeren Frequenzen zu beobachten. Außerdem sind bei größeren
+Blenden mehr Resonanzen pro Band aufgetreten, was aber auf die größere Bandbreite zurückzuführen ist.
+Unabhängig vom Blendendurchmesser ist zu beobachten, dass bei steigender Frequenz die Bandlücken größer und die Bandbreiten kleiner werden.
+Aus den in \ref{fig:3} dargestellten Dispersionsrelationen wurden die spektralen Breiten der Bandlücken $\Delta f_\text{Lücke}$ und Bänder $\Delta f_\text{Band}$ bestimmt. Die Ergebnisse befinden sich in Tabelle \ref{tab:3band}.
+Bei den Messdaten fällt auf, dass bei der $\SI{16}{\milli\metre}$ Blende das zweite Band breiter als das erste ist, was nicht zu den zuvor beobachteten Gesetzmaßigkeiten passt.
+Dies geht wahrscheinlich darauf zurück, dass Teile des ersten Bandes nicht mehr im Messbereich liegen.
+
+\begin{table}
+  \centering
+  \caption{Spektrale Breiten der Bänder und Bandlücken}
+  \label{tab:3band}
+   \noindent\makebox[\textwidth]{
+\begin{tabular}[t]{c c c c c c c}
+ \toprule
+ &\multicolumn{2}{c}{$\SI{10}{\milli\metre}$}  &\multicolumn{2}{c}{$\SI{13}{\milli\metre}$}  &\multicolumn{2}{c}{$\SI{16}{\milli\metre}$} \\
+ \cmidrule(lr){2-3}  \cmidrule(lr){4-5}  \cmidrule(lr){6-7}
+   {Band} & {$\Delta f_\text{Band}$ / $\si{\hertz}$} & {$\Delta f_\text{Lücke}$ / $\si{\hertz}$} & {$\Delta f_\text{Band}$ / $\si{\hertz}$} & {$\Delta f_\text{Lücke}$ / $\si{\hertz}$} & {$\Delta f_\text{Band}$ / $\si{\hertz}$} & {$\Delta f_\text{Lücke}$ / $\si{\hertz}$}\\
+   \midrule
+    1 & 1140 & 1736 & 1403 & 1384 & 1649 & 986  \\
+    2 & 745  & 2610 & 1228 & 2094 & 1753 & 1537 \\
+    3 & 492  & 2921 & 793  & 2505 & 1263 & 2089 \\
+    4 & 270  &      & 677  &      & 1014 &      \\
+    \bottomrule
+ \end{tabular}
+ }
+\end{table}

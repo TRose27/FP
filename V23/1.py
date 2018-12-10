@@ -18,7 +18,7 @@ f7,a7=np.genfromtxt("data/1/600mm.dat",unpack=True)
 df=np.array([2250,1140,767,569,453,381,328,287])
 d=np.array([75,150,225,300,375,450,525,600])
 dfit=1/d
-
+np.savetxt("data/1tab.csv",np.column_stack([d,dfit,df]),delimiter=",",fmt=["%3.0f","%3.3f","%4.0f"])
 
 def f(x, a, b):
     return a*x+b
