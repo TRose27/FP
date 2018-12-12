@@ -18,9 +18,10 @@ f8,a8=np.genfromtxt("data/9/616.dat",unpack=True)
 
 
 
-plt.figure(figsize=[12,7.5])
+plt.figure(figsize=[12,8])
 
 plt.subplot(3,3,1)
+plt.title("a)",loc="left")
 plt.grid()
 plt.plot(f0,a0,"r-",lw=0.5,label="10mm Blende")
 plt.ylabel(r'Amplitude')
@@ -42,6 +43,7 @@ plt.xlabel(r'f / $\si{\hertz}$')
 plt.legend(loc="best")
 
 plt.subplot(3,3,4)
+plt.title("b)",loc="left")
 plt.grid()
 plt.plot(f3,a3,"r-",lw=0.5,label="10mm Blende")
 plt.ylabel(r'Amplitude')
@@ -63,6 +65,7 @@ plt.xlabel(r'f / $\si{\hertz}$')
 plt.legend(loc="best")
 
 plt.subplot(3,3,7)
+plt.title("c)",loc="left")
 plt.grid()
 plt.plot(f6,a6,"r-",lw=0.5,label="10mm Blende")
 plt.ylabel(r'Amplitude')
