@@ -1,4 +1,75 @@
 \section{Theorie}
 \label{sec:Theorie}
 
-\cite{sample}
+\subsection{Resonanz}
+Wenn in einem geschlossenen Rohr ein Schall erzeugt wird und dieser von der gegenüberliegenden Wand reflektiert wird, entsteht eine stehende Welle im Rohr.
+Die hin- und zurücklaufende Wellen interferieren miteinander. Resonanz entsteht an den Stellen, wo die Wellen konstruktiv interferieren und die Resonanzbedingung 
+\begin{equation}
+    2L = \frac{nc}{f}
+    \label{eqn:resonanz}
+\end{equation}
+erfüllt ist. Dabei ist $L$ die Länge des Rohrs, $c$ die Schallgeschwindigkeit, $f$ die Frequenz und $n$ eine natürliche Zahl.
+
+
+\subsection{Gemeinsamkeiten von akustischen und quantenmechanischen Systemen}
+Aus der linearen Euler Gleichung
+\begin{equation*}
+    \frac{\partial v}{\partial t} = -\frac{1}{\rho}\vec{\nabla}p, 
+\end{equation*}
+mit der Geschwindigkeit $v$ und der Dichte $\rho$, und der Kontinuitätsgleichung
+\begin{equation*}
+    \frac{\partial \rho}{\partial t} = -\rho \vec{\nabla} \cdot \vec{v}
+\end{equation*}
+folgt, dass sich eine eindimensionale Welle mit 
+\begin{equation*}
+    p(x) = p_0 \cos(kx-\omega t)
+\end{equation*}
+beschreiben lässt. In einer Röhre mit der Länge $L$ lässt sich mit den Randbedingungen $\dfrac{\partial p}{\partial x}(0)=0$ und $\dfrac{\partial p}{\partial x}(L)=0$
+herleiten, dass $k=\dfrac{n\pi}{L}$ ist. Dabei ist $n$ eine ganzzahliger positive Zahl.\\
+Analog kann ein Teilchen in einem Potentialtopf mit der Schrödingergleichung beschrieben werden:
+\begin{equation*}
+    E\psi(r) = -\frac{\hbar}{2m}\Delta\psi(r) + V(r)\psi(r).
+\end{equation*}
+In einem unendlich hohen Potentialtopf dessen Zwischenraum ein Potential von $V(r)=0$ besitzt, vereinfacht sich die Schrödingergleichung zu 
+\begin{equation*}
+    E\psi(r) = -\frac{\hbar}{2m}\Delta\psi(r).
+\end{equation*}
+Diese Gleichung kann für bestimmte Eigenwerte der Energie $E$ mit dem Ansatz
+\begin{equation*}
+    \psi(x) = A\sin(kx+\alpha)
+\end{equation*}
+gelöst werden. Aus den Randbedingungen folgt $\alpha=0$ und $k=\frac{n\pi}{L}$. In der Quantenmechanik ist die Energie immer mit der Frequenz verbunden:
+\begin{equation*}
+    E = hf = \hbar\omega.
+\end{equation*}
+Damit folg für die Eigenwerte der Energie 
+\begin{equation*}
+    E(k) = \frac{\hbar^2k^2}{2m} = \frac{\hbar^2n^2\pi^2}{2mL^2}.
+\end{equation*}
+
+Die Schallwelle und die Wellenfunktion lösen in beiden Fällen die Wellengleichung, welche ein delokalisiertes Objekt beschreibt. In beiden Fällen gibt es  
+Eigenzustände und der Wellenvektor $k$ ist ebenfalls gleich.
+
+
+
+\subsection{Unterschiede von akustischen und quantenmechanischen Systemen}
+Als erstes wird im klassischen Fall die Amplitude von einem Mikrofon gemessen. Im quantenmechanischen Fall lässt sich jedoch aus dem Betragsquadrat nur die 
+Wahrscheinlichkeit berechnen, ein Teilchen an einer bestimmten Position zu messen.\\
+Desweiteren unterscheiden sich die Wellengleichungen in der zeitlichen Ableitung. Wärend die klassische Wellengleichung wegen der zweiten zeitlichen Ableitung 
+periodische Lösungen besitzt, folgt dies im quantenmechanischen Fall aus der ersten Zeitableitung in Verbindung mit einem komplexen Phasenfaktor. Diese 
+komplexwertige Funktionen können nicht direkt beobachtet oder gemessen werden, sondern nur das Betragsquadrat.\\
+Die Dispersionsrealationen unterscheiden sich ebenfalls. Im klassischen Fall ist diese linear, wobei sie in der Quantenmechanik einen parabolischen Verlauf folgt.
+Die Folge daraus sind unterschiedliche Gruppen- und Phasengeschwindigkeiten.\\
+Zuletzt fordert die Quantenmechanik das die Wellenfunktion an den Rändern des unendllichen Potentialtopfs verschwindet, wobei im klassischen Fall der Druck dort 
+einen Scchwingungsbauch vorweist.
+
+
+\subsection{Analogien zur Festkörperphysik}
+Mittels dem einsetzen von Blenden zwischen den einzelnen Röhrenbauteile, welche den Schall streuen, kann eine am Atom gestreute Elektronenwelle simuliert werden.
+Dies führt zu neuen Resonanzfrequenzen, welche zur Bandstrukturen führen, wobei die Blendgröße ein Maß für den Wirkungsquerschnitt ist. Die Bragg Bedingung erfüllt wird,
+also 
+\begin{equation*}
+    n\lambda = 2a
+\end{equation*}
+gilt. Dabei ist $n$ wieder eine natürliche Zahl und $a$ ist der Abstand der reflektierenden Ebenen. In diesem Versuch stellen die Blenden die reflektierenden Ebenen dar 
+und der Abstand ist die Röhrenlänge.
