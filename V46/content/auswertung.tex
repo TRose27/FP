@@ -1,9 +1,108 @@
 \section{Auswertung}
 \label{sec:Auswertung}
 
-\begin{figure}
-  \centering
-  \includegraphics{plot.pdf}
-  \caption{Plot.}
-  \label{fig:plot}
-\end{figure}
+\subsection{Ermittlung der maximalen Kraftflussdichte des Magnetfeldes}
+Die mit der Hallsonde bestimmten Werte für die magnetische Flussdichte, in Abhängigkeit von der Position, sind in Tabelle \ref{tab:Bz} zu finden.
+\begin{table}[H]
+    \centering
+    \caption{Die Messwerte für die magnetische Flussdichte in der Umgebung der Probe.}
+    \label{tab:Bz}
+    \begin{tabular}{c c}
+        \toprule
+        $z\,/\,\mathrm{mm}$ & $B\,/\,\mathrm{mT}$\\
+        \midrule
+        \csvreader[respect sharp, late after line=\\, late after last line=\\\bottomrule]{data/Bz.csv}{}{\num{\csvcoli} & \num{\csvcolii}}
+    \end{tabular}
+\end{table}\FloatBarrier
+Der dazugehörige Graph ist in Abbildung \ref{fig:Bz} zu sehen. Es wird angenommen, dass der maximale Wert des Graphen, der magnetischen Flussdichte am Ort der Probe 
+entspricht.
+\begin{figure}[H]
+    \centering
+    \includegraphics{build/Bz.pdf}
+    \caption{Magnetische Flussdichte in Abhängigkeit der Postion zur Bestimmung der maximalen Flussdichte.}
+    \label{fig:Bz}
+\end{figure}\FloatBarrier
+Das abgelesene Maximum und die damit folgene maximale Flussdichte am Ort der Probe lautet
+\begin{equation*}
+    B_0 = \SI{414}{\milli\tesla}.
+\end{equation*}
+
+
+
+
+\subsection{Bestimmung der effektiven Masse}
+Die verwendeten Proben mit ihrer Dicke und Dotierung sind in Tabelle \ref{tab:proben} zu sehen.
+\begin{table}[H]
+    \centering
+    \caption{Die Daten zu den verwendeten Proben.}
+    \label{tab:proben}
+    \begin{tabular}{c c c}
+        \toprule
+        Bezeichnung & Dotierung $N\,/\,\frac{1}{\mathrm{cm^3}}$ & Dicke$\,/\,\mathrm{mm}$\\
+        \midrule
+        $\mathrm{GaAs}_{\mathrm{rein}}$    &        -        & 5,11\\
+        $\mathrm{GaAs}_{\mathrm{dotiert}}$ & $\num{1,2e18}$  & 1,36\\
+        \bottomrule
+    \end{tabular}
+\end{table}\FloatBarrier
+Die gemessenen Winkel für die beiden Proben sind in der Tabelle \ref{tab:Messergebnisse} zu finden. Desweiteren sind in der Tabelle die Drehwinkel für die 
+beiden Proben nach Gleichung \eqref{eqn:} berechnet und durch die jeweilige Dicke der Probe geteilt, damit die Werte normiert sind. In der letzten Spalte sind die 
+Differenzen der normierten Winekl zu sehen, um den Faraday-Effekt der Leitungselektronen zu erhalten.
+\begin{table}[H]
+ \centering
+ \caption{Auflistung der gemessenen Winkel zu den jeweiligen Wellenlägen und die sich daraus ergebenen Polarisationswinkel.}
+ \label{tab:Messergebnisse}
+ \begin{tabular}{c c c c c c c c}
+  \toprule
+  $\lambda\,/\,\mathrm{\upmu m}$ & $\phi_{1,\mathrm{rein}}\,/\,\mathrm{rad}$ & $\phi_{2,\mathrm{rein}}\,/\,\mathrm{rad}$ & 
+  $\theta_{\mathrm{rein}}\,/\,\frac{\mathrm{rad}}{\mathrm{mm}}$ & $\phi_{1,\mathrm{dot}}\,/\,\mathrm{rad}$ & $\phi_{2,\mathrm{dot}}\,/\,\mathrm{rad}$ 
+  & $\theta_{\mathrm{dot}}\,/\,\frac{\mathrm{rad}}{\mathrm{mm}}$ & $\theta_{\mathrm{norm}}\,/\,\frac{\mathrm{rad}}{\mathrm{mm}}$\\
+  \midrule
+  \csvreader[respect sharp, late after line = \\, late after last line=\\\bottomrule]{data/daten2.csv}{}
+  {\num{\csvcoli} & \num{\csvcolii} & \num{\csvcoliii} & \num{\csvcoliv} & \num{\csvcolv} & \num{\csvcolvi} & \num{\csvcolvii} & \num{\csvcolviii}}
+ \end{tabular}
+\end{table}\FloatBarrier
+Die Gleichung \eqref{eqn:} lässt sich nach dem normierten Drehwinkel umstellen:
+\begin{equation}
+    \frac{\theta}{L} = \theta_{\mathrm{norm}} = \frac{e_0^3}{8\pi^2\epsilon_0c^3}\cdot\frac{1}{{m^*}^2}\cdot\frac{NB}{n}\lambda^2\;.
+    \label{eqn:gerade}
+\end{equation}
+Da auf der rechten Seite der Gleichung nur die Wellenlänge $\lambda$ nicht konstant ist, gibt es einen linearen Zusammenhang zwischen dem Quadrat der Wellenlänge und dem 
+normierten Drehwinkel $\theta_{\mathrm{norm}}$. Es wird daher eine lineare Regression mit der Form 
+\begin{equation*}
+    \theta_{\mathrm{norm}}(\lambda^2) = a\cdot \lambda^2 + b 
+\end{equation*}
+verwendet. Die Messwerte und die lineare Regression sind in Abbildung \ref{fig:Darstellung} zu sehen.
+\begin{figure}[H]
+    \centering
+    \includegraphics{build/Messergebnisse.pdf}
+    \caption{Die Differenz der normierten Drehwinkel gegen die Wellenlänge zum quadrat.}
+    \label{fig:Darstellung}
+\end{figure}\FloatBarrier
+Die Parameter für die Ausgleichsgerade sind 
+\begin{align*}
+    a &= (2,08\pm0,26)\cdot 10^{14}\,\frac{\mathrm{rad}}{\mathrm{m^3}}\;,\\
+    b &= (726\pm117)\,\frac{\mathrm{rad}}{\mathrm{m}}\;.
+\end{align*}
+Aus Gleichung \eqref{eqn:gerade} folgt nun, dass die Steigung $a$ folgende Gleichung erfüllt:
+\begin{equation*}
+    a = \frac{e_0^3}{8\pi^2\epsilon_0c^3}\cdot\frac{1}{{m^*}^2}\cdot\frac{NB}{n}\;.
+\end{equation*}
+Nach der effektiven Masse $m^*$ umgestellt, ergibt sich ein Wert von 
+\begin{equation}
+    m^* = \sqrt{\frac{e_0^3}{8\pi^2\epsilon_0c^3}\cdot\frac{1}{a}\cdot\frac{NB}{n}} = \SI{1,26\pm0,08e-32}{\kilo\gram}\;.
+\end{equation}
+Für den Brechungsindex wird dabei der Wert $n=3,3$\cite{n} verwendet.
+Der Fehler berechnet sich nach der Gauß'schen Fehlerfortpflanzung
+\begin{equation*}
+    \increment f=\sqrt{\sum_{i=1}^N \left(\frac{\partial f}{\partial x_i}\right)^2 \cdot (\increment x_i)^2}.
+\end{equation*}
+Mit der fehlerbehafteten Größe $a$ ergibt sich für die effektive Masse $m^*$ mit 
+\begin{equation*}
+    k=\frac{e_0^3}{8\pi^2\epsilon_0c^3}\cdot\frac{NB}{n}
+\end{equation*}
+der Fehler nach
+\begin{align*}
+    \increment m^* &= \sqrt{\left(\frac{\mathrm{d}m^*}{\mathrm{d}a}\right)^2 \cdot \increment a^2}\;,\\
+                   &= \sqrt{\left(-\frac{1}{2}\left(\frac{k}{a}\right)^{-\frac{1}{2}}(ka^{-2})\right)^2 \cdot \increment a^2}\;.
+\end{align*}
