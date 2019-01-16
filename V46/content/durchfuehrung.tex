@@ -1,2 +1,37 @@
 \section{Durchführung}
 \label{sec:Durchführung}
+Zunächst wird eine Messapparatur wie in Abbildung \ref{fig:aufbau} zu sehen aufgebaut.
+\begin{figure}
+    \centering
+    \includegraphics{images/aufbau.png}
+    \caption{Schematische Darstellung des Versuchaufbaus.\cite{sample}}
+    \label{fig:aufbau}
+\end{figure}
+Diese besteht zunähst einmal aus einer Halogen-Lampe als Lichtquelle und einer Linse zur Fokussierung.
+Dann durchläuft der Lichtstrahl einen auf eine feste Frequenz eingestellten Lichtzerhacker, an welchen sich
+der drehbare Polarisator, in diesem Fall ein Glan-Thompson-Prisma, mitsamt Goniometer anschließt. Dann durchläuft der Lichstrahl die Probe welche sich in
+einem, durch zwei Elektromagneten erzeugtem, Magnetfeld befindet. Anschließend wird die zu untersuchende Wellenlänge mit einem Interferenzfilter
+herausgefiltert und der Strahl durch ein weiteres Glan-Thompson-Prisma in zwei Strahlanteile aufgespalten. Die Intensität dieser Strahlen wird durch
+eine Sammellinse mit anschließendem PbS Photowiderstand gemessen und einmal über ein regelbares RC-Glied und einmal nur über einen Widerstand abgegriffen. Diese
+beiden Spannungen werden nun auf die Eingänge eines Differenzverstärkers gegeben, wodurch nur ihre Differenz übrig bleibt. Abschließend wird noch ein
+Selektivverstärker mit der selben Filterfrequenz wie die des Lichtzerhackers angeschlossen, um Störspannungen rauszufiltern. Das so entstandene monofrequente
+Signal wird dann auf einem Oszilloskop ausgewertet.
+
+
+Zur Kalibrierung des Gerätes wird nun der Interferenzfiltern entfernt und geprüft ob der Lichtsrahl auf beide Photowiderstände trifft, und ob bei geeigneter
+Stellung des ersten Polarisators ein Lichtsrahl nicht mehr sichtbar und der andere maximal hell ist. Anschließend wird die Güte des Selektivverstärkers maximal
+eingestellt und die Verstärkung sowie die Zeitkonstante des RC-Glieds so eingeregelt, dass sich bei geeigneter Polarisatorstellung eine minimale Signalamplitude
+ergibt.
+
+Zur Messung wird der Elektromagnet mit einem möglichst hohen Gleichstrom versorgt und die Probe in den Luftspalt eingebracht. Nun wird der Polarisator so eingestellt,
+dass sich eine minimale Signalamplitude ergibt, und der Winkel vom Goniometer notiert. Anschließend wird der Gleichstrom am Magneten, und damit das Magnetfeld,
+umgepolt und die Messung wiederholt. Dies wird einmal für reines Galliumarsenid und einmal für n-dotiertes Galliumarsenid mit Wellenlängen zwischen 1 und 3 $\si{\micro\metre}$
+durchgeführt.
+
+Da durch die Umpolung des Feldes der Rotationswinkel doppelt gemessen wird, berechnet sich der eigentliche Rotationswinkel folgendermaßen
+\begin{equation}
+  \theta = \frac{1}{2}(\theta_1 - \theta_2)
+  \label{eqn:theta}
+\end{equation}
+
+Abschließend wird noch mit einer Hallsonde das Magnetfeld innerhalb und zwischen den Elektromagneten vermessen.
