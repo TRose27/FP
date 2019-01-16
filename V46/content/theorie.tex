@@ -1,4 +1,60 @@
 \section{Theorie}
 \label{sec:Theorie}
+\subsection{Die effektive Masse}
+Zur Beschreibung von Halbleitern wird ihre komplexe Bandstruktur oftmals durch Näherungen beschrieben.
+Dies geschieht, wie in Abbildung \ref{fig:meff} zu sehen, durch anlegen einer Parabel an das Leitfähigkeitsband.
+\begin{figure}
+    \centering
+    \includegraphics{images/meff.png}
+    \caption{Parabolische Näherung am Leitungsband eines Halbleiters.\cite{sample}}
+    \label{fig:meff}
+\end{figure}
+Wird nun die Dispersionsrelation $E(\vec{k})$ der Elektronen in diesem Band als Taylorreihe in $k=0$ entwickelt und mit der genäherten parabolischen Dispersionsrelation
+verglichen lässt sich folgende Größe mit der Dimension einer Masse definieren:
+\begin{equation}
+  m_i^* = \frac{\hbar^2}{\left\{\frac{\partial^2 E}{\partial k_i^2}\right\}_{k=0}} .
+\end{equation}
+Diese wird als effektive Masse des Leitungselektrons bezeichnet. Sie kann in die verschiedenen Raumrichtungen variieren, oder aber, im Falle eines
+hoch symmetrischen Halbleiters, gleich sein. In diesem Fall lassen sich die Elektronen im Leitungsband durch Nutzung der effektiven Masse als freie Teilchen beschreiben.
+Daraus ergibt sich weiterhin, dass beim Anlegen eines äußeren elektrischen oder magnetischen Feldes newtonsche Mechanik angewendet werden kann:
+\begin{equation}
+  m^* \cdot \vec{b} = \vec{F} .
+\end{equation}
 
-\cite{sample}
+\subsection{Zirkuläre Doppelbrechung}
+\label{sec:brechung}
+Sogenannte optisch aktive Kristalle verfügen über die Fahigkeit die Polarisationsebene von einfallendem Licht zu drehen.
+Dies ist in Abbildung \ref{fig:brechung} dargestellt.
+\begin{figure}
+    \centering
+    \includegraphics{images/brechung.png}
+    \caption{Darstellung der zrikulären Doppelbrechung optisch aktiver Kristalle.\cite{sample}}
+    \label{fig:brechung}
+\end{figure}
+Zur quantitativen Beschreibung dieser zirkulären Doppelbrechung wird die Wellenfunktion des einfallenden Lichtes in einen rechts- und einen linkszirkulären Anteil aufgeteilt
+und somit eine Gleichung für den Drehwinkel $\theta$ aufgestellt. Nun werden noch die durch Lichteinfall induzierten Dipole im Festkörper und die dadruch entstehende
+Polarisation des Kristall berücksichtigt woraus letzendlich folgende Gleichung
+\begin{equation}
+  \theta = \frac{L \omega}{2 c n} \chi_\text{xy},
+\end{equation}
+mit der Kirstalllänge $L$, der Frequenz des Lichtes $\omega$, der Lichtgeschwindigkeit $c$, dem Brechungsindex $n$ und der $xy$ Kompenente des dielektrischen
+Suszeptibilitätstensors des Kristalles, folgt.
+
+\subsection{Der Faraday Effekt}
+Beim Faraday Effekt handelt es sich um die Fähigkeit optisch inaktiver Festkörper die Polarisationsebene von einfallenden Licht zu drehen, sofern ein Magnetfeld
+parallel zur Strahlrichtung angelegt wird. Dies geht auf die Wirkung des Magnetfeldes auf die Elektronen im Festkörper zurück.
+Zur Beschriebung dieses Phänomens wird analog zu \ref{sec:brechung} vorgegangen, jedoch muss das äußere Magnetfeld berücksichtigt werden.
+So lassen sich zwei Gleichungen für den Drehwinkel herleiten. Für den Fall gebundener Elektronen gilt
+\begin{equation}
+  \theta_\text{gebunden} =\frac{2 \pi^2 e_0^3 c}{\epsilon_0}\frac{1}{m^2}\frac{1}{\lambda^2 \omega_0^4}\frac{NBL}{n}
+  \label{eqn:gebunden}
+\end{equation}
+mit der Elementarladung $e_0$, der Lichtgeschwindigkeit $c$, der elektrischen Feldkonstante $\epsilon_0$, der Elektronenmasse $m$, der Wellenlänge des einfallenden
+Lichtes $\lambda$, der Resonanzfrequenz des Festkörpers $\omega_0$, der Elektronendichte $N$, der magnetischen Flussdichte $B$, der Länge des Festkörpers $L$ und dem
+Brechungsindex $n$.
+Für den Fall quasifreier Elektronen gilt
+\begin{equation}
+  \theta_\text{frei} = \frac{e_0^3}{8 \pi^2 \epsilon_0 c^3}\frac{\lambda^2}{m^2}\frac{NBL}{n}.
+  \label{eqn:frei}
+\end{equation}
+Unter den in diesem Versuch geschaffenen Bedingungen behält Gleichung \eqref{eqn:frei}, auch wenn $m$ durch die effektive Masse $m^*$ ersetzt wird, ihre Gültigkeit.
