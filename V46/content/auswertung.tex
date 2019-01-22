@@ -72,7 +72,8 @@ normierten Drehwinkel $\theta_{\mathrm{norm}}$. Es wird daher eine lineare Regre
 \begin{equation*}
     \theta_{\mathrm{norm}}(\lambda^2) = a\cdot \lambda^2 + b 
 \end{equation*}
-verwendet. Die Messwerte und die lineare Regression sind in Abbildung \ref{fig:Darstellung} zu sehen.
+verwendet. Da alle $\theta_{norm}$ eigentlich positiv sein sollte, werden für die lineare Regression nur Messwerte verwendet, welche positiv sind.
+Die Messwerte und die lineare Regression sind in Abbildung \ref{fig:Darstellung} zu sehen.
 \begin{figure}[H]
     \centering
     \includegraphics{build/Messergebnisse.pdf}
@@ -81,8 +82,8 @@ verwendet. Die Messwerte und die lineare Regression sind in Abbildung \ref{fig:D
 \end{figure}\FloatBarrier
 Die Parameter für die Ausgleichsgerade sind 
 \begin{align*}
-    a &= (2,08\pm0,26)\cdot 10^{14}\,\frac{\mathrm{rad}}{\mathrm{m^3}}\;,\\
-    b &= (726\pm117)\,\frac{\mathrm{rad}}{\mathrm{m}}\;.
+    a &= (4,01\pm0,68)\cdot 10^{14}\,\frac{\mathrm{rad}}{\mathrm{m^3}}\;,\\
+    b &= (-1876\pm402)\,\frac{\mathrm{rad}}{\mathrm{m}}\;.
 \end{align*}
 Aus Gleichung \eqref{eqn:gerade} folgt nun, dass die Steigung $a$ folgende Gleichung erfüllt:
 \begin{equation*}
@@ -90,7 +91,7 @@ Aus Gleichung \eqref{eqn:gerade} folgt nun, dass die Steigung $a$ folgende Gleic
 \end{equation*}
 Nach der effektiven Masse $m^*$ umgestellt, ergibt sich ein Wert von 
 \begin{equation}
-    m^* = \sqrt{\frac{e_0^3}{8\pi^2\epsilon_0c^3}\cdot\frac{1}{a}\cdot\frac{NB}{n}} = \SI{1,26\pm0,08e-32}{\kilo\gram}\;.
+    m^* = \sqrt{\frac{e_0^3}{8\pi^2\epsilon_0c^3}\cdot\frac{1}{a}\cdot\frac{NB}{n}} = \SI{9,06\pm0,76e-33}{\kilo\gram}\;.
 \end{equation}
 Für den Brechungsindex wird dabei der Wert $n=3,3$\cite{n} verwendet.
 Der Fehler berechnet sich nach der Gauß'schen Fehlerfortpflanzung

@@ -7,7 +7,7 @@ import scipy.constants as const
 lam,phi1r,phi2r,thetar,phi1u,phi2u,thetau = np.genfromtxt("data/daten.csv",unpack=True,comments="#",delimiter=",") #lambda/mum , Winkel / Deg
 
 def f(x, a,b):
-    return -a*x+b
+    return a*x+b
 
 phi1r, phi2r, phi1u, phi2u = np.deg2rad([phi1r,phi2r,phi1u,phi2u])
 
@@ -16,7 +16,7 @@ thetar = thetar / (5.11*10**(-3)) #rad/m
 thetau = 0.5*(phi1u-phi2u)
 thetau = thetau / (1.36*10**(-3)) #rad/m
 
-thetanorm = thetar-thetau  #Beide Winkel voneinander abgezogen in rad/m
+thetanorm = thetau-thetar  #Beide Winkel voneinander abgezogen in rad/m
 #thetanorm = abs(thetanorm)
 
 np.savetxt("data/daten2.csv", np.column_stack([lam,phi1r,phi2r,thetar,phi1u,phi2u,thetau,thetanorm]), fmt="%1.2f", delimiter=",",
@@ -25,7 +25,7 @@ np.savetxt("data/daten2.csv", np.column_stack([lam,phi1r,phi2r,thetar,phi1u,phi2
 lam = lam * 10**(-6) #im m
 lam = lam**2 #Wellenlänge quadriert
 
-params, cm = curve_fit(f, lam, thetanorm,p0=(-2.4*10**(11),0))
+params, cm = curve_fit(f, lam[0:4], thetanorm[0:4],p0=(-2.4*10**(11),0))
 errors = np.sqrt(np.diag(cm))
 
 print("a = ",params[0]," +- ",errors[0])
