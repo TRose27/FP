@@ -32,6 +32,7 @@ print('b1=', params[1], '+-', errors[1])
 
 plt.plot(nu,f(nu,*params),'r-', label='Fit 1')
 a1=ufloat(params[0],errors[0])
+b1=ufloat(params[1],errors[1])
 
 def f(x, a, b):
     return a*x+b
@@ -44,6 +45,7 @@ print('b2=', params[1], '+-', errors[1])
 
 plt.plot(nu,f(nu,*params),'b-', label='Fit 2')
 a2=ufloat(params[0],errors[0])
+b2=ufloat(params[1],errors[1])
 
 plt.xlabel(r'$\nu$ / $\si{\kilo\hertz}$')
 plt.ylabel(r'B / $\si{\micro\tesla}$')
@@ -57,5 +59,8 @@ a2=a2*1e-9
 gj1=(4 * np.pi * const.m_e)/(const.e * a1)
 gj2=(4 * np.pi * const.m_e)/(const.e * a2)
 
+Berde = (b1+b2)/2
+
 print("gj1=",gj1)
 print("gj2=",gj2)
+print("Berde=",Berde)

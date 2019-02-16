@@ -1,9 +1,84 @@
 \section{Auswertung}
 \label{sec:Auswertung}
+\FloatBarrier
+\subsection{Bestimmung des Landé Faktors für Rubidium 85 und 87}
+Die Messwerte für die Frequenz $\nu$, den Horizontalfeldspulenstrom $I_\text{H}$, den Sweepfeldspulenstrom $I_\text{S}$, sowie die mit der bekannten Formel für Helmholtzspulen
+\begin{equation}
+  B= \frac{\mu_0 \, 8 \, I \, N}{\sqrt{125} \, R}
+  \label{eqn:hh}
+\end{equation}
+berechneten Magnetfeldstärken sind in Tabelle \ref{tab:1} aufgetragen. Die Werte für die Windungen und Radii der Spulen wurden aus \cite{sample} entnommen.
+\begin{table}
+  \centering
+  \caption{Messwerte und Magnetfeldstärken.}
+  \label{tab:1}
+  \begin{tabular}[t]{c c c c c c c}
+   \toprule
+   & \multicolumn{3}{c}{Rubidium 85} & \multicolumn{3}{c}{Rubidium 87} \\
+   \cmidrule(lr){2-4}\cmidrule(lr){5-7}
+    {$\nu$ / $\si{\kilo\hertz}$} & {$I_\text{S}$ / $\si{\milli\ampere}$} & {$I_\text{H}$ / $\si{\milli\ampere}$} & {$B$ / $\si{\micro\tesla}$} &{$I_\text{S}$ / $\si{\milli\ampere}$} & {$I_\text{H}$ / $\si{\milli\ampere}$} &{$B$ / $\si{\micro\tesla}$} \\
+     \midrule
+     \csvreader[no head,
+     late after line=\\,
+     late after last line=\\\bottomrule]%
+     {data/tab.csv}{}%
+     {$\num{\csvcoli}$ & $\num{\csvcolii}$ & $\num{\csvcoliii}$ & $\num{\csvcoliv}$ & $\num{\csvcolv}$ & $\num{\csvcolvi}$ & $\num{\csvcolvii}$} %
+   \end{tabular}
+   \FloatBarrier
+ \end{table}
+Die Magnetfeldstärken werden nun gegen die Frequenzen aufgetragen und mittels SciPy 1.1.0 \cite{scipy} mit der Funktion $y=ax+b$ linear gefittet.
+Dies ist in Abbildung \ref{fig:fit} dargestellt.
+Die bestimmten Parameter sind:
+\begin{align*}
+  a_{85} &= \SI{0.127\pm0.006}{\micro\tesla\per\kilo\hertz} \\
+  b_{85} &= \SI{12.264\pm3.752}{\micro\tesla} \\
+  a_{87} &= \SI{0.195\pm0.006}{\micro\tesla\per\kilo\hertz} \\
+  b_{87} &= \SI{13.188\pm3.482}{\micro\tesla}
+\end{align*}
+Durch Vergleich mit Gleichung \eqref{eqn:} lässt sich $g_\text{F}$ folgendermaßen aus dem Parameter $a$ bestimmen:
+\begin{equation}
+  g_\text{F} = \frac{4 \pi \, m_e}{e \, a}
+\end{equation}
+So wurden folgende Landé Faktoren bestimmt:
+\begin{align*}
+  g_\text{F, 85} &= \num{0.563\pm0.027} \\
+  g_\text{F, 87} &= \num{0.366\pm0.011}.
+\end{align*}
+Die theoretischen Werte betragen $\sfrac{1}{2}$ für Rubidium 85 und $\sfrac{1}{3}$ für Rubidium 87 \cite{gF}, woraus sich die relativen Abweichungen zu $\SI{12.6}{\percent}$ und $\SI{9.8}{\percent}$ ergeben.
+Aus den so ermittelten Landé Faktoren lässt sich auch der Kernspin der Rubidium Isotope mit Gleichung \eqref{eqn:} bestimmen.
+So wurde für Rubidium 85 ein Kernspin von $\sfrac{5}{2}$ und für Rubidium 87 ein Kernspin von $\sfrac{3}{2}$ bestimmt.
 
 \begin{figure}
   \centering
-  \includegraphics{plot.pdf}
-  \caption{Plot.}
-  \label{fig:plot}
+  \includegraphics{build/auswertung.pdf}
+  \caption{Die grafische Darstellung der Messdaten, sowie die Fits für Rubidium 85 und 87.}
+  \label{fig:fit}
 \end{figure}
+\FloatBarrier
+\subsection{Bestimmung des Erdmagnetfeldes}
+Da bei einer Frequenz von 0 auch der Spulenstrom 0 sein muss, lassen sich die Achsenabschnitte der Fits mit der Horizontalkomponente des Erdmagnetfeldes identifizieren.
+Diese ist dann im Mittel
+\begin{equation*}
+B_\text{Erde, hor.} = \SI{12.7\pm2.6}{\micro\tesla}.
+\end{equation*}
+Die vertikale Komponente des Erdmagnetfeldes lässt sich aus dem gemessenem Vertikalspulenstrom von $\SI{226}{\milli\ampere}$ und Gleichung \eqref{eqn:hh} zu
+\begin{equation*}
+  B_\text{Erde, vert.} = \SI{34.6}{\micro\tesla}
+\end{equation*}
+bestimmen.
+
+\subsection{Bestimmung des Isotopengemisches}
+\FloatBarrier
+Aus der in Abbildung \ref{fig:resonanz} zu sehenden Resonanzkurve wurde das Amplitudenverhältnis zu $\sfrac{1}{2}$ bestimmt. Da dieses gleich dem Isotopenverhältnis ist,
+ist dies auch das Isotopenverhältnis zwischen Rubidium 87 und 85. Der natürlich vorkommende Wert \cite{Rb} beträgt
+\begin{equation*}
+  \left(\frac{\ce{^{87}Rb}}{\ce{^{85}Rb}}\right)_\text{natürlich} = 0,39 .
+\end{equation*}
+Somit beträgt die relative Abweichung von der natürlichen Isotopenverteilung $\SI{28.2}{\percent}$.
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.25]{images/kurve.jpeg}
+  \caption{Gemessene Resonanzkurve bei $\SI{100}{\kilo\hertz}$.}
+  \label{fig:resonanz}
+\end{figure}
+\FloatBarrier
