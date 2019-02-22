@@ -18,8 +18,8 @@ B2=B2*1000 #µT
 np.savetxt("data/tab.csv",np.column_stack([nu,s1,h1,B1,s2,h2,B2]),delimiter=",",fmt=["%4.0f","%3.0f","%3.0f","%3.2f","%3.0f","%3.0f","%3.2f"])
 
 plt.grid()
-plt.plot(nu,B1,"kx",label="Rubidium-85")
-plt.plot(nu,B2,"k.",label="Rubidium-87")
+plt.plot(nu,B1,"kx",label="Isotop 1")
+plt.plot(nu,B2,"k.",label="Isotop 2")
 
 def f(x, a, b):
     return a*x+b
