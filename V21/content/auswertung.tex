@@ -14,7 +14,7 @@ berechneten Magnetfeldstärken sind in Tabelle \ref{tab:1} aufgetragen. Die Wert
   \label{tab:1}
   \begin{tabular}[t]{c c c c c c c}
    \toprule
-   & \multicolumn{3}{c}{Rubidium 85} & \multicolumn{3}{c}{Rubidium 87} \\
+   & \multicolumn{3}{c}{Isotop 1} & \multicolumn{3}{c}{Isotop 2} \\
    \cmidrule(lr){2-4}\cmidrule(lr){5-7}
     {$\nu$ / $\si{\kilo\hertz}$} & {$I_\text{S}$ / $\si{\milli\ampere}$} & {$I_\text{H}$ / $\si{\milli\ampere}$} & {$B$ / $\si{\micro\tesla}$} &{$I_\text{S}$ / $\si{\milli\ampere}$} & {$I_\text{H}$ / $\si{\milli\ampere}$} &{$B$ / $\si{\micro\tesla}$} \\
      \midrule
@@ -30,10 +30,10 @@ Die Magnetfeldstärken werden nun gegen die Frequenzen aufgetragen und mittels S
 Dies ist in Abbildung \ref{fig:fit} dargestellt.
 Die bestimmten Parameter sind:
 \begin{align*}
-  a_{85} &= \SI{0.127\pm0.006}{\micro\tesla\per\kilo\hertz} \\
-  b_{85} &= \SI{12.264\pm3.752}{\micro\tesla} \\
-  a_{87} &= \SI{0.195\pm0.006}{\micro\tesla\per\kilo\hertz} \\
-  b_{87} &= \SI{13.188\pm3.482}{\micro\tesla}
+  a_{1} &= \SI{0.127\pm0.006}{\micro\tesla\per\kilo\hertz} \\
+  b_{1} &= \SI{12.264\pm3.752}{\micro\tesla} \\
+  a_{2} &= \SI{0.195\pm0.006}{\micro\tesla\per\kilo\hertz} \\
+  b_{2} &= \SI{13.188\pm3.482}{\micro\tesla}
 \end{align*}
 Durch Vergleich mit Gleichung \eqref{eqn:Bm} lässt sich $g_\text{F}$ folgendermaßen aus dem Parameter $a$ bestimmen:
 \begin{equation}
@@ -41,12 +41,12 @@ Durch Vergleich mit Gleichung \eqref{eqn:Bm} lässt sich $g_\text{F}$ folgenderm
 \end{equation}
 So wurden folgende Landé Faktoren bestimmt:
 \begin{align*}
-  g_\text{F, 85} &= \num{0.563\pm0.027} \\
-  g_\text{F, 87} &= \num{0.366\pm0.011}.
+  g_\text{F, 1} &= \num{0.563\pm0.027} \\
+  g_\text{F, 2} &= \num{0.366\pm0.011}.
 \end{align*}
-Die theoretischen Werte betragen $\sfrac{1}{2}$ für Rubidium 85 und $\sfrac{1}{3}$ für Rubidium 87 \cite{gF}, woraus sich die relativen Abweichungen zu $\SI{12.6}{\percent}$ und $\SI{9.8}{\percent}$ ergeben.
-Aus den so ermittelten Landé Faktoren lässt sich auch der Kernspin der Rubidium Isotope mit Gleichung \eqref{eqn:I} bestimmen.
-So wurde für Rubidium 85 ein Kernspin von $\sfrac{5}{2}$ und für Rubidium 87 ein Kernspin von $\sfrac{3}{2}$ bestimmt.
+Die theoretischen Werte betragen $\sfrac{1}{2}$ für Rubidium 85 und $\sfrac{1}{3}$ für Rubidium 87 \cite{gF}.
+So lässt sich Isotop 1 als Rubidum 85 und Isotop 2 als Rubidium 87 identifizieren.
+Die relativen Abweichungen ergeben sich dann zu $\SI{12.6}{\percent}$ für Rubidium 85 und $\SI{9.8}{\percent}$ für Rubidium 87.
 
 \begin{figure}
   \centering
@@ -55,8 +55,57 @@ So wurde für Rubidium 85 ein Kernspin von $\sfrac{5}{2}$ und für Rubidium 87 e
   \label{fig:fit}
 \end{figure}
 \FloatBarrier
+
+
+\subsection{Bestimmung der Kernspins}
+Mit den bestimmten Landé Faktoren lässt sich nun auch der Kernspin der Isotope bestimmen.
+Dazu wird zunächst aus Gleichung \eqref{eqn:gj} der Hüllen Landé Faktor $g_\text{J}$ bestimmt. Da Rubidium ein Alkali Metall ist, ist $L=0$, $S=\sfrac{1}{2}$ und somit $J=\sfrac{1}{2}$.
+Damit wird $g_\text{J}= 2$. Da sich die Hyperfeinniveaus aus der Kopplung von Hüllen- und Kernspin ergeben muss $F=I+\sfrac{1}{2}$ sein.
+Werden nun alle diese Werte in \eqref{eqn:I} eingesetzt und nach I umgestellt ergeben sich, da es sich um eine quadratische Gleichung handelt, zwei Lösungen:
+\begin{align}
+  I_{+} &= \frac{1}{g_\text{F}} - \frac{1}{2} \label{eqn:I+} \\
+  I_{-} &= -\frac{3}{2} \nonumber .
+\end{align}
+Die konstante Lösung $I_{-}$ wird hierbei verworfen, da die Quantenzahl $I$ per Definition nicht negativ sein kann.
+Mit Gleichung \eqref{eqn:I+} lassen sich nun aus den bestimmten Werten für $g_\text{F}$  die Kernspins der Isotope bestimmen:
+\begin{align*}
+  I_\text{85} &= \num{1.28\pm0.08} \\
+  I_\text{87} &= \num{2.23\pm0.08}.
+\end{align*}
+Die Literaturwert für Rubidium 85 beträgt $I=\sfrac{3}{2}$ \cite{Rb} und die Abweichung $\SI{14.6}{\percent}$, für Rubidium 87 ist der Literaturwert $I=\sfrac{5}{2}$ \cite{Rb} und die Abweichung
+$\SI{10.8}{\percent}$.
+
+\subsection{Abschätzung des quadratischen Zeeman-Effektes}
+Bei starken Magnetfeldern muss auch der Einfluss des quadratischen Zeeman-Effektes auf die Hyperfeinstrukturaufspaltung beachtet werden. Im Folgenden soll dessen Einfluss auf die durchgeführte
+Messung abgeschätzt werden. Die Übergangsenergie erweitert sich um einen Term zu
+\begin{equation}
+  U_\text{HF}= g_\text{F} \, \mu_\text{B} \, B + \underbrace{ g_\text{F}^2 \, \mu_\text{B}^2 \, B^2 \, \frac{\left(1-2 M_\text{F} \right)}{\Delta E_\text{Hy}}}_{= \Delta U_\text{HF}},
+  \label{eqn:zeeman}
+\end{equation}
+mit der magnetischen Quantenzahl der Hyperfeinstrukturaufspaltung $M_\text{F}$ und der Energiedifferenz zwischen den Niveaus $F$ und $F+1$, $\Delta E_\text{Hy}$.
+Zur Abschätzung des quadratischen Zeeman-Effektes werden nun für $M_\text{F}$ und $B$ Werte eingesetzt, welche den quadratischen Term maximal werden lassen.
+Für Rubidium 85 wurden folgende Werte eingesetzt:
+\begin{align*}
+  M_\text{F} &= - (I+\frac{1}{2}) = -\num{1.78\pm0.08} \\
+  B &= \SI{143.11}{\micro\tesla},
+\end{align*}
+und für Rubidium 87 demnach:
+\begin{align*}
+  M_\text{F} &= - (I+\frac{1}{2}) = -\num{2.73\pm0.08} \\
+  B &= \SI{212.12}{\micro\tesla}.
+\end{align*}
+So ergeben sich mit dem bestimmten Landé Faktoren und $\Delta E_\text{Hy,85}=\SI{2.01e-24}{\joule}$ und $\Delta E_\text{Hy,87}=\SI{4.53e-24}{\joule}$ \cite{sample} folgende Werte:
+\begin{align*}
+  \Delta U_\text{85} &= \SI{1.26\pm0.07e-30}{\joule} \\
+  \Delta U_\text{87} &= \SI{7.39\pm0.25e-31}{\joule} .
+\end{align*}
+Dies ist die maximale Verschiebung der Energieniveaus aufgrund des quadratischen Zeeman-Effektes welche in diesem Versuch möglich gewesen ist.
+Diese Verschiebung ist um 6 bis 7 Größenordnungen kleiner als die Aufspaltung und somit vernachlässigbar.
+
+
+
 \subsection{Bestimmung des Erdmagnetfeldes}
-Da bei einer Frequenz von 0 auch der Spulenstrom 0 sein muss, lassen sich die Achsenabschnitte der Fits mit der Horizontalkomponente des Erdmagnetfeldes identifizieren.
+Da in Abwesenheit externer Magnetfelder bei einer Frequenz von 0 auch der Spulenstrom 0 sein muss, lassen sich die Achsenabschnitte der Fits mit der Horizontalkomponente des Erdmagnetfeldes identifizieren.
 Diese ist dann im Mittel
 \begin{equation*}
 B_\text{Erde, hor.} = \SI{12.7\pm2.6}{\micro\tesla}.

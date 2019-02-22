@@ -2,32 +2,33 @@
 \label{sec:Theorie}
 
 \subsection{Energieniveaustruktur}
-Aus der Quantenmechanik ist bekannt, das der Gesamtdrehimpuls $\vec{J}$ der Elektronenhülle mit dem magnetischen Moment $\vec{\mu}_{\mathrm{J}}$ gekoppelt ist. Der Zusammenhang lautet 
+Aus der Quantenmechanik ist bekannt, das der Gesamtdrehimpuls $\vec{J}$ der Elektronenhülle mit dem magnetischen Moment $\vec{\mu}_{\mathrm{J}}$ gekoppelt ist. Der Zusammenhang lautet
 \begin{equation*}
     |\vec{\mu}_{\mathrm{J}}| = g_{\mathrm{J}} \mu_{\mathrm{B}} \sqrt{J(J+1)}\;,
 \end{equation*}
-wobei $g_{\mathrm{J}}$ der Landé-Faktor ist und $\mu_{\mathrm{B}}$ das Bohrsche Magneton. Der Landé-Faktor berücksichtigt, dass sich das magnetische Moment aus dem Bahndrehimpuls 
+wobei $g_{\mathrm{J}}$ der Landé-Faktor ist und $\mu_{\mathrm{B}}$ das Bohrsche Magneton. Der Landé-Faktor berücksichtigt, dass sich das magnetische Moment aus dem Bahndrehimpuls
 $\vec{L}$ und dem Spin $\vec{S}$ zusammensetzt:
 \begin{equation*}
-    g_{\text{J}} = \frac{3,0023 J(J+1) + 1,0023 (S(S+1)-L(L+1))}{2J(J+1)}\;.
+    g_{\text{J}} = \frac{3 J(J+1) + (S(S+1)-L(L+1))}{2J(J+1)}\;.
+    \label{eqn:gj}
 \end{equation*}
-Die Energieniveaus eines Atoms verändern sich, wenn ein äußeres Magnetfeld angelegt wird, da das magnetische Moment mit dem Feld wechselwirkt. Die Energie dieser Wechselwirkung beträgt 
+Die Energieniveaus eines Atoms verändern sich, wenn ein äußeres Magnetfeld angelegt wird, da das magnetische Moment mit dem Feld wechselwirkt. Die Energie dieser Wechselwirkung beträgt
 \begin{equation*}
     E_{\text{mag}} = -\vec{\mu}_{\text{J}} \cdot \vec{B}\;.
 \end{equation*}
-Aufgrund der Präzisionsbewegung von $\vec{\mu}_{\text{J}}$ ist die Energiebilanz nur von der z-Komponente abhängig. Wegen der Richtungsquantelung kann diese nur ganzzahlige Vielfache  
-$M_{\text{J}}$ des Wertes $g_{\text{J}}\mu_{\text{B}}B$ annehmen. Es folgt also 
+Aufgrund der Präzisionsbewegung von $\vec{\mu}_{\text{J}}$ ist die Energiebilanz nur von der z-Komponente abhängig. Wegen der Richtungsquantelung kann diese nur ganzzahlige Vielfache
+$M_{\text{J}}$ des Wertes $g_{\text{J}}\mu_{\text{B}}B$ annehmen. Es folgt also
 \begin{equation*}
     E_{\text{mag}} = M_{\text{J}}g_{\text{J}}\mu_{\text{B}}B\;,
 \end{equation*}
 wobei $M_{\text{J}}$ die Werte $-J$, $-J+1$, ..., $J-1$, $J$ besitzt. Dieses aufspalten der Energieniveaus in 2J+1 Unterniveaus beim anlegen eines äußeren Magnetfeldes, wird als
 Zeeman-Effekt bezeichnet.
-Wenn das externe Magnetfeld hinreichend schwach ist und das zu untersuchende Objekt einen von Null verschiedenen Kernspin $\vec{I}$ bestitzt, koppelt der Gesamtdrehimpuls $\vec{J}$ der 
+Wenn das externe Magnetfeld hinreichend schwach ist und das zu untersuchende Objekt einen von Null verschiedenen Kernspin $\vec{I}$ bestitzt, koppelt der Gesamtdrehimpuls $\vec{J}$ der
 Elektronenhülle ebenfalls vektoriell an den Kernspin
 \begin{equation*}
     \vec{F} = \vec{J} + \vec{I}
 \end{equation*}
-Die sich daraus ergebenen Unterniveaus werden als Hyperfeinstruktur bezeichnet. Die Anzahl der Hyperfeinstrukturen ist gleich $2J+1$ oder $2I+1$, jenachdem ob $J<1$ oder $J>I$ ist. 
+Die sich daraus ergebenen Unterniveaus werden als Hyperfeinstruktur bezeichnet. Die Anzahl der Hyperfeinstrukturen ist gleich $2J+1$ oder $2I+1$, jenachdem ob $J<1$ oder $J>I$ ist.
 Sie werden durch die Quantenzahl $F$ unterschieden, welche von $I+J$ bis $|I-J|$ laufen kann.
 In Abbildung \ref{fig:struktur} ist die Energieniveauaufspaltung für ein Alkali-Atom $\left(J=\dfrac{1}{2}\right)$ mit einem Kernspin von $I=\dfrac{3}{2}$ dargestellt.
 \begin{figure}[H]
@@ -36,7 +37,7 @@ In Abbildung \ref{fig:struktur} ist die Energieniveauaufspaltung für ein Alkali
     \caption{Hyperfeinstruktur- und Zeeman-Aufspaltung der Energieniveaus eines Alkali-Atoms.\cite[4]{sample}}
     \label{fig:struktur}
 \end{figure}\FloatBarrier
-Diese Hyperfeinstrukturen spalten sich durch anlegen eines schwachen Magnetfeldes in $2F+1$-Zeemanniveaus auf, die durch die Quantenzahl $m_{\text{F}}$ beschrieben werden, welche von 
+Diese Hyperfeinstrukturen spalten sich durch anlegen eines schwachen Magnetfeldes in $2F+1$-Zeemanniveaus auf, die durch die Quantenzahl $m_{\text{F}}$ beschrieben werden, welche von
 $-F$ bis $F$ laufen kann. Die Energiedifferenzen der Hyperfeinstrukturen betragen
 \begin{equation*}
     E_{\text{HF}} = g_{\text{F}}\mu_{\text{B}}B\;.
@@ -56,7 +57,7 @@ Für den Landé-Faktor $g_{\text{F}}$ ergibt sich unter Berücksichtigung des Ve
 
 
 \subsection{Optisches Pummpen}
-Das Grundprinzip des optischen Pumpens ist es, die im Normalfall herrschende thermische Besetzung der Energieniveaus nach Boltzmann umzukehren, sodass höhere Niveaus zahlreicher besetzt sind 
+Das Grundprinzip des optischen Pumpens ist es, die im Normalfall herrschende thermische Besetzung der Energieniveaus nach Boltzmann umzukehren, sodass höhere Niveaus zahlreicher besetzt sind
 als niedrigere. Dies geschieht durch optische Anregung. In Abbildung \ref{fig:pumpe} sind die Übergänge zwischen dem S- und P-Niveaus eines hypothetischen Alkali-Atoms zu sehen.
 \begin{figure}[H]
     \centering
@@ -64,26 +65,26 @@ als niedrigere. Dies geschieht durch optische Anregung. In Abbildung \ref{fig:pu
     \caption{Zeeman-Aufspaltung und mögliche Übergänge eines hypothetischen Alkaliatoms.\cite[6]{sample}}
     \label{fig:pumpe}
 \end{figure}\FloatBarrier
-Da in diesem Versuch rechtszirkular-polarisiertes Licht verwendet wird, also der Spin der Lichtquanten antiparallel zur Ausbreitungsrichtung ist, ist nur der $\sigma^+$-Übergang mit der 
+Da in diesem Versuch rechtszirkular-polarisiertes Licht verwendet wird, also der Spin der Lichtquanten antiparallel zur Ausbreitungsrichtung ist, ist nur der $\sigma^+$-Übergang mit der
 Auswahlregel $\Delta M_{\text{J}}=+1$ bei Anregung möglich. Wenn nun ein Dampfgemisch, bestehend aus dem hypothetischen Alkali-Atomen, in einer Zelle mit rechtszirkular-polarisiertem Licht
-bestrahlt wird, werden Elektronen aus dem unteren S-Niveau angeregt und gehen nach der Auswahlregel in das obere P-Niveau über. Aus diesem angeregten Zustand gehen die Elektronen durch spontane 
-Emission wieder in der Grundzustand über, dabei werden beide S-Niveaus wieder bevölkert. Dadurch das aber aus dem höheren S-Niveau kein Elektron durch Anregung in ein anderes Niveau übergeht, 
-füllt sich dieses langsam, während das untere S-Niveau sich leert. Daher wird eine Umkehrung der thermischen Besetzungdichte in den beiden S-Niveaus erreicht. Dadurch  das sich das 
-untere S-Niveau immer mehr leert, werden weniger Lichtquanten absorbiert als zu Beginn. Daher steigt die Transparenz der Zelle im Laufe der Zeit. Wenn es möglich wäre das untere S-Niveau 
+bestrahlt wird, werden Elektronen aus dem unteren S-Niveau angeregt und gehen nach der Auswahlregel in das obere P-Niveau über. Aus diesem angeregten Zustand gehen die Elektronen durch spontane
+Emission wieder in der Grundzustand über, dabei werden beide S-Niveaus wieder bevölkert. Dadurch das aber aus dem höheren S-Niveau kein Elektron durch Anregung in ein anderes Niveau übergeht,
+füllt sich dieses langsam, während das untere S-Niveau sich leert. Daher wird eine Umkehrung der thermischen Besetzungdichte in den beiden S-Niveaus erreicht. Dadurch  das sich das
+untere S-Niveau immer mehr leert, werden weniger Lichtquanten absorbiert als zu Beginn. Daher steigt die Transparenz der Zelle im Laufe der Zeit. Wenn es möglich wäre das untere S-Niveau
 völlig leer zu Pumpen, würde die Transparenz den Wert 1 erreichen.
 
 
 \section{Präzisionsmessung der Zeeman-Aufspaltung}
-Der beschrieben Pumpverfahren kann zur Präzisionsmessung der Zeeman-Aufspaltung benutzt werden. Dabei ist die induzierte Emission von großer Bedeutung. Bei der spontanen Emission wechselt 
-ein angeregtes Elektron nach ungefähr $\SI{e-8}{\second}$ in den Grundzustand, wobei ein Photon mit der Energiedifferenz zwischen den beiden Niveaus abgestrahlt wird. Bei der induzierten 
-Emission trifft ein Photon, dessen Energie der Energiedifferenz zwischen zwei Niveaus entspricht, auf ein angeregtes Atom, wodurch ein Elektron auf ein tieferes Niveau (unter Berücksichtigung 
+Der beschrieben Pumpverfahren kann zur Präzisionsmessung der Zeeman-Aufspaltung benutzt werden. Dabei ist die induzierte Emission von großer Bedeutung. Bei der spontanen Emission wechselt
+ein angeregtes Elektron nach ungefähr $\SI{e-8}{\second}$ in den Grundzustand, wobei ein Photon mit der Energiedifferenz zwischen den beiden Niveaus abgestrahlt wird. Bei der induzierten
+Emission trifft ein Photon, dessen Energie der Energiedifferenz zwischen zwei Niveaus entspricht, auf ein angeregtes Atom, wodurch ein Elektron auf ein tieferes Niveau (unter Berücksichtigung
 der Energiedifferenz) wechseln kann. Dabei wird ein weiteres Photon ausgestrahlt, welches die selbe Energie besitzt wie das eingehende Photon. Die beiden unterschiedlichen Emission laufen parallel,
-wobei im Energiebereich der Zeeman-Niveaus die induzierte Emission dominiert und die spontane Emission vernachlässigbar ist. Wird nun das Grundniveau einer Probe in einer Dampfzelle wie zuvor 
-beschrieben leer gepumpt, ist diese quasi transparent für das eingestrahlte Licht. Wenn nun ein frequenzvariables Hochfrequenzfeld an die Dampfzelle angelegt wird, wird das leer gepumpte 
-Grundniveau wieder befüllt, wenn das Magnetfeld den Wert 
+wobei im Energiebereich der Zeeman-Niveaus die induzierte Emission dominiert und die spontane Emission vernachlässigbar ist. Wird nun das Grundniveau einer Probe in einer Dampfzelle wie zuvor
+beschrieben leer gepumpt, ist diese quasi transparent für das eingestrahlte Licht. Wenn nun ein frequenzvariables Hochfrequenzfeld an die Dampfzelle angelegt wird, wird das leer gepumpte
+Grundniveau wieder befüllt, wenn das Magnetfeld den Wert
 \begin{align}
     h\nu &= g_{\text{J}}\mu_{\text{B}}B_{\text{m}}M_{\text{F}}\nonumber\\
-   \implies B_{\text{m}} &= \frac{4\pi m_0}{e_0 g_{\text{F}}}\nu 
+   \implies B_{\text{m}} &= \frac{4\pi m_0}{e_0 g_{\text{F}}}\nu
    \label{eqn:Bm}
 \end{align}
 erreicht, denn es setzt die induzierte Emission ein. Nun kann das eingestrahlte $\sigma^+$-Licht wieder absorbiert werden und die Transparenz nimmt wieder ab. Dies ist in Abbildung \ref{fig:res}

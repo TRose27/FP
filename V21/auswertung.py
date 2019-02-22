@@ -56,11 +56,21 @@ plt.savefig('build/auswertung.pdf')
 a1=a1*1e-9
 a2=a2*1e-9
 
-gj1=(4 * np.pi * const.m_e)/(const.e * a1)
-gj2=(4 * np.pi * const.m_e)/(const.e * a2)
+gf1=(4 * np.pi * const.m_e)/(const.e * a1)
+gf2=(4 * np.pi * const.m_e)/(const.e * a2)
 
 Berde = (b1+b2)/2
 
-print("gj1=",gj1)
-print("gj2=",gj2)
+I1= (1/gf1)-0.5
+I2= (1/gf2)-0.5
+
+U1=gf1**2 * ((const.e * const.hbar)/(2* const.m_e ))**2 * (143.11e-6)**2 * (1+2*(I1+0.5))/2.01e-24
+U2=gf2**2 * ((const.e * const.hbar)/(2* const.m_e ))**2 * (212.12e-6)**2 * (1+2*(I2+0.5))/4.53e-24
+
+print("gf1=",gf1)
+print("gf2=",gf2)
 print("Berde=",Berde)
+print("I1=",I1)
+print("I2=",I2)
+print("U1=",U1)
+print("U2=",U2)
