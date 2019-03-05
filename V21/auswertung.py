@@ -66,6 +66,8 @@ I2= (1/gf2)-0.5
 
 U1=gf1**2 * ((const.e * const.hbar)/(2* const.m_e ))**2 * (143.11e-6)**2 * (1+2*(I1+0.5))/2.01e-24
 U2=gf2**2 * ((const.e * const.hbar)/(2* const.m_e ))**2 * (212.12e-6)**2 * (1+2*(I2+0.5))/4.53e-24
+Lin1= (const.e * const.hbar)/(2* const.m_e ) * gf1 * 143.11e-6
+Lin2= (const.e * const.hbar)/(2* const.m_e ) * gf2 * 212.12e-6
 
 print("gf1=",gf1)
 print("gf2=",gf2)
@@ -74,3 +76,5 @@ print("I1=",I1)
 print("I2=",I2)
 print("U1=",U1)
 print("U2=",U2)
+print("Lin1=",Lin1)
+print("Lin2=",Lin2)
