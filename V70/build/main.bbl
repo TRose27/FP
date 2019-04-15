@@ -1,0 +1,255 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 2.8 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \sortlist[entry]{nty/global/}
+    \entry{leitfaden}{manual}{}
+      \name{author}{1}{}{%
+        {{hash=2821a70f99517ac7757c95300d43e95c}{%
+           family={Dortmund},
+           familyi={D\bibinitperiod},
+           given={TU},
+           giveni={T\bibinitperiod}}}%
+      }
+      \strng{namehash}{2821a70f99517ac7757c95300d43e95c}
+      \strng{fullhash}{2821a70f99517ac7757c95300d43e95c}
+      \strng{authornamehash}{2821a70f99517ac7757c95300d43e95c}
+      \strng{authorfullhash}{2821a70f99517ac7757c95300d43e95c}
+      \field{sortinit}{D}
+      \field{sortinithash}{d10b5413de1f3d197b20897dd0d565bb}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Leitfaden zum Vakuumversuch V70}
+      \field{year}{2017}
+    \endentry
+    \entry{scipy}{software}{}
+      \true{moreauthor}
+      \true{morelabelname}
+      \name{author}{3}{}{%
+        {{hash=4b3d26f886661aa723985bcfd835ba18}{%
+           family={Jones},
+           familyi={J\bibinitperiod},
+           given={Eric},
+           giveni={E\bibinitperiod}}}%
+        {{hash=00f2976ade6b1d16d78161a1f190716c}{%
+           family={Oliphant},
+           familyi={O\bibinitperiod},
+           given={Travis\bibnamedelima E.},
+           giveni={T\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+        {{hash=3d6efaaa3d9682e20787eb06ff70a3d7}{%
+           family={Peterson},
+           familyi={P\bibinitperiod},
+           given={Pearu},
+           giveni={P\bibinitperiod}}}%
+      }
+      \strng{namehash}{6161d5ffac903d9c99af53f45c09a00f}
+      \strng{fullhash}{a084ab80d4e88edca8fdd4b590cf2da8}
+      \strng{authornamehash}{6161d5ffac903d9c99af53f45c09a00f}
+      \strng{authorfullhash}{a084ab80d4e88edca8fdd4b590cf2da8}
+      \field{sortinit}{J}
+      \field{sortinithash}{c86bd6cced82a15683b396c2169909ef}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{{SciPy}: Open source scientific tools for {Python}}
+      \field{version}{0.16.0}
+      \verb{url}
+      \verb http://www.scipy.org/
+      \endverb
+    \endentry
+    \entry{pirani}{online}{}
+      \field{sortinit}{P}
+      \field{sortinithash}{24100cef455d7974167575052c29146e}
+      \field{labeltitlesource}{title}
+      \field{title}{Pirani-Vakuummeter}
+      \field{urlday}{1}
+      \field{urlmonth}{11}
+      \field{urlyear}{2018}
+      \field{urldateera}{ce}
+      \verb{url}
+      \verb https://de.wikipedia.org/wiki/Pirani-Vakuummeter
+      \endverb
+    \endentry
+    \entry{bereiche}{online}{}
+      \field{sortinit}{V}
+      \field{sortinithash}{555737dafdcf1396ebfeae5822e5bde2}
+      \field{labeltitlesource}{title}
+      \field{title}{Vakuum}
+      \field{urlday}{29}
+      \field{urlmonth}{10}
+      \field{urlyear}{2018}
+      \field{urldateera}{ce}
+      \verb{url}
+      \verb https://www.giessereilexikon.com/giesserei-lexikon/Encyclopedia/show/952/?L=64
+      \endverb
+    \endentry
+    \entry{anwendung}{online}{}
+      \field{sortinit}{V}
+      \field{sortinithash}{555737dafdcf1396ebfeae5822e5bde2}
+      \field{labeltitlesource}{title}
+      \field{title}{Vakuum - Anwendung}
+      \field{urlday}{1}
+      \field{urlmonth}{11}
+      \field{urlyear}{2018}
+      \field{urldateera}{ce}
+      \verb{url}
+      \verb https://de.wikipedia.org/wiki/Vakuum#Anwendungen
+      \endverb
+    \endentry
+    \entry{lhc}{online}{}
+      \field{sortinit}{V}
+      \field{sortinithash}{555737dafdcf1396ebfeae5822e5bde2}
+      \field{labeltitlesource}{title}
+      \field{title}{Vakuum im LHC}
+      \field{urlday}{5}
+      \field{urlmonth}{11}
+      \field{urlyear}{2018}
+      \field{urldateera}{ce}
+      \verb{url}
+      \verb http://www.lhc-facts.ch/index.php?page=vakuum
+      \endverb
+    \endentry
+    \entry{drehpumpe}{online}{}
+      \name{author}{1}{}{%
+        {{hash=43e400bedb7288e4265f67cd5f9c2ceb}{%
+           family={Vakuum},
+           familyi={V\bibinitperiod},
+           given={Pfeiffer},
+           giveni={P\bibinitperiod}}}%
+      }
+      \strng{namehash}{43e400bedb7288e4265f67cd5f9c2ceb}
+      \strng{fullhash}{43e400bedb7288e4265f67cd5f9c2ceb}
+      \strng{authornamehash}{43e400bedb7288e4265f67cd5f9c2ceb}
+      \strng{authorfullhash}{43e400bedb7288e4265f67cd5f9c2ceb}
+      \field{sortinit}{V}
+      \field{sortinithash}{555737dafdcf1396ebfeae5822e5bde2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Drehschiebervakuumpumpe Aufbau/Funktionsprinzip}
+      \field{urlday}{31}
+      \field{urlmonth}{10}
+      \field{urlyear}{2018}
+      \field{urldateera}{ce}
+      \verb{url}
+      \verb https://www.pfeiffer-vacuum.com/de/know-how/vakuumerzeugung/drehschiebervakuumpumpen/aufbau-funktionsprinzip/
+      \endverb
+    \endentry
+    \entry{turbopumpe}{online}{}
+      \name{author}{1}{}{%
+        {{hash=43e400bedb7288e4265f67cd5f9c2ceb}{%
+           family={Vakuum},
+           familyi={V\bibinitperiod},
+           given={Pfeiffer},
+           giveni={P\bibinitperiod}}}%
+      }
+      \strng{namehash}{43e400bedb7288e4265f67cd5f9c2ceb}
+      \strng{fullhash}{43e400bedb7288e4265f67cd5f9c2ceb}
+      \strng{authornamehash}{43e400bedb7288e4265f67cd5f9c2ceb}
+      \strng{authorfullhash}{43e400bedb7288e4265f67cd5f9c2ceb}
+      \field{sortinit}{V}
+      \field{sortinithash}{555737dafdcf1396ebfeae5822e5bde2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Funktionsprinzip Turbomolekularpumpe}
+      \field{urlday}{1}
+      \field{urlmonth}{11}
+      \field{urlyear}{2018}
+      \field{urldateera}{ce}
+      \verb{url}
+      \verb https://www.pfeiffer-vacuum.com/de/know-how/vakuumerzeugung/turbomolekularpumpen/aufbau-funktionsprinzip/funktionsprinzip-turbomolekularpumpe/
+      \endverb
+    \endentry
+    \entry{leitwert}{online}{}
+      \name{author}{1}{}{%
+        {{hash=43e400bedb7288e4265f67cd5f9c2ceb}{%
+           family={Vakuum},
+           familyi={V\bibinitperiod},
+           given={Pfeiffer},
+           giveni={P\bibinitperiod}}}%
+      }
+      \strng{namehash}{43e400bedb7288e4265f67cd5f9c2ceb}
+      \strng{fullhash}{43e400bedb7288e4265f67cd5f9c2ceb}
+      \strng{authornamehash}{43e400bedb7288e4265f67cd5f9c2ceb}
+      \strng{authorfullhash}{43e400bedb7288e4265f67cd5f9c2ceb}
+      \field{sortinit}{V}
+      \field{sortinithash}{555737dafdcf1396ebfeae5822e5bde2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Leitwert}
+      \field{urlday}{1}
+      \field{urlmonth}{11}
+      \field{urlyear}{2018}
+      \field{urldateera}{ce}
+      \verb{url}
+      \verb https://www.pfeiffer-vacuum.com/de/know-how/einfuehrung-in-die-vakuumtechnik/grundlagen/leitwert/
+      \endverb
+    \endentry
+    \entry{strömung}{online}{}
+      \name{author}{1}{}{%
+        {{hash=43e400bedb7288e4265f67cd5f9c2ceb}{%
+           family={Vakuum},
+           familyi={V\bibinitperiod},
+           given={Pfeiffer},
+           giveni={P\bibinitperiod}}}%
+      }
+      \strng{namehash}{43e400bedb7288e4265f67cd5f9c2ceb}
+      \strng{fullhash}{43e400bedb7288e4265f67cd5f9c2ceb}
+      \strng{authornamehash}{43e400bedb7288e4265f67cd5f9c2ceb}
+      \strng{authorfullhash}{43e400bedb7288e4265f67cd5f9c2ceb}
+      \field{sortinit}{V}
+      \field{sortinithash}{555737dafdcf1396ebfeae5822e5bde2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Strömungsarten}
+      \field{urlday}{29}
+      \field{urlmonth}{10}
+      \field{urlyear}{2018}
+      \field{urldateera}{ce}
+      \verb{url}
+      \verb https://www.pfeiffer-vacuum.com/de/know-how/einfuehrung-in-die-vakuumtechnik/grundlagen/stroemungsarten/
+      \endverb
+    \endentry
+    \entry{pfeiffer}{online}{}
+      \name{author}{1}{}{%
+        {{hash=43e400bedb7288e4265f67cd5f9c2ceb}{%
+           family={Vakuum},
+           familyi={V\bibinitperiod},
+           given={Pfeiffer},
+           giveni={P\bibinitperiod}}}%
+      }
+      \strng{namehash}{43e400bedb7288e4265f67cd5f9c2ceb}
+      \strng{fullhash}{43e400bedb7288e4265f67cd5f9c2ceb}
+      \strng{authornamehash}{43e400bedb7288e4265f67cd5f9c2ceb}
+      \strng{authorfullhash}{43e400bedb7288e4265f67cd5f9c2ceb}
+      \field{sortinit}{V}
+      \field{sortinithash}{555737dafdcf1396ebfeae5822e5bde2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Vakuum - Definition}
+      \field{urlday}{27}
+      \field{urlmonth}{10}
+      \field{urlyear}{2018}
+      \field{urldateera}{ce}
+      \verb{url}
+      \verb https://www.pfeiffer-vacuum.com/de/know-how/einfuehrung-in-die-vakuumtechnik/allgemeines/
+      \endverb
+    \endentry
+  \endsortlist
+\endrefsection
+\endinput
+

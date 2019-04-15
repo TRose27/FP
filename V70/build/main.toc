@@ -1,0 +1,30 @@
+\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
+\defcounter {refsection}{0}\relax 
+\select@language {german}
+\contentsline {section}{\numberline {1}Zielsetzung}{3}{section.1}
+\contentsline {section}{\numberline {2}Theorie}{3}{section.2}
+\contentsline {subsection}{\numberline {2.1}Herleitung der p(t)-Kurve}{4}{subsection.2.1}
+\contentsline {subsection}{\numberline {2.2}Leckratenmessung}{5}{subsection.2.2}
+\contentsline {subsection}{\numberline {2.3}Druckbereiche}{5}{subsection.2.3}
+\contentsline {subsection}{\numberline {2.4}Strömungsarten und Leitwert}{6}{subsection.2.4}
+\contentsline {subsection}{\numberline {2.5}Sorption}{7}{subsection.2.5}
+\contentsline {subsection}{\numberline {2.6}Vakuumerzeugung}{8}{subsection.2.6}
+\contentsline {subsubsection}{\numberline {2.6.1}Drehschieberpumpe}{8}{subsubsection.2.6.1}
+\contentsline {subsubsection}{\numberline {2.6.2}Turbomolekularpumpe}{9}{subsubsection.2.6.2}
+\contentsline {subsection}{\numberline {2.7}Vakuummessung}{10}{subsection.2.7}
+\contentsline {section}{\numberline {3}Fehlerrechnung}{11}{section.3}
+\contentsline {section}{\numberline {4}Durchführung}{11}{section.4}
+\contentsline {subsection}{\numberline {4.1}Messungen zur Drehschieberpumpe}{14}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}Messungen zur Turbomolekularpumpe}{14}{subsection.4.2}
+\contentsline {subsection}{\numberline {4.3}Volumenbestimmung}{14}{subsection.4.3}
+\contentsline {section}{\numberline {5}Auswertung}{15}{section.5}
+\contentsline {subsection}{\numberline {5.1}Volumenbestimmung}{15}{subsection.5.1}
+\contentsline {subsection}{\numberline {5.2}Drehschieberpumpe}{16}{subsection.5.2}
+\contentsline {subsubsection}{\numberline {5.2.1}Evakuierungsmessung}{16}{subsubsection.5.2.1}
+\contentsline {subsubsection}{\numberline {5.2.2}Leckratenmessung}{19}{subsubsection.5.2.2}
+\contentsline {subsection}{\numberline {5.3}Turbopumpe}{23}{subsection.5.3}
+\contentsline {subsubsection}{\numberline {5.3.1}Evakuierungsmessung}{23}{subsubsection.5.3.1}
+\contentsline {subsubsection}{\numberline {5.3.2}Leckratenmessung}{24}{subsubsection.5.3.2}
+\contentsline {subsection}{\numberline {5.4}Vergleich der bestimmten Saugvermögen}{29}{subsection.5.4}
+\contentsline {section}{\numberline {6}Diskussion}{30}{section.6}
+\contentsline {section}{\nonumberline Literatur}{31}{section*.33}
